@@ -26,4 +26,5 @@ def download(kaggle_query: str):
 
 
 if __name__ == "__main__":
-    download("kaggle datasets download -d crawford/gene-expression -f data.zip")
+    download("kaggle datasets download -d crawford/gene-expression")
+    unzip("gene-expression.zip")
