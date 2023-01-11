@@ -1,0 +1,17 @@
+.venv/
+*.csv
+*.code-workspace
+.vscode/
+*.zip
+*.tar.gz
+*.tar.xz
+*.tar.bz2
+*.tar
+*.tgz
+*.tbz2
+*.tbz
+build/
+dist/
+*.egg-info/
+logs/
+*__pycache__/
