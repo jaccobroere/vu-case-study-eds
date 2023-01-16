@@ -1,4 +1,6 @@
+from typing import Optional, List
 import pandas as pd
+from feature_engine.selection.base_selector import BaseSelector
 
 
 def transform_data(df: pd.DataFrame):
