@@ -1,4 +1,6 @@
+from typing import Optional, List
 import pandas as pd
+from feature_engine.selection.base_selector import BaseSelector
 
 
 def transform_data(df: pd.DataFrame):
@@ -23,7 +25,7 @@ def transform_data(df: pd.DataFrame):
     return df
 
 
-def add_actuals(df: pd.DataFrame, actuals: pd.DataFrame):
+def add_actuals(df: pd.DataFrame, actuals: pd.DataFrame, target: str = "cancer"):
     """Adds the actuals to the transformed data.
 
     Args:
@@ -34,6 +36,7 @@ def add_actuals(df: pd.DataFrame, actuals: pd.DataFrame):
         pd.DataFrame: The transformed data with actuals.
     """
     res = pd.merge(actuals, df, on="patient", how="inner")
+    res[target] = (res[target] == "ALL").astype(int)
 
     # Set index column back to patient
     res.index = res["patient"]
