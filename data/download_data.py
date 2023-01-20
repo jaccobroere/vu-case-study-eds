@@ -35,6 +35,7 @@ def download_txt(url: str, filename):
 
 
 if __name__ == "__main__":
+    get_ipython().system("git clone https://github.com/kivancguckiran/microarray-data")
     download("kaggle datasets download -d crawford/gene-expression")
     unzip("gene-expression.zip")
     download_txt(url = 'http://genomics-pubs.princeton.edu/oncology/Data/CarcinomaNormalDatasetCancerResearch.txt', filename = 'carcinoma_princeton.txt')
