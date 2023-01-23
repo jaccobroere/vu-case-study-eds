@@ -17,7 +17,10 @@ def transform_data(df: pd.DataFrame):
     df = df.loc[:, cols].T
 
     # Set column names and index
-    df.columns = df.loc["Gene Accession Number", :]
+    if len(df.loc["Gene Accession Number", :]) == len(df.columns):
+        df.columns = df.loc["Gene Accession Number", :]
+    else:
+        df.columns = df.loc["Gene Accession Number", :].iloc[0]
     df.drop(["Gene Accession Number", "Gene Description"], inplace=True)
     df.index.set_names("patient", inplace=True)
     df.index = pd.to_numeric(df.index)
