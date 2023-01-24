@@ -3,7 +3,6 @@ from IPython import get_ipython
 import zipfile
 import os
 import tarfile
-import gdown
 
 def remove(filename):
     if os.path.exists(filename):
