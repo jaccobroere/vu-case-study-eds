@@ -26,7 +26,7 @@ class Gene_SPCA(BaseEstimator, TransformerMixin):
     def fit(self, X, y = None, verbose = 0):
 
         if verbose: 
-            print("Progress based on max iterations:")
+            # print("Progress based on max iterations:")
             pbar = tqdm(total = self.max_iter)
 
         if isinstance(X, pd.DataFrame):
@@ -38,10 +38,9 @@ class Gene_SPCA(BaseEstimator, TransformerMixin):
         B = np.zeros((A[:,0].shape[0], self.n_comps))
         XtX = X.T @ X
         
-        iter = 0
-
         #Initialize progress monitors arbitrarily large
         diff, diff_improve = 100, 100 
+        iter = 0
 
         # Loop of step 2 and 3 until convergence / maxiter:
         while iter < self.max_iter and diff > self.tol and diff_improve > self.improve_tol:
@@ -50,7 +49,7 @@ class Gene_SPCA(BaseEstimator, TransformerMixin):
             # Update B (step 2*)
             input = A.T @ XtX
             for i in range(self.n_comps):
-                B[:, i] = self._soft_threshold(input[i,:], 10)
+                B[:, i] = self._soft_threshold(input[i,:], self.l1)
             
             # Monitor change
             diff_old = diff
@@ -73,7 +72,8 @@ class Gene_SPCA(BaseEstimator, TransformerMixin):
     
     def transform(self, X, y = None):
         return X @ self.loadings
-    
+
+    # Internal class helper functions
     def _soft_threshold(self, vec, l1):
         temp = np.maximum(0, (np.abs(vec) - l1 / 2))
         return temp * np.sign(vec)
