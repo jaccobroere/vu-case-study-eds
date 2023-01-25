@@ -1,7 +1,8 @@
 from typing import Optional, List
 import pandas as pd
+import numpy as np
 from feature_engine.selection.base_selector import BaseSelector
-
+from helpers.helper_classes import Gene_SPCA
 
 def transform_data(df: pd.DataFrame):
     """Transforms the data to a format that can be used by the model.
@@ -44,7 +45,11 @@ def add_actuals(df: pd.DataFrame, actuals: pd.DataFrame, target: str = "cancer")
 
     return res
 
-def get_data_pev(X, n_components = 30):
+def get_gene_spca(l1, n_components = 20):
+    spca_obj = Gene_SPCA(max_iter = 10000, n_comps = n_components, l1 = l1)
+    return spca_obj
+
+def get_data_pev(X, n_components = 20, verbose = 0):
     """ 
     Function that returns the explained variance of the first principal component for a single dataset versus 
     the number of non-zero loadings / genes
@@ -86,6 +91,14 @@ def get_data_pev(X, n_components = 30):
         nonzero_columns_arr.append(nonzero_cnt)
         nonzero_loadings_arr.append(spca_cur.nonzero)
         PEV_var_arr.append(PEV)
+
+        # Print values when verbose
+        if verbose == 1:
+            print("l1 = ", l1_cur)
+            print("nonzero_cnt = ", nonzero_cnt)
+            print("nonzero_loadings = ", spca_cur.nonzero)
+            print("PEV = ", PEV)
+            print("")
 
         # Update l1_cur
         l1_cur += 20
