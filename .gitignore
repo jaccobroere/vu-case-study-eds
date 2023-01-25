@@ -15,4 +15,8 @@ dist/
 *.egg-info/
 # logs/
 *__pycache__/
+<<<<<<< Updated upstream
 *.DS_Store
+=======
+.DS_Store
+>>>>>>> Stashed changes
