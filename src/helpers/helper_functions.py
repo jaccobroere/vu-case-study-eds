@@ -49,6 +49,7 @@ def get_gene_spca(l1, n_components = 20):
     spca_obj = Gene_SPCA(max_iter = 10000, n_comps = n_components, l1 = l1)
     return spca_obj
 
+#TODO: Possibly install failsave s.t max_iter is not reached, altough this is unlikely
 def get_data_pev(X, n_components = 20, verbose = 0):
     """ 
     Function that returns the explained variance of the first principal component for a single dataset versus 
@@ -62,7 +63,7 @@ def get_data_pev(X, n_components = 20, verbose = 0):
 
     # First obtain total variance
     pca = get_gene_spca(0, n_components = n_components)
-    _, R = np.linalg.qr(pca.fit_transform(X, verbose = 0))
+    _, R = np.linalg.qr(pca.fit_transform(X))
     total_var = sum(R[i][i]**2 for i in range(R.shape[0]))
 
     # Initialize values for loop
@@ -101,6 +102,6 @@ def get_data_pev(X, n_components = 20, verbose = 0):
             print("")
 
         # Update l1_cur
-        l1_cur += 20
+        l1_cur += 50
     
     return nonzero_columns_arr, nonzero_loadings_arr, PEV_var_arr
