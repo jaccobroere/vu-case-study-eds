@@ -22,8 +22,13 @@ class Gene_SPCA(BaseEstimator, TransformerMixin):
         self.l1 = l1
         self.loadings = None
         self.hasFit = False
-
+        self.nonzero = -1
+        self.zero = -1
+        self.totloadings = -1
+    
     def fit(self, X, y = None, verbose = 0):
+
+        self.totloadings = self.n_comps * X.shape[1]
 
         if verbose: 
             # print("Progress based on max iterations:")
@@ -68,6 +73,8 @@ class Gene_SPCA(BaseEstimator, TransformerMixin):
         # Normalize loadings after loop
         B = self._normalize_mat(B)
         self.loadings = B
+        self.nonzero = np.count_nonzero(B)
+        self.zero = self.totloadings - self.nonzero
         return self
     
     def transform(self, X, y = None):
