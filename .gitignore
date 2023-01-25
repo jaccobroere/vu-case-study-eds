@@ -1,4 +1,5 @@
 .venv/
+venv/
 *.csv
 *.code-workspace
 .vscode/
@@ -15,3 +16,5 @@ dist/
 *.egg-info/
 # logs/
 *__pycache__/
+*.lib
+.DS_Store
