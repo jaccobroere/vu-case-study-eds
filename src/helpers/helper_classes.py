@@ -2,8 +2,133 @@ from typing import Optional, List
 import pandas as pd
 import numpy as np
 from feature_engine.selection.base_selector import BaseSelector
-from sklearn.base import BaseEstimator, TransformerMixin
 from tqdm import tqdm
+
+from sklearn.base import BaseEstimator, TransformerMixin
+from sklearn.decomposition._sparse_pca import SparsePCA
+from sklearn.decomposition._dict_learning import dict_learning
+from sklearn.utils.extmath import svd_flip
+
+
+class LoadingsSPCA(SparsePCA):
+    """
+    This class, LoadingsSPCA, is an altered version of the SparsePCA class from
+    scikit-learn (sklearn). The main difference is that LoadingsSPCA includes
+    an additional attribute, 'loadings', which saves the loadings from the PCA analysis.
+    The class uses the same parameters and methods as the sklearn SparsePCA class,
+    with the added functionality of saving the loadings for further analysis.
+
+    Parameters
+    ----------
+    n_components : int or None (default: None)
+        Number of sparse components to use. If None, use all the components
+    alpha : float (default: 1)
+        Sparsity controlling parameter. Higher values lead to sparser solutions
+    ridge_alpha : float (default: 0.01)
+        Amount of ridge shrinkage to apply in order to improve conditioning when
+        calling the transform method
+    max_iter : int (default: 1000)
+        Maximum number of iterations to perform
+    tol : float (default: 1e-8)
+        Tolerance for stopping criterion
+    method : {'lars', 'cd'} (default: 'lars')
+        lars: uses the least angle regression method to solve the lasso problem
+        cd: uses the coordinate descent method to compute the Lasso solution
+    n_jobs : int or None (default: None)
+        Number of parallel jobs to run. None means 1.
+        ``-1`` means using all processors.
+    U_init : array of shape (n_features, n_components)
+        Initial values for the loadings for warm restart scenarios
+    V_init : array of shape (n_samples, n_components)
+        Initial values for the codes for warm restart scenarios
+    verbose : bool (default: False)
+        If verbose is True the objective function and sparsity are printed at each
+        iteration
+    random_state : int, RandomState instance or None (default: None)
+        Seed of the pseudo random number generator to use when shuffling the data.
+
+    Attributes
+    ----------
+    components_ : array, [n_components, n_features]
+        Sparse components extracted from the data.
+    error_ : array
+        Vector of errors at each iteration
+    n_iter_ : int
+        Number of iterations run
+    loadings_ : array
+        The loadings from the PCA analysis
+
+    """
+
+    def __init__(
+        self,
+        n_components=None,
+        *,
+        alpha=1,
+        ridge_alpha=0.01,
+        max_iter=1000,
+        tol=1e-8,
+        method="lars",
+        n_jobs=None,
+        U_init=None,
+        V_init=None,
+        verbose=False,
+        random_state=None,
+    ):
+        super().__init__(
+            n_components=n_components,
+            alpha=alpha,
+            ridge_alpha=ridge_alpha,
+            max_iter=max_iter,
+            tol=tol,
+            method=method,
+            n_jobs=n_jobs,
+            verbose=verbose,
+            random_state=random_state,
+            U_init=U_init,
+            V_init=V_init,
+        )
+
+    def _fit(self, X, n_components, random_state):
+        # Transpose U and V for dictionary learning if the have been initialized
+        code_init = self.V_init.T if self.V_init is not None else None
+        dict_init = self.U_init.T if self.U_init is not None else None
+
+        # Perform dictionary learning to solve the PCA problem with l1 penalty on the components
+        code, dictionary, E, self.n_iter_ = dict_learning(
+            X.T,
+            n_components,
+            alpha=self.alpha,
+            tol=self.tol,
+            max_iter=self.max_iter,
+            method=self.method,
+            n_jobs=self.n_jobs,
+            verbose=self.verbose,
+            random_state=random_state,
+            code_init=code_init,
+            dict_init=dict_init,
+            return_n_iter=True,
+        )
+
+        # flip eigenvectors' sign to enforce deterministic output
+        code, dictionary = svd_flip(code, dictionary, u_based_decision=False)
+        self.components_ = code.T
+
+        # Normalize the components
+        components_norm = np.linalg.norm(self.components_, axis=1)[:, np.newaxis]
+        components_norm[components_norm == 0] = 1
+        self.components_ /= components_norm
+
+        # Set attributes
+        self.n_components_ = len(self.components_)
+        self.error_ = E
+
+        # Save loadings and amount of zero and nonzero elements
+        self.loadings = self.components_.T
+        self.nonzero = np.count_nonzero(self.loadings)
+        self.zero = self.loadings.shape[0] * self.loadings.shape[1] - self.nonzero
+
+        return self
 
 
 class Gene_SPCA(BaseEstimator, TransformerMixin):
