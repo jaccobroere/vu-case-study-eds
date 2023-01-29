@@ -2,7 +2,8 @@ from typing import Optional, List
 import pandas as pd
 import numpy as np
 from feature_engine.selection.base_selector import BaseSelector
-from helpers.helper_classes import Gene_SPCA, LoadingsSPCA
+from helpers.helper_classes import GeneSPCA, LoadingsSPCA
+
 
 def transform_data(df: pd.DataFrame):
     """Transforms the data to a format that can be used by the model.
@@ -45,17 +46,27 @@ def add_actuals(df: pd.DataFrame, actuals: pd.DataFrame, target: str = "cancer")
 
     return res
 
-def get_spca(alpha, n_components = 20, tol = 0.00001, max_iter = 10000, random_state = 2023):
-    spca_obj = LoadingsSPCA(alpha = alpha, max_iter = max_iter, tol = tol, n_components = n_components, n_jobs = -1, random_state=random_state)
+
+def get_spca(alpha, n_components=20, tol=0.00001, max_iter=10000, random_state=2023):
+    spca_obj = LoadingsSPCA(
+        alpha=alpha,
+        max_iter=max_iter,
+        tol=tol,
+        n_components=n_components,
+        n_jobs=-1,
+        random_state=random_state,
+    )
     return spca_obj
 
-def get_gene_spca(l1, n_components = 20, tol = 0.00001, random_state = 2023, max_iter = 10000):
-    spca_obj = Gene_SPCA(max_iter = max_iter, tol = tol, n_comps = n_components, l1 = l1)
+
+def get_gene_spca(l1, n_components=20, tol=0.00001, random_state=2023, max_iter=10000):
+    spca_obj = GeneSPCA(max_iter=max_iter, tol=tol, n_comps=n_components, l1=l1)
     return spca_obj
 
-def get_data_pev(X, n_components = 20, verbose = 0, step_size = 0.5, get_transform = get_spca):
-    """ 
-    Function that returns the explained variance of the first principal component for a single dataset versus 
+
+def get_data_pev(X, n_components=20, verbose=0, step_size=0.5, get_transform=get_spca):
+    """
+    Function that returns the explained variance of the first principal component for a single dataset versus
     the number of non-zero loadings / genes
 
     Returns:
@@ -65,9 +76,9 @@ def get_data_pev(X, n_components = 20, verbose = 0, step_size = 0.5, get_transfo
     """
 
     # First obtain total variance
-    pca = get_transform(0, n_components = n_components)
+    pca = get_transform(0, n_components=n_components)
     _, R = np.linalg.qr(pca.fit_transform(X))
-    total_var = sum(R[i][i]**2 for i in range(R.shape[0]))
+    total_var = sum(R[i][i] ** 2 for i in range(R.shape[0]))
 
     # Initialize values for loop
     nonzero_cnt = 999999999
@@ -81,18 +92,21 @@ def get_data_pev(X, n_components = 20, verbose = 0, step_size = 0.5, get_transfo
     while nonzero_cnt > 200:
 
         # Obtain and fit spca object
-        spca_cur = get_transform(alpha_cur, n_components = n_components)
+        spca_cur = get_transform(alpha_cur, n_components=n_components)
         X_spca_cur = spca_cur.fit_transform(X)
 
         # Obtain PEV of first principal component
         _, R_cur = np.linalg.qr(X_spca_cur)
-        explained_var_leading = R_cur[0][0]**2
+        explained_var_leading = R_cur[0][0] ** 2
         PEV = explained_var_leading / total_var
 
         # Count number of nonzero loadings and columns
-        zero_rows = sum(np.count_nonzero(spca_cur.loadings[i,:]) == 0 for i in range(spca_cur.loadings.shape[0]))
+        zero_rows = sum(
+            np.count_nonzero(spca_cur.loadings[i, :]) == 0
+            for i in range(spca_cur.loadings.shape[0])
+        )
         nonzero_cnt = X.shape[1] - zero_rows
-        
+
         # Append values to arrays
         nz_cols.append(nonzero_cnt)
         nz_loadings.append(spca_cur.nonzero)
@@ -108,5 +122,5 @@ def get_data_pev(X, n_components = 20, verbose = 0, step_size = 0.5, get_transfo
 
         # Update l1_cur
         alpha_cur += step_size
-    
+
     return nz_cols, nz_loadings, PEV_arr

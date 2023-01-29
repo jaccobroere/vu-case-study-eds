@@ -6,7 +6,7 @@ import os
 import time
 
 # helper functions
-from helpers.helper_classes import Gene_SPCA
+from helpers.helper_classes import GeneSPCA
 
 # sklearn
 from sklearn.decomposition import PCA, SparsePCA
@@ -35,7 +35,7 @@ print(data)
     # the same number of non-zero loadings
 
 def get_gene_spca(n_components, random_state):
-    return Gene_SPCA(n_comps = n_components, l1= 400)
+    return GeneSPCA(n_comps = n_components, l1= 400)
 
 def get_spca(n_components, random_state):
     return SparsePCA(n_components=n_components, random_state=random_state)

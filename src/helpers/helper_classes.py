@@ -131,14 +131,16 @@ class LoadingsSPCA(SparsePCA):
         return self
 
 
-class Gene_SPCA(BaseEstimator, TransformerMixin):
+class GeneSPCA(BaseEstimator, TransformerMixin):
 
     """
     SKLearn compatible transformer implementing the SPCA variant
     for gene expression data as described in "Sparse Principal Component Analysis" Zou et al (2006)
     """
 
-    def __init__(self, n_comps=20, max_iter=10000, tol=0.0001, improve_tol=0.00001, l1=5):
+    def __init__(
+        self, n_comps=20, max_iter=10000, tol=0.0001, improve_tol=0.00001, l1=5
+    ):
         self.max_iter = max_iter
         self.tol = tol
         self.improve_tol = improve_tol
