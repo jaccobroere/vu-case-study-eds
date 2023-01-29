@@ -39,9 +39,9 @@ os.environ["PATH"] += os.pathsep + '/Library/TeX/texbin'
 
 # Get list of datasets to run on
 pev_dataset_list = []
-# for dname, _ in data.items():
-    # pev_dataset_list.append(dname)
-pev_dataset_list = ['sorlie', 'christensen'] #'chin', 'nakayama']
+for dname, _ in data.items():
+    pev_dataset_list.append(dname)
+# pev_dataset_list = ['sorlie', 'christensen'] #'chin', 'nakayama']
 # pev_dataset_list = ['christensen']
 
 # Read parameters
@@ -49,7 +49,7 @@ SEED = config.getint('PARAMS', 'SEED')
 N_COMPONENTS = config.getint('PARAMS', 'N_COMPONENTS')
 STEP_ALPHA = 0.25
 STEP_L1 = 50
-VERBOSE = 1
+VERBOSE = 0
 
 ##############################################################################
 ######## Run and plot
