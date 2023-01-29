@@ -23,6 +23,7 @@ class Gene_SPCA(BaseEstimator, TransformerMixin):
         self.loadings = None
         self.hasFit = False
         self.nonzero = -1
+        self.nonzero_features = -1
         self.zero = -1
         self.totloadings = -1
     
@@ -75,6 +76,8 @@ class Gene_SPCA(BaseEstimator, TransformerMixin):
         self.loadings = B
         self.nonzero = np.count_nonzero(B)
         self.zero = self.totloadings - self.nonzero
+        self.nonzero_features = X.shape[1] - sum(np.count_nonzero(B[i,:]) == 0 for i in range(B.shape[0]))
+
         return self
     
     def transform(self, X, y = None):
