@@ -139,12 +139,12 @@ class GeneSPCA(BaseEstimator, TransformerMixin):
     """
 
     def __init__(
-        self, n_comps=20, max_iter=10000, tol=0.0001, improve_tol=0.00001, l1=5
+        self, n_components=20, max_iter=10000, tol=0.0001, improve_tol=0.00001, l1=5
     ):
         self.max_iter = max_iter
         self.tol = tol
         self.improve_tol = improve_tol
-        self.n_comps = n_comps
+        self.n_components = n_components
         self.l1 = l1
         self.loadings = None
         self.hasFit = False
@@ -154,7 +154,7 @@ class GeneSPCA(BaseEstimator, TransformerMixin):
 
     def fit(self, X, y=None, verbose=0):
 
-        self.totloadings = self.n_comps * X.shape[1]
+        self.totloadings = self.n_components * X.shape[1]
 
         if verbose:
             # print("Progress based on max iterations:")
@@ -165,8 +165,8 @@ class GeneSPCA(BaseEstimator, TransformerMixin):
 
         # Step 1: Setup first iteration
         U, _, Vt = np.linalg.svd(X, full_matrices=False)
-        A = Vt.T[:, : self.n_comps]
-        B = np.zeros((A[:, 0].shape[0], self.n_comps))
+        A = Vt.T[:, : self.n_components]
+        B = np.zeros((A[:, 0].shape[0], self.n_components))
         XtX = X.T @ X
 
         # Initialize progress monitors arbitrarily large
@@ -181,7 +181,7 @@ class GeneSPCA(BaseEstimator, TransformerMixin):
 
             # Update B (step 2*)
             input = A.T @ XtX
-            for i in range(self.n_comps):
+            for i in range(self.n_components):
                 B[:, i] = self._soft_threshold(input[i, :], self.l1)
 
             # Monitor change

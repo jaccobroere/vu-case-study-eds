@@ -18,3 +18,4 @@ dist/
 *__pycache__/
 *.lib
 .DS_Store
+data/microarray-data

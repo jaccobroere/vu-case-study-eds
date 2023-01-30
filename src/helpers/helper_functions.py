@@ -2,7 +2,9 @@ from typing import Optional, List
 import pandas as pd
 import numpy as np
 from feature_engine.selection.base_selector import BaseSelector
-from helpers.helper_classes import GeneSPCA, LoadingsSPCA
+from helpers.helper_classes import GeneSPCA, LoadingsSPCA, AddFeatureNames
+from sklearn.decomposition import PCA, SparsePCA
+from sklearn.pipeline import Pipeline
 
 
 def transform_data(df: pd.DataFrame):
@@ -124,3 +126,42 @@ def get_data_pev(X, n_components=20, verbose=0, step_size=0.5, get_transform=get
         alpha_cur += step_size
 
     return nz_cols, nz_loadings, PEV_arr
+
+
+def get_pca_pipeline(
+    method="pca",
+    n_components=5,
+    random_state=2023,
+    alpha=1,
+    n_jobs=-1,
+    max_iter=400,
+    **kwargs
+):
+    algorithm = {
+        "pca": PCA(n_components=n_components, random_state=random_state),
+        "spca": SparsePCA(
+            n_components=n_components,
+            random_state=random_state,
+            alpha=alpha,
+            max_iter=max_iter,
+            n_jobs=n_jobs,
+        ),
+        "gspca": GeneSPCA(n_components=n_components, l1=alpha, max_iter=max_iter),
+    }
+
+    return Pipeline(
+        [
+            ("pca", algorithm[method]),
+            ("add_features_names", AddFeatureNames(prefix="cmpnt_")),
+        ]
+    )
+
+
+def get_model(model, **kwargs):
+    for k, v in kwargs.items():
+        try:
+            model.set_params(**{k: v})
+        except ValueError:
+            pass
+
+    return model
