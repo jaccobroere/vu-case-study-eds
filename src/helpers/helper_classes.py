@@ -48,8 +48,8 @@ class EnetSPCA(BaseEstimator, TransformerMixin):
 
         # Step 1: Setup first iteration
         U, _, Vt = np.linalg.svd(X, full_matrices=False)
-        A = Vt.T[:, :20]
-        B = np.zeros((A[:, 0].shape[0], 20))
+        A = Vt.T[:, :self.n_comps]
+        B = np.zeros((A[:, 0].shape[0], self.n_comps))
 
         if self.alpha == 0:
             return A
@@ -73,11 +73,15 @@ class EnetSPCA(BaseEstimator, TransformerMixin):
 
             # Update B (step 2*)
             if self.use_sklearn:
-                if self.n_jobs == -1:
+                if self.n_jobs != 0:
+                    if self.n_jobs == -1:
+                        threads = None
+                    else:
+                        threads = self.n_jobs
                     map_arr = list(range(self.n_comps))
                     second_arg = A
                     third_arg = Sig_root
-                    with Pool(6) as pool:
+                    with Pool(threads) as pool:
                         B = np.array(pool.starmap(self._enet_criterion, zip(map_arr, repeat(second_arg), repeat(third_arg))))
                         B = B.T
                         # B = np.array(p.starmap(ElasticNet(alpha = self.alpha, fit_intercept=False, max_iter = 10000).fit, [(Sig_root, Sig_root @ A[:, i]) for i in map_arr]))
