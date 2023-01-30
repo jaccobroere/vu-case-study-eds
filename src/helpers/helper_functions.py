@@ -2,7 +2,7 @@ from typing import Optional, List
 import pandas as pd
 import numpy as np
 from feature_engine.selection.base_selector import BaseSelector
-from helpers.helper_classes import Gene_SPCA, LoadingsSPCA
+from helpers.helper_classes import Gene_SPCA, LoadingsSPCA, EnetSPCA
 
 def transform_data(df: pd.DataFrame):
     """Transforms the data to a format that can be used by the model.
@@ -46,7 +46,7 @@ def add_actuals(df: pd.DataFrame, actuals: pd.DataFrame, target: str = "cancer")
     return res
 
 def get_spca(alpha, n_components = 20, tol = 0.00001, max_iter = 10000, random_state = 2023):
-    spca_obj = LoadingsSPCA(alpha = alpha, max_iter = max_iter, tol = tol, n_components = n_components, n_jobs = -1, random_state=random_state)
+    spca_obj = EnetSPCA(alpha = alpha, max_iter = max_iter, tol = tol, n_comps = n_components)
     return spca_obj
 
 def get_gene_spca(l1, n_components = 20, tol = 0.00001, random_state = 2023, max_iter = 10000):
