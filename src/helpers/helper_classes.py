@@ -21,10 +21,9 @@ class EnetSPCA(BaseEstimator, TransformerMixin):
     """
     SKLearn compatible transformer implementing the SPCA algorithm as described in "Sparse Principal Component Analysis" Zou et al (2006)
     """
-    def __init__(self, n_comps=20, max_iter=10000, tol=0.00001, improve_tol=0.00001, alpha = 0.1, l1_ratio = 0.5, use_sklearn = True, n_jobs = 0):
+    def __init__(self, n_comps=20, max_iter=10000, tol=0.00001, alpha = 0.1, l1_ratio = 0.5, use_sklearn = True, n_jobs = 0):
         self.max_iter = max_iter
         self.tol = tol
-        self.improve_tol = improve_tol
         self.n_comps = n_comps
         self.alpha = alpha
         self.l1_ratio = l1_ratio
@@ -36,73 +35,77 @@ class EnetSPCA(BaseEstimator, TransformerMixin):
         self.n_jobs = n_jobs
 
     def fit(self, X, y=None, verbose=0):
-        print(' hey ')
+        
+        # Calculate total number of loadings
         self.totloadings = self.n_comps * X.shape[1]
 
+        # Setup progress bar
         if verbose:
-            # print("Progress based on max iterations:")
+            print("Progress based on max iterations:")
             pbar = tqdm(total=self.max_iter)
 
+        # Convert to numpy array if necessary
         if isinstance(X, pd.DataFrame):
             X = X.values
 
-        # Step 1: Setup first iteration
+        ## Step 1: Setup first iteration
         U, _, Vt = np.linalg.svd(X, full_matrices=False)
         A = Vt.T[:, :self.n_comps]
         B = np.zeros((A[:, 0].shape[0], self.n_comps))
-
-        if self.alpha == 0:
-            return A
-
         XtX = X.T @ X
         Sig_root = sqrtm(XtX)
         Sig_root = Sig_root.real
 
+        # ElasticNET() is not suitable for alpha = 0, return PCA results
+        if self.alpha == 0:
+            return A
 
         # Initialize progress monitors arbitrarily large
         diff, diff_improve = 100, 100
         iter = 0
 
-        # Loop of step 2 and 3 until convergence / maxiter:
+        ## Loop of step 2 and 3 until convergence / maxiter:
         while (
-            iter < self.max_iter and diff > self.tol and diff_improve > self.improve_tol
+            iter < self.max_iter and diff > self.tol
         ):
             B_old = np.copy(B)
 
-            # print(iter)
+            ## Update B (step 2*)
 
-            # Update B (step 2*)
+            # Check if user wants to use sklearn or scipy implementation
             if self.use_sklearn:
+
+                # Setup parallelization if n_jobs != 0
                 if self.n_jobs != 0:
+
                     if self.n_jobs == -1:
                         threads = None
                     else:
                         threads = self.n_jobs
+
+                    # Setup thread pool using a starmap
                     map_arr = list(range(self.n_comps))
                     second_arg = A
                     third_arg = Sig_root
                     with Pool(threads) as pool:
                         B = np.array(pool.starmap(self._enet_criterion, zip(map_arr, repeat(second_arg), repeat(third_arg))))
                         B = B.T
-                        # B = np.array(p.starmap(ElasticNet(alpha = self.alpha, fit_intercept=False, max_iter = 10000).fit, [(Sig_root, Sig_root @ A[:, i]) for i in map_arr]))
-                        # print(B.shape)
+
                 else:
                     for i in range(self.n_comps):
                         B[:, i] = ElasticNet(alpha = self.alpha, fit_intercept=False, max_iter = 10000).fit(Sig_root, Sig_root @ A[:, i]).coef_
-                    # print(B.shape)
+            
             else:
+                # Scipy implementation, basically not-runnable due to time constraints.
                 for i in range(self.n_comps):
                     B[:, i] = minimize(self._criterion, np.zeros(A[:, i].shape[0]), args=(XtX, A[:, i]))
                     print(i)
 
             # Monitor change
-            diff_old = diff
             diff = self._max_diff(B_old, B)
-            diff_improve = np.abs(diff - diff_old)
 
             # Update A (step 3)
-            A_old = A
-            Un, s, Vnt = np.linalg.svd(XtX @ B, full_matrices=False)
+            Un, _, Vnt = np.linalg.svd(XtX @ B, full_matrices=False)
             A = Un @ Vnt
 
             iter = iter + 1
