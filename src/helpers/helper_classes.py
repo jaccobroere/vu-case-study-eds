@@ -61,12 +61,12 @@ class EnetSPCA(BaseEstimator, TransformerMixin):
             return A
 
         # Initialize progress monitors arbitrarily large
-        diff, diff_improve = 100, 100
+        diff, diff_nonimprove = 100, 0
         iter = 0
 
         ## Loop of step 2 and 3 until convergence / maxiter:
         while (
-            iter < self.max_iter and diff > self.tol
+            iter < self.max_iter and diff > self.tol and diff_nonimprove < 5
         ):
             B_old = np.copy(B)
 
@@ -102,10 +102,16 @@ class EnetSPCA(BaseEstimator, TransformerMixin):
                     print(i)
 
             # Monitor change
-            diff = self._max_diff(B_old, B)
+            diff_old = diff
+            diff = np.linalg.norm(np.abs(B - B_old))
+            if diff_old < diff:
+                diff_nonimprove += 1
+
+            print(diff)
 
             # Update A (step 3)
-            Un, _, Vnt = np.linalg.svd(XtX @ B, full_matrices=False)
+            # A_old = A
+            Un, s, Vnt = np.linalg.svd(XtX @ B, full_matrices=False)
             A = Un @ Vnt
 
             iter = iter + 1
