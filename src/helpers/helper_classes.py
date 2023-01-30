@@ -8,7 +8,93 @@ from sklearn.base import BaseEstimator, TransformerMixin
 from sklearn.decomposition._sparse_pca import SparsePCA
 from sklearn.decomposition._dict_learning import dict_learning
 from sklearn.utils.extmath import svd_flip
+from sklearn.linear_model import ElasticNet
 
+from scipy.linalg import sqrtm
+
+class EnetSPCA(BaseEstimator, TransformerMixin):
+    """
+    SKLearn compatible transformer implementing the SPCA algorithm as described in "Sparse Principal Component Analysis" Zou et al (2006)
+    """
+    def __init__(self, n_comps=20, max_iter=10000, tol=0.0001, improve_tol=0.00001, alpha = 0.1):
+        self.max_iter = max_iter
+        self.tol = tol
+        self.improve_tol = improve_tol
+        self.n_comps = n_comps
+        self.alpha = alpha
+        self.loadings = None
+        self.nonzero = -1
+        self.zero = -1
+        self.totloadings = -1
+
+    def fit(self, X, y=None, verbose=0):
+
+        self.totloadings = self.n_comps * X.shape[1]
+
+        if verbose:
+            # print("Progress based on max iterations:")
+            pbar = tqdm(total=self.max_iter)
+
+        if isinstance(X, pd.DataFrame):
+            X = X.values
+
+        # Step 1: Setup first iteration
+        U, _, Vt = np.linalg.svd(X, full_matrices=False)
+        A = Vt.T[:, :20]
+        B = np.zeros((A[:, 0].shape[0], 20))
+        XtX = X.T @ X
+        Sig_root = sqrtm(XtX)
+        Sig_root = Sig_root.real
+
+
+        # Initialize progress monitors arbitrarily large
+        diff, diff_improve = 100, 100
+        iter = 0
+
+        # Loop of step 2 and 3 until convergence / maxiter:
+        while (
+            iter < self.max_iter and diff > self.tol and diff_improve > self.improve_tol
+        ):
+            B_old = np.copy(B)
+
+            # Update B (step 2*)
+            for i in range(self.n_comps):
+                B[:, i] = ElasticNet(alpha = self.alpha, fit_intercept=False).fit(Sig_root, Sig_root @ A[:, i]).coef_
+
+            # Monitor change
+            diff_old = diff
+            diff = self._max_diff(B_old, B)
+            diff_improve = np.abs(diff - diff_old)
+
+            # Update A (step 3)
+            A_old = A
+            Un, s, Vnt = np.linalg.svd(XtX @ B, full_matrices=False)
+            A = Un @ Vnt
+
+            iter = iter + 1
+            if verbose:
+                pbar.update(1)
+            
+        if verbose:
+            pbar.close()
+
+        # Normalize loadings after loop
+        B = self._normalize_mat(B)
+        self.loadings = B
+        self.nonzero = np.count_nonzero(B)
+        self.zero = self.totloadings - self.nonzero
+        return self
+
+    def transform(self, X, y=None):
+        return X @ self.loadings
+
+    def _max_diff(self, X1, X2):
+        return np.max(np.abs(X1 - X2))
+
+    def _normalize_mat(self, X):
+        for i in range(X.shape[1]):
+            X[:, i] = X[:, i] / np.maximum(np.linalg.norm(X[:, i]), 1)
+        return X
 
 class LoadingsSPCA(SparsePCA):
     """
