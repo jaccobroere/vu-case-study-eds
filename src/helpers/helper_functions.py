@@ -48,16 +48,8 @@ def add_actuals(df: pd.DataFrame, actuals: pd.DataFrame, target: str = "cancer")
 
     return res
 
-
-def get_spca(alpha, n_components=20, tol=0.00001, max_iter=10000, random_state=2023):
-    spca_obj = LoadingsSPCA(
-        alpha=alpha,
-        max_iter=max_iter,
-        tol=tol,
-        n_components=n_components,
-        n_jobs=-1,
-        random_state=random_state,
-    )
+def get_spca(alpha, n_components = 20, tol = 0.00001, max_iter = 10000, random_state = 2023):
+    spca_obj = EnetSPCA(alpha = alpha, max_iter = max_iter, tol = tol, n_comps = n_components)
     return spca_obj
 
 
