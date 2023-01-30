@@ -11,24 +11,32 @@ from sklearn.utils.extmath import svd_flip
 from sklearn.linear_model import ElasticNet
 
 from scipy.linalg import sqrtm
+from scipy.optimize import minimize
+
+from itertools import repeat
+
+from multiprocessing import Pool
 
 class EnetSPCA(BaseEstimator, TransformerMixin):
     """
     SKLearn compatible transformer implementing the SPCA algorithm as described in "Sparse Principal Component Analysis" Zou et al (2006)
     """
-    def __init__(self, n_comps=20, max_iter=10000, tol=0.0001, improve_tol=0.00001, alpha = 0.1):
+    def __init__(self, n_comps=20, max_iter=10000, tol=0.00001, improve_tol=0.00001, alpha = 0.1, l1_ratio = 0.5, use_sklearn = True, n_jobs = 0):
         self.max_iter = max_iter
         self.tol = tol
         self.improve_tol = improve_tol
         self.n_comps = n_comps
         self.alpha = alpha
+        self.l1_ratio = l1_ratio
         self.loadings = None
         self.nonzero = -1
         self.zero = -1
         self.totloadings = -1
+        self.use_sklearn = use_sklearn
+        self.n_jobs = n_jobs
 
     def fit(self, X, y=None, verbose=0):
-
+        print(' hey ')
         self.totloadings = self.n_comps * X.shape[1]
 
         if verbose:
@@ -42,6 +50,10 @@ class EnetSPCA(BaseEstimator, TransformerMixin):
         U, _, Vt = np.linalg.svd(X, full_matrices=False)
         A = Vt.T[:, :20]
         B = np.zeros((A[:, 0].shape[0], 20))
+
+        if self.alpha == 0:
+            return A
+
         XtX = X.T @ X
         Sig_root = sqrtm(XtX)
         Sig_root = Sig_root.real
@@ -57,9 +69,27 @@ class EnetSPCA(BaseEstimator, TransformerMixin):
         ):
             B_old = np.copy(B)
 
+            # print(iter)
+
             # Update B (step 2*)
-            for i in range(self.n_comps):
-                B[:, i] = ElasticNet(alpha = self.alpha, fit_intercept=False).fit(Sig_root, Sig_root @ A[:, i]).coef_
+            if self.use_sklearn:
+                if self.n_jobs == -1:
+                    map_arr = list(range(self.n_comps))
+                    second_arg = A
+                    third_arg = Sig_root
+                    with Pool(6) as pool:
+                        B = np.array(pool.starmap(self._enet_criterion, zip(map_arr, repeat(second_arg), repeat(third_arg))))
+                        B = B.T
+                        # B = np.array(p.starmap(ElasticNet(alpha = self.alpha, fit_intercept=False, max_iter = 10000).fit, [(Sig_root, Sig_root @ A[:, i]) for i in map_arr]))
+                        # print(B.shape)
+                else:
+                    for i in range(self.n_comps):
+                        B[:, i] = ElasticNet(alpha = self.alpha, fit_intercept=False, max_iter = 10000).fit(Sig_root, Sig_root @ A[:, i]).coef_
+                    # print(B.shape)
+            else:
+                for i in range(self.n_comps):
+                    B[:, i] = minimize(self._criterion, np.zeros(A[:, i].shape[0]), args=(XtX, A[:, i]))
+                    print(i)
 
             # Monitor change
             diff_old = diff
@@ -95,6 +125,13 @@ class EnetSPCA(BaseEstimator, TransformerMixin):
         for i in range(X.shape[1]):
             X[:, i] = X[:, i] / np.maximum(np.linalg.norm(X[:, i]), 1)
         return X
+    
+    def _criterion(self, x, XtX, alpha_j):
+        return (alpha_j - x).T @ XtX @ (alpha_j - x) + self.alpha * self.l1_ratio * np.linalg.norm(x, 1) + 0.5 * self.alpha * (1 - self.l1_ratio) * np.linalg.norm(x, 2)
+
+    def _enet_criterion(self, i, A, Sig_root):
+        return ElasticNet(alpha = self.alpha, fit_intercept=False, max_iter = 10000).fit(Sig_root, Sig_root @ A[:, i]).coef_
+
 
 class LoadingsSPCA(SparsePCA):
     """
@@ -224,7 +261,7 @@ class Gene_SPCA(BaseEstimator, TransformerMixin):
     for gene expression data as described in "Sparse Principal Component Analysis" Zou et al (2006)
     """
 
-    def __init__(self, n_comps=20, max_iter=10000, tol=0.0001, improve_tol=0.00001, l1=5):
+    def __init__(self, n_comps=20, max_iter=10000, tol=0.0001, improve_tol=0.00001, l1=5, alpha = None):
         self.max_iter = max_iter
         self.tol = tol
         self.improve_tol = improve_tol
