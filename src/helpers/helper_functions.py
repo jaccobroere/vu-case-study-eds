@@ -2,7 +2,7 @@ from typing import Optional, List
 import pandas as pd
 import numpy as np
 from feature_engine.selection.base_selector import BaseSelector
-from helpers.helper_classes import GeneSPCA, LoadingsSPCA, AddFeatureNames
+from helpers.helper_classes import GeneSPCA, LoadingsSPCA, AddFeatureNames, EnetSPCA
 from sklearn.decomposition import PCA, SparsePCA
 from sklearn.pipeline import Pipeline
 
@@ -139,7 +139,7 @@ def get_pca_pipeline(
 ):
     algorithm = {
         "pca": PCA(n_components=n_components, random_state=random_state),
-        "spca": SparsePCA(
+        "spca": EnetSPCA(
             n_components=n_components,
             random_state=random_state,
             alpha=alpha,

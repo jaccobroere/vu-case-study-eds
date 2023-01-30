@@ -10,13 +10,18 @@ from sklearn.decomposition._dict_learning import dict_learning
 from sklearn.utils.extmath import svd_flip
 from sklearn.linear_model import ElasticNet
 
+
 from scipy.linalg import sqrtm
+
 
 class EnetSPCA(BaseEstimator, TransformerMixin):
     """
     SKLearn compatible transformer implementing the SPCA algorithm as described in "Sparse Principal Component Analysis" Zou et al (2006)
     """
-    def __init__(self, n_comps=20, max_iter=10000, tol=0.0001, improve_tol=0.00001, alpha = 0.1):
+
+    def __init__(
+        self, n_comps=20, max_iter=10000, tol=0.0001, improve_tol=0.00001, alpha=0.1
+    ):
         self.max_iter = max_iter
         self.tol = tol
         self.improve_tol = improve_tol
@@ -46,7 +51,6 @@ class EnetSPCA(BaseEstimator, TransformerMixin):
         Sig_root = sqrtm(XtX)
         Sig_root = Sig_root.real
 
-
         # Initialize progress monitors arbitrarily large
         diff, diff_improve = 100, 100
         iter = 0
@@ -59,7 +63,11 @@ class EnetSPCA(BaseEstimator, TransformerMixin):
 
             # Update B (step 2*)
             for i in range(self.n_comps):
-                B[:, i] = ElasticNet(alpha = self.alpha, fit_intercept=False).fit(Sig_root, Sig_root @ A[:, i]).coef_
+                B[:, i] = (
+                    ElasticNet(alpha=self.alpha, fit_intercept=False)
+                    .fit(Sig_root, Sig_root @ A[:, i])
+                    .coef_
+                )
 
             # Monitor change
             diff_old = diff
@@ -74,7 +82,7 @@ class EnetSPCA(BaseEstimator, TransformerMixin):
             iter = iter + 1
             if verbose:
                 pbar.update(1)
-            
+
         if verbose:
             pbar.close()
 
@@ -95,6 +103,7 @@ class EnetSPCA(BaseEstimator, TransformerMixin):
         for i in range(X.shape[1]):
             X[:, i] = X[:, i] / np.maximum(np.linalg.norm(X[:, i]), 1)
         return X
+
 
 class LoadingsSPCA(SparsePCA):
     """
@@ -225,7 +234,7 @@ class GeneSPCA(BaseEstimator, TransformerMixin):
     """
 
     def __init__(
-        self, n_components=20, max_iter=10000, tol=0.0001, improve_tol=0.00001, l1=5
+        self, n_components=20, max_iter=10000, tol=0.0001, improve_tol=0.00001, alpha=5
     ):
         self.max_iter = max_iter
         self.tol = tol
