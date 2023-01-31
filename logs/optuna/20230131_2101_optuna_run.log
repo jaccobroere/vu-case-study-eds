@@ -1,0 +1,408 @@
+A new study created in memory with name: GSPCA_LGBM
+Trial 0 finished with value: 0.7166666666666667 and parameters: {'num_leaves': 62, 'max_depth': 15, 'min_child_samples': 3}. Best is trial 0 with value: 0.7166666666666667.
+Trial 1 finished with value: 0.75 and parameters: {'num_leaves': 82, 'max_depth': 14, 'min_child_samples': 4}. Best is trial 1 with value: 0.75.
+Trial 2 finished with value: 0.75 and parameters: {'num_leaves': 43, 'max_depth': 19, 'min_child_samples': 4}. Best is trial 1 with value: 0.75.
+Trial 3 finished with value: 0.7166666666666667 and parameters: {'num_leaves': 38, 'max_depth': 9, 'min_child_samples': 3}. Best is trial 1 with value: 0.75.
+Trial 4 finished with value: 0.75 and parameters: {'num_leaves': 30, 'max_depth': 7, 'min_child_samples': 5}. Best is trial 1 with value: 0.75.
+Trial 5 finished with value: 0.75 and parameters: {'num_leaves': 51, 'max_depth': 10, 'min_child_samples': 4}. Best is trial 1 with value: 0.75.
+Trial 6 finished with value: 0.75 and parameters: {'num_leaves': 66, 'max_depth': 13, 'min_child_samples': 5}. Best is trial 1 with value: 0.75.
+Trial 7 finished with value: 0.7666666666666667 and parameters: {'num_leaves': 84, 'max_depth': 11, 'min_child_samples': 2}. Best is trial 7 with value: 0.7666666666666667.
+Trial 8 finished with value: 0.7500000000000001 and parameters: {'num_leaves': 35, 'max_depth': 3, 'min_child_samples': 3}. Best is trial 7 with value: 0.7666666666666667.
+Trial 9 finished with value: 0.75 and parameters: {'num_leaves': 25, 'max_depth': 11, 'min_child_samples': 4}. Best is trial 7 with value: 0.7666666666666667.
+Trial 10 finished with value: 0.7666666666666667 and parameters: {'num_leaves': 99, 'max_depth': 18, 'min_child_samples': 2}. Best is trial 7 with value: 0.7666666666666667.
+Trial 11 finished with value: 0.7666666666666667 and parameters: {'num_leaves': 98, 'max_depth': 20, 'min_child_samples': 2}. Best is trial 7 with value: 0.7666666666666667.
+Trial 12 finished with value: 0.7666666666666667 and parameters: {'num_leaves': 100, 'max_depth': 17, 'min_child_samples': 2}. Best is trial 7 with value: 0.7666666666666667.
+Trial 13 finished with value: 0.7666666666666667 and parameters: {'num_leaves': 84, 'max_depth': 7, 'min_child_samples': 2}. Best is trial 7 with value: 0.7666666666666667.
+Trial 14 finished with value: 0.7666666666666667 and parameters: {'num_leaves': 83, 'max_depth': 16, 'min_child_samples': 2}. Best is trial 7 with value: 0.7666666666666667.
+Trial 15 finished with value: 0.7666666666666667 and parameters: {'num_leaves': 73, 'max_depth': 18, 'min_child_samples': 2}. Best is trial 7 with value: 0.7666666666666667.
+Trial 16 finished with value: 0.7166666666666667 and parameters: {'num_leaves': 93, 'max_depth': 13, 'min_child_samples': 3}. Best is trial 7 with value: 0.7666666666666667.
+Trial 17 finished with value: 0.7666666666666667 and parameters: {'num_leaves': 74, 'max_depth': 8, 'min_child_samples': 2}. Best is trial 7 with value: 0.7666666666666667.
+Trial 18 finished with value: 0.7166666666666667 and parameters: {'num_leaves': 89, 'max_depth': 12, 'min_child_samples': 3}. Best is trial 7 with value: 0.7666666666666667.
+Trial 19 finished with value: 0.7666666666666667 and parameters: {'num_leaves': 53, 'max_depth': 4, 'min_child_samples': 2}. Best is trial 7 with value: 0.7666666666666667.
+Trial 20 finished with value: 0.7166666666666667 and parameters: {'num_leaves': 17, 'max_depth': 16, 'min_child_samples': 3}. Best is trial 7 with value: 0.7666666666666667.
+Trial 21 finished with value: 0.7666666666666667 and parameters: {'num_leaves': 98, 'max_depth': 20, 'min_child_samples': 2}. Best is trial 7 with value: 0.7666666666666667.
+Trial 22 finished with value: 0.7666666666666667 and parameters: {'num_leaves': 92, 'max_depth': 20, 'min_child_samples': 2}. Best is trial 7 with value: 0.7666666666666667.
+Trial 23 finished with value: 0.7666666666666667 and parameters: {'num_leaves': 100, 'max_depth': 19, 'min_child_samples': 2}. Best is trial 7 with value: 0.7666666666666667.
+Trial 24 finished with value: 0.7666666666666667 and parameters: {'num_leaves': 76, 'max_depth': 18, 'min_child_samples': 2}. Best is trial 7 with value: 0.7666666666666667.
+Trial 25 finished with value: 0.7166666666666667 and parameters: {'num_leaves': 89, 'max_depth': 15, 'min_child_samples': 3}. Best is trial 7 with value: 0.7666666666666667.
+Trial 26 finished with value: 0.7666666666666667 and parameters: {'num_leaves': 93, 'max_depth': 11, 'min_child_samples': 2}. Best is trial 7 with value: 0.7666666666666667.
+Trial 27 finished with value: 0.7166666666666667 and parameters: {'num_leaves': 80, 'max_depth': 17, 'min_child_samples': 3}. Best is trial 7 with value: 0.7666666666666667.
+Trial 28 finished with value: 0.7666666666666667 and parameters: {'num_leaves': 67, 'max_depth': 20, 'min_child_samples': 2}. Best is trial 7 with value: 0.7666666666666667.
+Trial 29 finished with value: 0.7666666666666667 and parameters: {'num_leaves': 88, 'max_depth': 14, 'min_child_samples': 2}. Best is trial 7 with value: 0.7666666666666667.
+Trial 30 finished with value: 0.7166666666666667 and parameters: {'num_leaves': 60, 'max_depth': 15, 'min_child_samples': 3}. Best is trial 7 with value: 0.7666666666666667.
+Trial 31 finished with value: 0.7666666666666667 and parameters: {'num_leaves': 98, 'max_depth': 18, 'min_child_samples': 2}. Best is trial 7 with value: 0.7666666666666667.
+Trial 32 finished with value: 0.7666666666666667 and parameters: {'num_leaves': 99, 'max_depth': 17, 'min_child_samples': 2}. Best is trial 7 with value: 0.7666666666666667.
+Trial 33 finished with value: 0.7666666666666667 and parameters: {'num_leaves': 95, 'max_depth': 19, 'min_child_samples': 2}. Best is trial 7 with value: 0.7666666666666667.
+Trial 34 finished with value: 0.7166666666666667 and parameters: {'num_leaves': 85, 'max_depth': 17, 'min_child_samples': 3}. Best is trial 7 with value: 0.7666666666666667.
+Trial 35 finished with value: 0.7666666666666667 and parameters: {'num_leaves': 79, 'max_depth': 14, 'min_child_samples': 2}. Best is trial 7 with value: 0.7666666666666667.
+Trial 36 finished with value: 0.75 and parameters: {'num_leaves': 100, 'max_depth': 9, 'min_child_samples': 5}. Best is trial 7 with value: 0.7666666666666667.
+Trial 37 finished with value: 0.75 and parameters: {'num_leaves': 95, 'max_depth': 19, 'min_child_samples': 4}. Best is trial 7 with value: 0.7666666666666667.
+Trial 38 finished with value: 0.7666666666666667 and parameters: {'num_leaves': 88, 'max_depth': 16, 'min_child_samples': 2}. Best is trial 7 with value: 0.7666666666666667.
+Trial 39 finished with value: 0.7166666666666667 and parameters: {'num_leaves': 69, 'max_depth': 12, 'min_child_samples': 3}. Best is trial 7 with value: 0.7666666666666667.
+Trial 40 finished with value: 0.7666666666666667 and parameters: {'num_leaves': 42, 'max_depth': 13, 'min_child_samples': 2}. Best is trial 7 with value: 0.7666666666666667.
+Trial 41 finished with value: 0.7666666666666667 and parameters: {'num_leaves': 85, 'max_depth': 7, 'min_child_samples': 2}. Best is trial 7 with value: 0.7666666666666667.
+Trial 42 finished with value: 0.7666666666666667 and parameters: {'num_leaves': 82, 'max_depth': 7, 'min_child_samples': 2}. Best is trial 7 with value: 0.7666666666666667.
+Trial 43 finished with value: 0.7666666666666667 and parameters: {'num_leaves': 92, 'max_depth': 5, 'min_child_samples': 2}. Best is trial 7 with value: 0.7666666666666667.
+Trial 44 finished with value: 0.7666666666666667 and parameters: {'num_leaves': 95, 'max_depth': 10, 'min_child_samples': 2}. Best is trial 7 with value: 0.7666666666666667.
+Trial 45 finished with value: 0.7666666666666667 and parameters: {'num_leaves': 86, 'max_depth': 5, 'min_child_samples': 2}. Best is trial 7 with value: 0.7666666666666667.
+Trial 46 finished with value: 0.7166666666666667 and parameters: {'num_leaves': 77, 'max_depth': 9, 'min_child_samples': 3}. Best is trial 7 with value: 0.7666666666666667.
+Trial 47 finished with value: 0.7833333333333334 and parameters: {'num_leaves': 53, 'max_depth': 6, 'min_child_samples': 2}. Best is trial 47 with value: 0.7833333333333334.
+Trial 48 finished with value: 0.75 and parameters: {'num_leaves': 51, 'max_depth': 6, 'min_child_samples': 5}. Best is trial 47 with value: 0.7833333333333334.
+Trial 49 finished with value: 0.7666666666666667 and parameters: {'num_leaves': 45, 'max_depth': 19, 'min_child_samples': 2}. Best is trial 47 with value: 0.7833333333333334.
+A new study created in memory with name: GSPCA_LR
+Trial 0 finished with value: 0.75 and parameters: {'l1_ratio': 0.06401705335930796, 'C': 0.010931525679534234}. Best is trial 0 with value: 0.75.
+Trial 1 finished with value: 0.4666666666666667 and parameters: {'l1_ratio': 0.716073524100167, 'C': 0.010073680212133264}. Best is trial 0 with value: 0.75.
+Trial 2 finished with value: 0.75 and parameters: {'l1_ratio': 0.12468798413881865, 'C': 0.010306335147723524}. Best is trial 0 with value: 0.75.
+Trial 3 finished with value: 0.7666666666666667 and parameters: {'l1_ratio': 0.47133400495962496, 'C': 0.46561750666216817}. Best is trial 3 with value: 0.7666666666666667.
+Trial 4 finished with value: 0.85 and parameters: {'l1_ratio': 0.9169839791507457, 'C': 0.1600591003545177}. Best is trial 4 with value: 0.85.
+Trial 5 finished with value: 0.8166666666666668 and parameters: {'l1_ratio': 0.35420151570933056, 'C': 0.06889168125783995}. Best is trial 4 with value: 0.85.
+Trial 6 finished with value: 0.7666666666666667 and parameters: {'l1_ratio': 0.2302370674493167, 'C': 0.8264201261565338}. Best is trial 4 with value: 0.85.
+Trial 7 finished with value: 0.7833333333333333 and parameters: {'l1_ratio': 0.8249522435254915, 'C': 0.6867973140060212}. Best is trial 4 with value: 0.85.
+Trial 8 finished with value: 0.7666666666666667 and parameters: {'l1_ratio': 0.4379016328505587, 'C': 0.3427212892149659}. Best is trial 4 with value: 0.85.
+Trial 9 finished with value: 0.7833333333333333 and parameters: {'l1_ratio': 0.30743732593819373, 'C': 0.03009602134550326}. Best is trial 4 with value: 0.85.
+Trial 10 finished with value: 0.85 and parameters: {'l1_ratio': 0.9969196833303322, 'C': 0.19147047753013272}. Best is trial 4 with value: 0.85.
+Trial 11 finished with value: 0.85 and parameters: {'l1_ratio': 0.9902156044463047, 'C': 0.19061856097995677}. Best is trial 4 with value: 0.85.
+Trial 12 finished with value: 0.85 and parameters: {'l1_ratio': 0.9846839427246105, 'C': 0.17982609394808793}. Best is trial 4 with value: 0.85.
+Trial 13 finished with value: 0.8166666666666668 and parameters: {'l1_ratio': 0.6851084809515406, 'C': 0.1007975763208453}. Best is trial 4 with value: 0.85.
+Trial 14 finished with value: 0.8166666666666668 and parameters: {'l1_ratio': 0.8564086053892834, 'C': 0.24738258504021682}. Best is trial 4 with value: 0.85.
+Trial 15 finished with value: 0.8333333333333334 and parameters: {'l1_ratio': 0.6166125241540472, 'C': 0.11385653551812655}. Best is trial 4 with value: 0.85.
+Trial 16 finished with value: 0.7833333333333334 and parameters: {'l1_ratio': 0.869544791763694, 'C': 0.4197859765213332}. Best is trial 4 with value: 0.85.
+Trial 17 finished with value: 0.8 and parameters: {'l1_ratio': 0.5667509334229451, 'C': 0.06444278452884211}. Best is trial 4 with value: 0.85.
+Trial 18 finished with value: 0.8333333333333334 and parameters: {'l1_ratio': 0.9929661948960463, 'C': 0.15235510412748238}. Best is trial 4 with value: 0.85.
+Trial 19 finished with value: 0.8 and parameters: {'l1_ratio': 0.762733208121222, 'C': 0.27460131728262854}. Best is trial 4 with value: 0.85.
+Trial 20 finished with value: 0.7833333333333334 and parameters: {'l1_ratio': 0.9152112945552815, 'C': 0.4944625317625803}. Best is trial 4 with value: 0.85.
+Trial 21 finished with value: 0.8333333333333333 and parameters: {'l1_ratio': 0.9973950343121267, 'C': 0.2320281834032448}. Best is trial 4 with value: 0.85.
+Trial 22 finished with value: 0.8333333333333334 and parameters: {'l1_ratio': 0.801551938157949, 'C': 0.15919286445414088}. Best is trial 4 with value: 0.85.
+Trial 23 finished with value: 0.8333333333333333 and parameters: {'l1_ratio': 0.9093998649088733, 'C': 0.2328576263657457}. Best is trial 4 with value: 0.85.
+Trial 24 finished with value: 0.8166666666666668 and parameters: {'l1_ratio': 0.9273578240452602, 'C': 0.13295301830515113}. Best is trial 4 with value: 0.85.
+Trial 25 finished with value: 0.8 and parameters: {'l1_ratio': 0.7597977089158419, 'C': 0.30126326282625476}. Best is trial 4 with value: 0.85.
+Trial 26 finished with value: 0.7666666666666667 and parameters: {'l1_ratio': 0.8517789174383066, 'C': 0.07541592212820708}. Best is trial 4 with value: 0.85.
+Trial 27 finished with value: 0.85 and parameters: {'l1_ratio': 0.9576299815957806, 'C': 0.1828217703763315}. Best is trial 4 with value: 0.85.
+Trial 28 finished with value: 0.8 and parameters: {'l1_ratio': 0.8973093808565172, 'C': 0.09898530059061827}. Best is trial 4 with value: 0.85.
+Trial 29 finished with value: 0.7666666666666667 and parameters: {'l1_ratio': 0.8227267002744192, 'C': 0.05115931427582747}. Best is trial 4 with value: 0.85.
+Trial 30 finished with value: 0.8333333333333333 and parameters: {'l1_ratio': 0.9392717445520531, 'C': 0.21680373918147558}. Best is trial 4 with value: 0.85.
+Trial 31 finished with value: 0.85 and parameters: {'l1_ratio': 0.989436238229548, 'C': 0.1766440287210294}. Best is trial 4 with value: 0.85.
+Trial 32 finished with value: 0.8333333333333334 and parameters: {'l1_ratio': 0.9943359829775441, 'C': 0.1432488497638985}. Best is trial 4 with value: 0.85.
+Trial 33 finished with value: 0.85 and parameters: {'l1_ratio': 0.8949034038080126, 'C': 0.19951759255385249}. Best is trial 4 with value: 0.85.
+Trial 34 finished with value: 0.8 and parameters: {'l1_ratio': 0.9365250597740531, 'C': 0.34757032817546224}. Best is trial 4 with value: 0.85.
+Trial 35 finished with value: 0.8333333333333334 and parameters: {'l1_ratio': 0.6980252132720431, 'C': 0.12173100905863785}. Best is trial 4 with value: 0.85.
+Trial 36 finished with value: 0.8333333333333333 and parameters: {'l1_ratio': 0.7990583491018863, 'C': 0.1898301808746484}. Best is trial 4 with value: 0.85.
+Trial 37 finished with value: 0.8 and parameters: {'l1_ratio': 0.8700257523429985, 'C': 0.25972183213633215}. Best is trial 4 with value: 0.85.
+Trial 38 finished with value: 0.7666666666666667 and parameters: {'l1_ratio': 0.9502102582654024, 'C': 0.5323856328959534}. Best is trial 4 with value: 0.85.
+Trial 39 finished with value: 0.7833333333333334 and parameters: {'l1_ratio': 0.7463746258547459, 'C': 0.39013129826738785}. Best is trial 4 with value: 0.85.
+Trial 40 finished with value: 0.8 and parameters: {'l1_ratio': 0.9993971548907671, 'C': 0.3105572640106122}. Best is trial 4 with value: 0.85.
+Trial 41 finished with value: 0.85 and parameters: {'l1_ratio': 0.9466818072900519, 'C': 0.1841687152149699}. Best is trial 4 with value: 0.85.
+Trial 42 finished with value: 0.85 and parameters: {'l1_ratio': 0.8444500028019721, 'C': 0.15675608815539827}. Best is trial 4 with value: 0.85.
+Trial 43 finished with value: 0.85 and parameters: {'l1_ratio': 0.9502677304948591, 'C': 0.2071450995609099}. Best is trial 4 with value: 0.85.
+Trial 44 finished with value: 0.8166666666666668 and parameters: {'l1_ratio': 0.8860312301301493, 'C': 0.11870829694209861}. Best is trial 4 with value: 0.85.
+Trial 45 finished with value: 0.8 and parameters: {'l1_ratio': 0.8076236763269325, 'C': 0.28992751079720597}. Best is trial 4 with value: 0.85.
+Trial 46 finished with value: 0.85 and parameters: {'l1_ratio': 0.9606650462176046, 'C': 0.17438193165979637}. Best is trial 4 with value: 0.85.
+Trial 47 finished with value: 0.8 and parameters: {'l1_ratio': 0.8773999930606631, 'C': 0.09416412804798446}. Best is trial 4 with value: 0.85.
+Trial 48 finished with value: 0.8333333333333334 and parameters: {'l1_ratio': 0.9152534274848725, 'C': 0.13501910421800103}. Best is trial 4 with value: 0.85.
+Trial 49 finished with value: 0.8 and parameters: {'l1_ratio': 0.6571923187398525, 'C': 0.24370301532841102}. Best is trial 4 with value: 0.85.
+A new study created in memory with name: GSPCA_LGBM
+Trial 0 finished with value: 0.7777777777777777 and parameters: {'num_leaves': 17, 'max_depth': 8, 'min_child_samples': 3}. Best is trial 0 with value: 0.7777777777777777.
+Trial 1 finished with value: 0.7555555555555555 and parameters: {'num_leaves': 93, 'max_depth': 10, 'min_child_samples': 4}. Best is trial 0 with value: 0.7777777777777777.
+Trial 2 finished with value: 0.7555555555555555 and parameters: {'num_leaves': 29, 'max_depth': 6, 'min_child_samples': 3}. Best is trial 0 with value: 0.7777777777777777.
+Trial 3 finished with value: 0.7555555555555554 and parameters: {'num_leaves': 92, 'max_depth': 3, 'min_child_samples': 4}. Best is trial 0 with value: 0.7777777777777777.
+Trial 4 finished with value: 0.7333333333333332 and parameters: {'num_leaves': 67, 'max_depth': 15, 'min_child_samples': 2}. Best is trial 0 with value: 0.7777777777777777.
+Trial 5 finished with value: 0.711111111111111 and parameters: {'num_leaves': 90, 'max_depth': 11, 'min_child_samples': 5}. Best is trial 0 with value: 0.7777777777777777.
+Trial 6 finished with value: 0.7777777777777777 and parameters: {'num_leaves': 25, 'max_depth': 19, 'min_child_samples': 3}. Best is trial 0 with value: 0.7777777777777777.
+Trial 7 finished with value: 0.7777777777777777 and parameters: {'num_leaves': 46, 'max_depth': 15, 'min_child_samples': 3}. Best is trial 0 with value: 0.7777777777777777.
+Trial 8 finished with value: 0.711111111111111 and parameters: {'num_leaves': 55, 'max_depth': 13, 'min_child_samples': 5}. Best is trial 0 with value: 0.7777777777777777.
+Trial 9 finished with value: 0.7333333333333332 and parameters: {'num_leaves': 53, 'max_depth': 11, 'min_child_samples': 2}. Best is trial 0 with value: 0.7777777777777777.
+Trial 10 finished with value: 0.7555555555555555 and parameters: {'num_leaves': 16, 'max_depth': 7, 'min_child_samples': 2}. Best is trial 0 with value: 0.7777777777777777.
+Trial 11 finished with value: 0.7777777777777777 and parameters: {'num_leaves': 16, 'max_depth': 20, 'min_child_samples': 3}. Best is trial 0 with value: 0.7777777777777777.
+Trial 12 finished with value: 0.7777777777777777 and parameters: {'num_leaves': 35, 'max_depth': 19, 'min_child_samples': 3}. Best is trial 0 with value: 0.7777777777777777.
+Trial 13 finished with value: 0.7555555555555555 and parameters: {'num_leaves': 32, 'max_depth': 8, 'min_child_samples': 4}. Best is trial 0 with value: 0.7777777777777777.
+Trial 14 finished with value: 0.7777777777777777 and parameters: {'num_leaves': 75, 'max_depth': 17, 'min_child_samples': 3}. Best is trial 0 with value: 0.7777777777777777.
+Trial 15 finished with value: 0.7555555555555554 and parameters: {'num_leaves': 23, 'max_depth': 4, 'min_child_samples': 4}. Best is trial 0 with value: 0.7777777777777777.
+Trial 16 finished with value: 0.7333333333333332 and parameters: {'num_leaves': 41, 'max_depth': 9, 'min_child_samples': 2}. Best is trial 0 with value: 0.7777777777777777.
+Trial 17 finished with value: 0.7777777777777777 and parameters: {'num_leaves': 25, 'max_depth': 13, 'min_child_samples': 3}. Best is trial 0 with value: 0.7777777777777777.
+Trial 18 finished with value: 0.7555555555555555 and parameters: {'num_leaves': 42, 'max_depth': 5, 'min_child_samples': 4}. Best is trial 0 with value: 0.7777777777777777.
+Trial 19 finished with value: 0.7333333333333332 and parameters: {'num_leaves': 16, 'max_depth': 17, 'min_child_samples': 2}. Best is trial 0 with value: 0.7777777777777777.
+Trial 20 finished with value: 0.7777777777777777 and parameters: {'num_leaves': 73, 'max_depth': 13, 'min_child_samples': 3}. Best is trial 0 with value: 0.7777777777777777.
+Trial 21 finished with value: 0.7777777777777777 and parameters: {'num_leaves': 45, 'max_depth': 17, 'min_child_samples': 3}. Best is trial 0 with value: 0.7777777777777777.
+Trial 22 finished with value: 0.7777777777777777 and parameters: {'num_leaves': 48, 'max_depth': 15, 'min_child_samples': 3}. Best is trial 0 with value: 0.7777777777777777.
+Trial 23 finished with value: 0.7777777777777777 and parameters: {'num_leaves': 23, 'max_depth': 19, 'min_child_samples': 3}. Best is trial 0 with value: 0.7777777777777777.
+Trial 24 finished with value: 0.7555555555555555 and parameters: {'num_leaves': 36, 'max_depth': 16, 'min_child_samples': 4}. Best is trial 0 with value: 0.7777777777777777.
+Trial 25 finished with value: 0.7777777777777777 and parameters: {'num_leaves': 28, 'max_depth': 20, 'min_child_samples': 3}. Best is trial 0 with value: 0.7777777777777777.
+Trial 26 finished with value: 0.7333333333333332 and parameters: {'num_leaves': 63, 'max_depth': 14, 'min_child_samples': 2}. Best is trial 0 with value: 0.7777777777777777.
+Trial 27 finished with value: 0.7777777777777777 and parameters: {'num_leaves': 37, 'max_depth': 18, 'min_child_samples': 3}. Best is trial 0 with value: 0.7777777777777777.
+Trial 28 finished with value: 0.7555555555555555 and parameters: {'num_leaves': 21, 'max_depth': 9, 'min_child_samples': 4}. Best is trial 0 with value: 0.7777777777777777.
+Trial 29 finished with value: 0.711111111111111 and parameters: {'num_leaves': 48, 'max_depth': 10, 'min_child_samples': 5}. Best is trial 0 with value: 0.7777777777777777.
+Trial 30 finished with value: 0.7333333333333332 and parameters: {'num_leaves': 83, 'max_depth': 12, 'min_child_samples': 2}. Best is trial 0 with value: 0.7777777777777777.
+Trial 31 finished with value: 0.7777777777777777 and parameters: {'num_leaves': 15, 'max_depth': 20, 'min_child_samples': 3}. Best is trial 0 with value: 0.7777777777777777.
+Trial 32 finished with value: 0.7777777777777777 and parameters: {'num_leaves': 20, 'max_depth': 19, 'min_child_samples': 3}. Best is trial 0 with value: 0.7777777777777777.
+Trial 33 finished with value: 0.7777777777777777 and parameters: {'num_leaves': 30, 'max_depth': 18, 'min_child_samples': 3}. Best is trial 0 with value: 0.7777777777777777.
+Trial 34 finished with value: 0.7777777777777777 and parameters: {'num_leaves': 26, 'max_depth': 15, 'min_child_samples': 3}. Best is trial 0 with value: 0.7777777777777777.
+Trial 35 finished with value: 0.7777777777777777 and parameters: {'num_leaves': 19, 'max_depth': 20, 'min_child_samples': 3}. Best is trial 0 with value: 0.7777777777777777.
+Trial 36 finished with value: 0.7555555555555555 and parameters: {'num_leaves': 63, 'max_depth': 7, 'min_child_samples': 4}. Best is trial 0 with value: 0.7777777777777777.
+Trial 37 finished with value: 0.7777777777777777 and parameters: {'num_leaves': 31, 'max_depth': 18, 'min_child_samples': 3}. Best is trial 0 with value: 0.7777777777777777.
+Trial 38 finished with value: 0.7333333333333332 and parameters: {'num_leaves': 27, 'max_depth': 16, 'min_child_samples': 2}. Best is trial 0 with value: 0.7777777777777777.
+Trial 39 finished with value: 0.7555555555555555 and parameters: {'num_leaves': 15, 'max_depth': 6, 'min_child_samples': 3}. Best is trial 0 with value: 0.7777777777777777.
+Trial 40 finished with value: 0.7555555555555554 and parameters: {'num_leaves': 54, 'max_depth': 3, 'min_child_samples': 4}. Best is trial 0 with value: 0.7777777777777777.
+Trial 41 finished with value: 0.7777777777777777 and parameters: {'num_leaves': 36, 'max_depth': 19, 'min_child_samples': 3}. Best is trial 0 with value: 0.7777777777777777.
+Trial 42 finished with value: 0.7777777777777777 and parameters: {'num_leaves': 33, 'max_depth': 19, 'min_child_samples': 3}. Best is trial 0 with value: 0.7777777777777777.
+Trial 43 finished with value: 0.7777777777777777 and parameters: {'num_leaves': 42, 'max_depth': 16, 'min_child_samples': 3}. Best is trial 0 with value: 0.7777777777777777.
+Trial 44 finished with value: 0.7777777777777777 and parameters: {'num_leaves': 96, 'max_depth': 18, 'min_child_samples': 3}. Best is trial 0 with value: 0.7777777777777777.
+Trial 45 finished with value: 0.7333333333333332 and parameters: {'num_leaves': 20, 'max_depth': 20, 'min_child_samples': 2}. Best is trial 0 with value: 0.7777777777777777.
+Trial 46 finished with value: 0.7777777777777777 and parameters: {'num_leaves': 39, 'max_depth': 12, 'min_child_samples': 3}. Best is trial 0 with value: 0.7777777777777777.
+Trial 47 finished with value: 0.7555555555555555 and parameters: {'num_leaves': 24, 'max_depth': 14, 'min_child_samples': 4}. Best is trial 0 with value: 0.7777777777777777.
+Trial 48 finished with value: 0.7777777777777777 and parameters: {'num_leaves': 34, 'max_depth': 17, 'min_child_samples': 3}. Best is trial 0 with value: 0.7777777777777777.
+Trial 49 finished with value: 0.7333333333333332 and parameters: {'num_leaves': 29, 'max_depth': 11, 'min_child_samples': 2}. Best is trial 0 with value: 0.7777777777777777.
+A new study created in memory with name: GSPCA_LR
+Trial 0 finished with value: 0.6666666666666665 and parameters: {'l1_ratio': 0.5288518220175125, 'C': 0.047394426254013515}. Best is trial 0 with value: 0.6666666666666665.
+Trial 1 finished with value: 0.6666666666666666 and parameters: {'l1_ratio': 0.2713373218959282, 'C': 0.07884428027531443}. Best is trial 1 with value: 0.6666666666666666.
+Trial 2 finished with value: 0.5777777777777777 and parameters: {'l1_ratio': 0.13859941985179336, 'C': 0.010122824383181833}. Best is trial 1 with value: 0.6666666666666666.
+Trial 3 finished with value: 0.6666666666666667 and parameters: {'l1_ratio': 0.02527829110249047, 'C': 0.011332392569667537}. Best is trial 3 with value: 0.6666666666666667.
+Trial 4 finished with value: 0.6888888888888889 and parameters: {'l1_ratio': 0.776671563664708, 'C': 0.09620470603848555}. Best is trial 4 with value: 0.6888888888888889.
+Trial 5 finished with value: 0.7555555555555555 and parameters: {'l1_ratio': 0.1384407116998313, 'C': 0.9861635316142732}. Best is trial 5 with value: 0.7555555555555555.
+Trial 6 finished with value: 0.7555555555555555 and parameters: {'l1_ratio': 0.280917826040623, 'C': 0.6353816630496456}. Best is trial 5 with value: 0.7555555555555555.
+Trial 7 finished with value: 0.7333333333333332 and parameters: {'l1_ratio': 0.056456586129658426, 'C': 0.12380952744819165}. Best is trial 5 with value: 0.7555555555555555.
+Trial 8 finished with value: 0.6888888888888888 and parameters: {'l1_ratio': 0.666676015378101, 'C': 0.2945501511077991}. Best is trial 5 with value: 0.7555555555555555.
+Trial 9 finished with value: 0.5777777777777777 and parameters: {'l1_ratio': 0.6982265039260027, 'C': 0.04801574734128553}. Best is trial 5 with value: 0.7555555555555555.
+Trial 10 finished with value: 0.7777777777777777 and parameters: {'l1_ratio': 0.9214461972153548, 'C': 0.9773140359885253}. Best is trial 10 with value: 0.7777777777777777.
+Trial 11 finished with value: 0.7777777777777777 and parameters: {'l1_ratio': 0.9601954417358449, 'C': 0.9495013925981406}. Best is trial 10 with value: 0.7777777777777777.
+Trial 12 finished with value: 0.711111111111111 and parameters: {'l1_ratio': 0.9974014777943058, 'C': 0.4805784862290608}. Best is trial 10 with value: 0.7777777777777777.
+Trial 13 finished with value: 0.7777777777777777 and parameters: {'l1_ratio': 0.9869254258302561, 'C': 0.9770983074726883}. Best is trial 10 with value: 0.7777777777777777.
+Trial 14 finished with value: 0.6666666666666666 and parameters: {'l1_ratio': 0.8690829046837676, 'C': 0.3155623439395658}. Best is trial 10 with value: 0.7777777777777777.
+Trial 15 finished with value: 0.7333333333333332 and parameters: {'l1_ratio': 0.8497480799643221, 'C': 0.5946537790170549}. Best is trial 10 with value: 0.7777777777777777.
+Trial 16 finished with value: 0.6666666666666666 and parameters: {'l1_ratio': 0.9064331126058014, 'C': 0.24797238097908297}. Best is trial 10 with value: 0.7777777777777777.
+Trial 17 finished with value: 0.7555555555555555 and parameters: {'l1_ratio': 0.7559387809514744, 'C': 0.9466011941142313}. Best is trial 10 with value: 0.7777777777777777.
+Trial 18 finished with value: 0.7333333333333332 and parameters: {'l1_ratio': 0.584549797136928, 'C': 0.4687141080389111}. Best is trial 10 with value: 0.7777777777777777.
+Trial 19 finished with value: 0.6888888888888888 and parameters: {'l1_ratio': 0.9040933630670268, 'C': 0.1959513784223963}. Best is trial 10 with value: 0.7777777777777777.
+Trial 20 finished with value: 0.6666666666666666 and parameters: {'l1_ratio': 0.9975891043700336, 'C': 0.38380702618322793}. Best is trial 10 with value: 0.7777777777777777.
+Trial 21 finished with value: 0.7555555555555555 and parameters: {'l1_ratio': 0.8188073396263109, 'C': 0.9936349266109397}. Best is trial 10 with value: 0.7777777777777777.
+Trial 22 finished with value: 0.7333333333333332 and parameters: {'l1_ratio': 0.9907738612294736, 'C': 0.655945001813574}. Best is trial 10 with value: 0.7777777777777777.
+Trial 23 finished with value: 0.7333333333333332 and parameters: {'l1_ratio': 0.9248414329432311, 'C': 0.6455457314452112}. Best is trial 10 with value: 0.7777777777777777.
+Trial 24 finished with value: 0.7555555555555555 and parameters: {'l1_ratio': 0.8057133516665005, 'C': 0.9913355114172138}. Best is trial 10 with value: 0.7777777777777777.
+Trial 25 finished with value: 0.6888888888888888 and parameters: {'l1_ratio': 0.9262788505033078, 'C': 0.4317707941137702}. Best is trial 10 with value: 0.7777777777777777.
+Trial 26 finished with value: 0.7555555555555555 and parameters: {'l1_ratio': 0.7160958198764921, 'C': 0.6830842346864743}. Best is trial 10 with value: 0.7777777777777777.
+Trial 27 finished with value: 0.6888888888888888 and parameters: {'l1_ratio': 0.8325280973334955, 'C': 0.37541758369645073}. Best is trial 10 with value: 0.7777777777777777.
+Trial 28 finished with value: 0.7555555555555555 and parameters: {'l1_ratio': 0.6354140350552158, 'C': 0.7396783098076136}. Best is trial 10 with value: 0.7777777777777777.
+Trial 29 finished with value: 0.7333333333333332 and parameters: {'l1_ratio': 0.5018193116434507, 'C': 0.4815893448471867}. Best is trial 10 with value: 0.7777777777777777.
+Trial 30 finished with value: 0.6666666666666666 and parameters: {'l1_ratio': 0.7505744755589675, 'C': 0.2404924728301444}. Best is trial 10 with value: 0.7777777777777777.
+Trial 31 finished with value: 0.7555555555555555 and parameters: {'l1_ratio': 0.5494282123151247, 'C': 0.854728943986184}. Best is trial 10 with value: 0.7777777777777777.
+Trial 32 finished with value: 0.7555555555555555 and parameters: {'l1_ratio': 0.3780489788744733, 'C': 0.9931796605992833}. Best is trial 10 with value: 0.7777777777777777.
+Trial 33 finished with value: 0.7555555555555555 and parameters: {'l1_ratio': 0.4519962593054737, 'C': 0.5385900330962061}. Best is trial 10 with value: 0.7777777777777777.
+Trial 34 finished with value: 0.7333333333333332 and parameters: {'l1_ratio': 0.9508065619143887, 'C': 0.7085456878480465}. Best is trial 10 with value: 0.7777777777777777.
+Trial 35 finished with value: 0.7555555555555555 and parameters: {'l1_ratio': 0.8635334143716378, 'C': 0.7796389419385664}. Best is trial 10 with value: 0.7777777777777777.
+Trial 36 finished with value: 0.7555555555555555 and parameters: {'l1_ratio': 0.17534480417564904, 'C': 0.55775400343921}. Best is trial 10 with value: 0.7777777777777777.
+Trial 37 finished with value: 0.7555555555555555 and parameters: {'l1_ratio': 0.8849087249059776, 'C': 0.848349456328663}. Best is trial 10 with value: 0.7777777777777777.
+Trial 38 finished with value: 0.7555555555555555 and parameters: {'l1_ratio': 0.7818208779939773, 'C': 0.753575452309518}. Best is trial 10 with value: 0.7777777777777777.
+Trial 39 finished with value: 0.7333333333333332 and parameters: {'l1_ratio': 0.9523166080822295, 'C': 0.5513684848894853}. Best is trial 10 with value: 0.7777777777777777.
+Trial 40 finished with value: 0.7555555555555555 and parameters: {'l1_ratio': 0.011928391378003222, 'C': 0.3633189985895983}. Best is trial 10 with value: 0.7777777777777777.
+Trial 41 finished with value: 0.7555555555555555 and parameters: {'l1_ratio': 0.26346869332691014, 'C': 0.7883112550425138}. Best is trial 10 with value: 0.7777777777777777.
+Trial 42 finished with value: 0.7555555555555555 and parameters: {'l1_ratio': 0.09911449614390883, 'C': 0.5975431601989695}. Best is trial 10 with value: 0.7777777777777777.
+Trial 43 finished with value: 0.7555555555555555 and parameters: {'l1_ratio': 0.15778947652986144, 'C': 0.9919678045890585}. Best is trial 10 with value: 0.7777777777777777.
+Trial 44 finished with value: 0.7555555555555555 and parameters: {'l1_ratio': 0.8730479068004254, 'C': 0.7955741599925606}. Best is trial 10 with value: 0.7777777777777777.
+Trial 45 finished with value: 0.7555555555555555 and parameters: {'l1_ratio': 0.21696270429628384, 'C': 0.45115604632386563}. Best is trial 10 with value: 0.7777777777777777.
+Trial 46 finished with value: 0.7555555555555555 and parameters: {'l1_ratio': 0.07255214220591755, 'C': 0.6182819064068059}. Best is trial 10 with value: 0.7777777777777777.
+Trial 47 finished with value: 0.7555555555555555 and parameters: {'l1_ratio': 0.9568189123130302, 'C': 0.818816008484729}. Best is trial 10 with value: 0.7777777777777777.
+Trial 48 finished with value: 0.7555555555555555 and parameters: {'l1_ratio': 0.27442454005611094, 'C': 0.5504674098978635}. Best is trial 10 with value: 0.7777777777777777.
+Trial 49 finished with value: 0.6666666666666666 and parameters: {'l1_ratio': 0.8426474004439884, 'C': 0.3282960888745399}. Best is trial 10 with value: 0.7777777777777777.
+A new study created in memory with name: GSPCA_LGBM
+Trial 0 finished with value: 0.6434782608695653 and parameters: {'num_leaves': 94, 'max_depth': 16, 'min_child_samples': 5}. Best is trial 0 with value: 0.6434782608695653.
+Trial 1 finished with value: 0.6434782608695653 and parameters: {'num_leaves': 96, 'max_depth': 16, 'min_child_samples': 3}. Best is trial 0 with value: 0.6434782608695653.
+Trial 2 finished with value: 0.6434782608695653 and parameters: {'num_leaves': 33, 'max_depth': 15, 'min_child_samples': 5}. Best is trial 0 with value: 0.6434782608695653.
+Trial 3 finished with value: 0.6173913043478262 and parameters: {'num_leaves': 71, 'max_depth': 9, 'min_child_samples': 3}. Best is trial 0 with value: 0.6434782608695653.
+Trial 4 finished with value: 0.6695652173913043 and parameters: {'num_leaves': 84, 'max_depth': 3, 'min_child_samples': 5}. Best is trial 4 with value: 0.6695652173913043.
+Trial 5 finished with value: 0.6347826086956521 and parameters: {'num_leaves': 75, 'max_depth': 11, 'min_child_samples': 5}. Best is trial 4 with value: 0.6695652173913043.
+Trial 6 finished with value: 0.6434782608695653 and parameters: {'num_leaves': 26, 'max_depth': 11, 'min_child_samples': 4}. Best is trial 4 with value: 0.6695652173913043.
+Trial 7 finished with value: 0.6434782608695653 and parameters: {'num_leaves': 48, 'max_depth': 19, 'min_child_samples': 3}. Best is trial 4 with value: 0.6695652173913043.
+Trial 8 finished with value: 0.6434782608695653 and parameters: {'num_leaves': 20, 'max_depth': 12, 'min_child_samples': 5}. Best is trial 4 with value: 0.6695652173913043.
+Trial 9 finished with value: 0.6869565217391304 and parameters: {'num_leaves': 35, 'max_depth': 10, 'min_child_samples': 2}. Best is trial 9 with value: 0.6869565217391304.
+Trial 10 finished with value: 0.6434782608695653 and parameters: {'num_leaves': 50, 'max_depth': 5, 'min_child_samples': 2}. Best is trial 9 with value: 0.6869565217391304.
+Trial 11 finished with value: 0.6260869565217391 and parameters: {'num_leaves': 68, 'max_depth': 3, 'min_child_samples': 2}. Best is trial 9 with value: 0.6869565217391304.
+Trial 12 finished with value: 0.6521739130434783 and parameters: {'num_leaves': 83, 'max_depth': 6, 'min_child_samples': 4}. Best is trial 9 with value: 0.6869565217391304.
+Trial 13 finished with value: 0.6608695652173913 and parameters: {'num_leaves': 37, 'max_depth': 7, 'min_child_samples': 4}. Best is trial 9 with value: 0.6869565217391304.
+Trial 14 finished with value: 0.6260869565217391 and parameters: {'num_leaves': 58, 'max_depth': 3, 'min_child_samples': 2}. Best is trial 9 with value: 0.6869565217391304.
+Trial 15 finished with value: 0.6173913043478262 and parameters: {'num_leaves': 43, 'max_depth': 9, 'min_child_samples': 3}. Best is trial 9 with value: 0.6869565217391304.
+Trial 16 finished with value: 0.6434782608695653 and parameters: {'num_leaves': 84, 'max_depth': 20, 'min_child_samples': 4}. Best is trial 9 with value: 0.6869565217391304.
+Trial 17 finished with value: 0.6869565217391304 and parameters: {'num_leaves': 60, 'max_depth': 13, 'min_child_samples': 2}. Best is trial 9 with value: 0.6869565217391304.
+Trial 18 finished with value: 0.6869565217391304 and parameters: {'num_leaves': 62, 'max_depth': 14, 'min_child_samples': 2}. Best is trial 9 with value: 0.6869565217391304.
+Trial 19 finished with value: 0.6869565217391304 and parameters: {'num_leaves': 30, 'max_depth': 13, 'min_child_samples': 2}. Best is trial 9 with value: 0.6869565217391304.
+Trial 20 finished with value: 0.6608695652173913 and parameters: {'num_leaves': 18, 'max_depth': 18, 'min_child_samples': 2}. Best is trial 9 with value: 0.6869565217391304.
+Trial 21 finished with value: 0.6869565217391304 and parameters: {'num_leaves': 60, 'max_depth': 14, 'min_child_samples': 2}. Best is trial 9 with value: 0.6869565217391304.
+Trial 22 finished with value: 0.6695652173913043 and parameters: {'num_leaves': 63, 'max_depth': 9, 'min_child_samples': 2}. Best is trial 9 with value: 0.6869565217391304.
+Trial 23 finished with value: 0.6434782608695653 and parameters: {'num_leaves': 48, 'max_depth': 13, 'min_child_samples': 3}. Best is trial 9 with value: 0.6869565217391304.
+Trial 24 finished with value: 0.6869565217391304 and parameters: {'num_leaves': 53, 'max_depth': 10, 'min_child_samples': 2}. Best is trial 9 with value: 0.6869565217391304.
+Trial 25 finished with value: 0.6434782608695653 and parameters: {'num_leaves': 40, 'max_depth': 17, 'min_child_samples': 3}. Best is trial 9 with value: 0.6869565217391304.
+Trial 26 finished with value: 0.6869565217391304 and parameters: {'num_leaves': 66, 'max_depth': 14, 'min_child_samples': 2}. Best is trial 9 with value: 0.6869565217391304.
+Trial 27 finished with value: 0.6782608695652174 and parameters: {'num_leaves': 77, 'max_depth': 12, 'min_child_samples': 2}. Best is trial 9 with value: 0.6869565217391304.
+Trial 28 finished with value: 0.6260869565217392 and parameters: {'num_leaves': 56, 'max_depth': 8, 'min_child_samples': 3}. Best is trial 9 with value: 0.6869565217391304.
+Trial 29 finished with value: 0.6869565217391304 and parameters: {'num_leaves': 43, 'max_depth': 16, 'min_child_samples': 2}. Best is trial 9 with value: 0.6869565217391304.
+Trial 30 finished with value: 0.6347826086956523 and parameters: {'num_leaves': 89, 'max_depth': 14, 'min_child_samples': 3}. Best is trial 9 with value: 0.6869565217391304.
+Trial 31 finished with value: 0.6782608695652174 and parameters: {'num_leaves': 28, 'max_depth': 12, 'min_child_samples': 2}. Best is trial 9 with value: 0.6869565217391304.
+Trial 32 finished with value: 0.6869565217391304 and parameters: {'num_leaves': 31, 'max_depth': 13, 'min_child_samples': 2}. Best is trial 9 with value: 0.6869565217391304.
+Trial 33 finished with value: 0.6695652173913043 and parameters: {'num_leaves': 24, 'max_depth': 15, 'min_child_samples': 2}. Best is trial 9 with value: 0.6869565217391304.
+Trial 34 finished with value: 0.6608695652173913 and parameters: {'num_leaves': 15, 'max_depth': 10, 'min_child_samples': 2}. Best is trial 9 with value: 0.6869565217391304.
+Trial 35 finished with value: 0.6434782608695653 and parameters: {'num_leaves': 32, 'max_depth': 16, 'min_child_samples': 3}. Best is trial 9 with value: 0.6869565217391304.
+Trial 36 finished with value: 0.6869565217391304 and parameters: {'num_leaves': 38, 'max_depth': 13, 'min_child_samples': 2}. Best is trial 9 with value: 0.6869565217391304.
+Trial 37 finished with value: 0.6347826086956523 and parameters: {'num_leaves': 73, 'max_depth': 10, 'min_child_samples': 3}. Best is trial 9 with value: 0.6869565217391304.
+Trial 38 finished with value: 0.6608695652173913 and parameters: {'num_leaves': 62, 'max_depth': 11, 'min_child_samples': 2}. Best is trial 9 with value: 0.6869565217391304.
+Trial 39 finished with value: 0.6869565217391304 and parameters: {'num_leaves': 53, 'max_depth': 15, 'min_child_samples': 2}. Best is trial 9 with value: 0.6869565217391304.
+Trial 40 finished with value: 0.6434782608695653 and parameters: {'num_leaves': 96, 'max_depth': 17, 'min_child_samples': 3}. Best is trial 9 with value: 0.6869565217391304.
+Trial 41 finished with value: 0.6869565217391304 and parameters: {'num_leaves': 60, 'max_depth': 14, 'min_child_samples': 2}. Best is trial 9 with value: 0.6869565217391304.
+Trial 42 finished with value: 0.6869565217391304 and parameters: {'num_leaves': 66, 'max_depth': 15, 'min_child_samples': 2}. Best is trial 9 with value: 0.6869565217391304.
+Trial 43 finished with value: 0.6869565217391304 and parameters: {'num_leaves': 69, 'max_depth': 13, 'min_child_samples': 2}. Best is trial 9 with value: 0.6869565217391304.
+Trial 44 finished with value: 0.6608695652173913 and parameters: {'num_leaves': 56, 'max_depth': 11, 'min_child_samples': 2}. Best is trial 9 with value: 0.6869565217391304.
+Trial 45 finished with value: 0.6782608695652174 and parameters: {'num_leaves': 44, 'max_depth': 12, 'min_child_samples': 2}. Best is trial 9 with value: 0.6869565217391304.
+Trial 46 finished with value: 0.6695652173913043 and parameters: {'num_leaves': 23, 'max_depth': 14, 'min_child_samples': 2}. Best is trial 9 with value: 0.6869565217391304.
+Trial 47 finished with value: 0.6434782608695653 and parameters: {'num_leaves': 79, 'max_depth': 17, 'min_child_samples': 5}. Best is trial 9 with value: 0.6869565217391304.
+Trial 48 finished with value: 0.6695652173913043 and parameters: {'num_leaves': 49, 'max_depth': 8, 'min_child_samples': 2}. Best is trial 9 with value: 0.6869565217391304.
+Trial 49 finished with value: 0.6434782608695653 and parameters: {'num_leaves': 35, 'max_depth': 13, 'min_child_samples': 4}. Best is trial 9 with value: 0.6869565217391304.
+A new study created in memory with name: GSPCA_LR
+Trial 0 finished with value: 0.7043478260869565 and parameters: {'l1_ratio': 0.9832430135170183, 'C': 0.05141930657326197}. Best is trial 0 with value: 0.7043478260869565.
+Trial 1 finished with value: 0.6956521739130435 and parameters: {'l1_ratio': 0.4871352828794975, 'C': 0.9735939165818805}. Best is trial 0 with value: 0.7043478260869565.
+Trial 2 finished with value: 0.6956521739130435 and parameters: {'l1_ratio': 0.033272279192430365, 'C': 0.09879558214520179}. Best is trial 0 with value: 0.7043478260869565.
+Trial 3 finished with value: 0.6956521739130435 and parameters: {'l1_ratio': 0.5545899344087856, 'C': 0.7761712464935006}. Best is trial 0 with value: 0.7043478260869565.
+Trial 4 finished with value: 0.6956521739130436 and parameters: {'l1_ratio': 0.57946384855088, 'C': 0.026401380712654035}. Best is trial 0 with value: 0.7043478260869565.
+Trial 5 finished with value: 0.7043478260869565 and parameters: {'l1_ratio': 0.46658234018727973, 'C': 0.02385866016038147}. Best is trial 0 with value: 0.7043478260869565.
+Trial 6 finished with value: 0.6434782608695653 and parameters: {'l1_ratio': 0.9282133189062374, 'C': 0.010902480906309134}. Best is trial 0 with value: 0.7043478260869565.
+Trial 7 finished with value: 0.6956521739130435 and parameters: {'l1_ratio': 0.603006349497991, 'C': 0.6579572485751184}. Best is trial 0 with value: 0.7043478260869565.
+Trial 8 finished with value: 0.6956521739130435 and parameters: {'l1_ratio': 0.7382992568107435, 'C': 0.7949772531426861}. Best is trial 0 with value: 0.7043478260869565.
+Trial 9 finished with value: 0.6782608695652174 and parameters: {'l1_ratio': 0.8038243048764148, 'C': 0.011323439282061762}. Best is trial 0 with value: 0.7043478260869565.
+Trial 10 finished with value: 0.6956521739130435 and parameters: {'l1_ratio': 0.9470956315623923, 'C': 0.10972200380725733}. Best is trial 0 with value: 0.7043478260869565.
+Trial 11 finished with value: 0.7130434782608696 and parameters: {'l1_ratio': 0.3728381748137023, 'C': 0.03725149794710847}. Best is trial 11 with value: 0.7130434782608696.
+Trial 12 finished with value: 0.6956521739130435 and parameters: {'l1_ratio': 0.29437985398779837, 'C': 0.05752002511690737}. Best is trial 11 with value: 0.7130434782608696.
+Trial 13 finished with value: 0.7043478260869565 and parameters: {'l1_ratio': 0.9808337949462395, 'C': 0.053165935949413066}. Best is trial 11 with value: 0.7130434782608696.
+Trial 14 finished with value: 0.6956521739130435 and parameters: {'l1_ratio': 0.317898590796693, 'C': 0.24834292581369044}. Best is trial 11 with value: 0.7130434782608696.
+Trial 15 finished with value: 0.7043478260869565 and parameters: {'l1_ratio': 0.765416540571912, 'C': 0.03038897405720107}. Best is trial 11 with value: 0.7130434782608696.
+Trial 16 finished with value: 0.6956521739130435 and parameters: {'l1_ratio': 0.8442188937820199, 'C': 0.13476359412160208}. Best is trial 11 with value: 0.7130434782608696.
+Trial 17 finished with value: 0.6956521739130436 and parameters: {'l1_ratio': 0.9985478957054243, 'C': 0.04280502355165391}. Best is trial 11 with value: 0.7130434782608696.
+Trial 18 finished with value: 0.7043478260869566 and parameters: {'l1_ratio': 0.6845937409303045, 'C': 0.0191679725930611}. Best is trial 11 with value: 0.7130434782608696.
+Trial 19 finished with value: 0.6956521739130435 and parameters: {'l1_ratio': 0.6776258163436283, 'C': 0.01504613590106582}. Best is trial 11 with value: 0.7130434782608696.
+Trial 20 finished with value: 0.7043478260869566 and parameters: {'l1_ratio': 0.6775648986835556, 'C': 0.0170443373151752}. Best is trial 11 with value: 0.7130434782608696.
+Trial 21 finished with value: 0.7043478260869566 and parameters: {'l1_ratio': 0.6815254858744808, 'C': 0.017786522704338052}. Best is trial 11 with value: 0.7130434782608696.
+Trial 22 finished with value: 0.7043478260869566 and parameters: {'l1_ratio': 0.4077752353263383, 'C': 0.018104410153543617}. Best is trial 11 with value: 0.7130434782608696.
+Trial 23 finished with value: 0.7043478260869565 and parameters: {'l1_ratio': 0.6547279521273714, 'C': 0.03154108561983155}. Best is trial 11 with value: 0.7130434782608696.
+Trial 24 finished with value: 0.7217391304347827 and parameters: {'l1_ratio': 0.730143234994935, 'C': 0.017593434746041175}. Best is trial 24 with value: 0.7217391304347827.
+Trial 25 finished with value: 0.7043478260869566 and parameters: {'l1_ratio': 0.8796069155293802, 'C': 0.023111283308199147}. Best is trial 24 with value: 0.7217391304347827.
+Trial 26 finished with value: 0.6782608695652174 and parameters: {'l1_ratio': 0.7710026414285743, 'C': 0.010880739088548497}. Best is trial 24 with value: 0.7217391304347827.
+Trial 27 finished with value: 0.6956521739130436 and parameters: {'l1_ratio': 0.8682851125697189, 'C': 0.03882118839943927}. Best is trial 24 with value: 0.7217391304347827.
+Trial 28 finished with value: 0.7043478260869565 and parameters: {'l1_ratio': 0.5503493977688447, 'C': 0.02144750439584868}. Best is trial 24 with value: 0.7217391304347827.
+Trial 29 finished with value: 0.7043478260869565 and parameters: {'l1_ratio': 0.6254939111507586, 'C': 0.03262553485664175}. Best is trial 24 with value: 0.7217391304347827.
+Trial 30 finished with value: 0.6521739130434783 and parameters: {'l1_ratio': 0.7476562658063464, 'C': 0.013010089513247143}. Best is trial 24 with value: 0.7217391304347827.
+Trial 31 finished with value: 0.7130434782608697 and parameters: {'l1_ratio': 0.6743277991531236, 'C': 0.016727847362435815}. Best is trial 24 with value: 0.7217391304347827.
+Trial 32 finished with value: 0.6956521739130435 and parameters: {'l1_ratio': 0.712639208415086, 'C': 0.01482849660141402}. Best is trial 24 with value: 0.7217391304347827.
+Trial 33 finished with value: 0.7130434782608697 and parameters: {'l1_ratio': 0.8087218266890287, 'C': 0.019940238175472632}. Best is trial 24 with value: 0.7217391304347827.
+Trial 34 finished with value: 0.6608695652173913 and parameters: {'l1_ratio': 0.8066833366458339, 'C': 0.014834009432041223}. Best is trial 24 with value: 0.7217391304347827.
+Trial 35 finished with value: 0.7043478260869566 and parameters: {'l1_ratio': 0.9032180108107561, 'C': 0.02318884334299603}. Best is trial 24 with value: 0.7217391304347827.
+Trial 36 finished with value: 0.7043478260869566 and parameters: {'l1_ratio': 0.620283579651926, 'C': 0.02707110761308305}. Best is trial 24 with value: 0.7217391304347827.
+Trial 37 finished with value: 0.6608695652173913 and parameters: {'l1_ratio': 0.8332275643716368, 'C': 0.013989562137290181}. Best is trial 24 with value: 0.7217391304347827.
+Trial 38 finished with value: 0.6782608695652175 and parameters: {'l1_ratio': 0.5445839642396364, 'C': 0.010379901761861753}. Best is trial 24 with value: 0.7217391304347827.
+Trial 39 finished with value: 0.7043478260869565 and parameters: {'l1_ratio': 0.48696280760541377, 'C': 0.0199121119600712}. Best is trial 24 with value: 0.7217391304347827.
+Trial 40 finished with value: 0.7043478260869565 and parameters: {'l1_ratio': 0.8088380321299662, 'C': 0.039860168724648905}. Best is trial 24 with value: 0.7217391304347827.
+Trial 41 finished with value: 0.6956521739130435 and parameters: {'l1_ratio': 0.7179813943857418, 'C': 0.021047508707404024}. Best is trial 24 with value: 0.7217391304347827.
+Trial 42 finished with value: 0.6956521739130436 and parameters: {'l1_ratio': 0.6054416771358657, 'C': 0.027844085695505696}. Best is trial 24 with value: 0.7217391304347827.
+Trial 43 finished with value: 0.7130434782608697 and parameters: {'l1_ratio': 0.7770419966952391, 'C': 0.017833433616393172}. Best is trial 24 with value: 0.7217391304347827.
+Trial 44 finished with value: 0.6347826086956523 and parameters: {'l1_ratio': 0.9247580588355985, 'C': 0.012600973288399169}. Best is trial 24 with value: 0.7217391304347827.
+Trial 45 finished with value: 0.6956521739130436 and parameters: {'l1_ratio': 0.7688756923332999, 'C': 0.025032220398031733}. Best is trial 24 with value: 0.7217391304347827.
+Trial 46 finished with value: 0.7043478260869566 and parameters: {'l1_ratio': 0.7870924682575036, 'C': 0.01741645178425077}. Best is trial 24 with value: 0.7217391304347827.
+Trial 47 finished with value: 0.6608695652173913 and parameters: {'l1_ratio': 0.8576498123177966, 'C': 0.010238283608996672}. Best is trial 24 with value: 0.7217391304347827.
+Trial 48 finished with value: 0.7130434782608696 and parameters: {'l1_ratio': 0.737096906731579, 'C': 0.0642472627092057}. Best is trial 24 with value: 0.7217391304347827.
+Trial 49 finished with value: 0.6608695652173913 and parameters: {'l1_ratio': 0.8365563628092487, 'C': 0.013082932138636648}. Best is trial 24 with value: 0.7217391304347827.
+A new study created in memory with name: GSPCA_LGBM
+Trial 0 finished with value: 0.9862068965517242 and parameters: {'num_leaves': 92, 'max_depth': 7, 'min_child_samples': 4}. Best is trial 0 with value: 0.9862068965517242.
+Trial 1 finished with value: 0.9862068965517242 and parameters: {'num_leaves': 16, 'max_depth': 9, 'min_child_samples': 3}. Best is trial 0 with value: 0.9862068965517242.
+Trial 2 finished with value: 0.9862068965517242 and parameters: {'num_leaves': 66, 'max_depth': 5, 'min_child_samples': 4}. Best is trial 0 with value: 0.9862068965517242.
+Trial 3 finished with value: 0.9793103448275862 and parameters: {'num_leaves': 77, 'max_depth': 17, 'min_child_samples': 2}. Best is trial 0 with value: 0.9862068965517242.
+Trial 4 finished with value: 0.9862068965517242 and parameters: {'num_leaves': 95, 'max_depth': 7, 'min_child_samples': 5}. Best is trial 0 with value: 0.9862068965517242.
+Trial 5 finished with value: 0.9793103448275862 and parameters: {'num_leaves': 44, 'max_depth': 6, 'min_child_samples': 2}. Best is trial 0 with value: 0.9862068965517242.
+Trial 6 finished with value: 0.9862068965517242 and parameters: {'num_leaves': 64, 'max_depth': 16, 'min_child_samples': 3}. Best is trial 0 with value: 0.9862068965517242.
+Trial 7 finished with value: 0.9793103448275862 and parameters: {'num_leaves': 39, 'max_depth': 8, 'min_child_samples': 2}. Best is trial 0 with value: 0.9862068965517242.
+Trial 8 finished with value: 0.9862068965517242 and parameters: {'num_leaves': 49, 'max_depth': 3, 'min_child_samples': 4}. Best is trial 0 with value: 0.9862068965517242.
+Trial 9 finished with value: 0.9793103448275862 and parameters: {'num_leaves': 92, 'max_depth': 18, 'min_child_samples': 2}. Best is trial 0 with value: 0.9862068965517242.
+Trial 10 finished with value: 0.9862068965517242 and parameters: {'num_leaves': 79, 'max_depth': 13, 'min_child_samples': 5}. Best is trial 0 with value: 0.9862068965517242.
+Trial 11 finished with value: 0.9862068965517242 and parameters: {'num_leaves': 19, 'max_depth': 11, 'min_child_samples': 3}. Best is trial 0 with value: 0.9862068965517242.
+Trial 12 finished with value: 0.9862068965517242 and parameters: {'num_leaves': 15, 'max_depth': 11, 'min_child_samples': 4}. Best is trial 0 with value: 0.9862068965517242.
+Trial 13 finished with value: 0.9862068965517242 and parameters: {'num_leaves': 35, 'max_depth': 9, 'min_child_samples': 3}. Best is trial 0 with value: 0.9862068965517242.
+Trial 14 finished with value: 0.9862068965517242 and parameters: {'num_leaves': 26, 'max_depth': 14, 'min_child_samples': 4}. Best is trial 0 with value: 0.9862068965517242.
+Trial 15 finished with value: 0.9862068965517242 and parameters: {'num_leaves': 55, 'max_depth': 3, 'min_child_samples': 3}. Best is trial 0 with value: 0.9862068965517242.
+Trial 16 finished with value: 0.9862068965517242 and parameters: {'num_leaves': 81, 'max_depth': 9, 'min_child_samples': 5}. Best is trial 0 with value: 0.9862068965517242.
+Trial 17 finished with value: 0.9862068965517242 and parameters: {'num_leaves': 29, 'max_depth': 10, 'min_child_samples': 4}. Best is trial 0 with value: 0.9862068965517242.
+Trial 18 finished with value: 0.9862068965517242 and parameters: {'num_leaves': 100, 'max_depth': 20, 'min_child_samples': 3}. Best is trial 0 with value: 0.9862068965517242.
+Trial 19 finished with value: 0.9862068965517242 and parameters: {'num_leaves': 68, 'max_depth': 5, 'min_child_samples': 4}. Best is trial 0 with value: 0.9862068965517242.
+Trial 20 finished with value: 0.9862068965517242 and parameters: {'num_leaves': 55, 'max_depth': 13, 'min_child_samples': 3}. Best is trial 0 with value: 0.9862068965517242.
+Trial 21 finished with value: 0.9862068965517242 and parameters: {'num_leaves': 87, 'max_depth': 5, 'min_child_samples': 4}. Best is trial 0 with value: 0.9862068965517242.
+Trial 22 finished with value: 0.9862068965517242 and parameters: {'num_leaves': 64, 'max_depth': 6, 'min_child_samples': 4}. Best is trial 0 with value: 0.9862068965517242.
+Trial 23 finished with value: 0.9862068965517242 and parameters: {'num_leaves': 73, 'max_depth': 8, 'min_child_samples': 5}. Best is trial 0 with value: 0.9862068965517242.
+Trial 24 finished with value: 0.9862068965517242 and parameters: {'num_leaves': 86, 'max_depth': 4, 'min_child_samples': 4}. Best is trial 0 with value: 0.9862068965517242.
+Trial 25 finished with value: 0.9862068965517242 and parameters: {'num_leaves': 61, 'max_depth': 7, 'min_child_samples': 3}. Best is trial 0 with value: 0.9862068965517242.
+Trial 26 finished with value: 0.9862068965517242 and parameters: {'num_leaves': 71, 'max_depth': 5, 'min_child_samples': 4}. Best is trial 0 with value: 0.9862068965517242.
+Trial 27 finished with value: 0.9862068965517242 and parameters: {'num_leaves': 48, 'max_depth': 9, 'min_child_samples': 5}. Best is trial 0 with value: 0.9862068965517242.
+Trial 28 finished with value: 0.9862068965517242 and parameters: {'num_leaves': 28, 'max_depth': 7, 'min_child_samples': 3}. Best is trial 0 with value: 0.9862068965517242.
+Trial 29 finished with value: 0.9793103448275862 and parameters: {'num_leaves': 75, 'max_depth': 12, 'min_child_samples': 2}. Best is trial 0 with value: 0.9862068965517242.
+Trial 30 finished with value: 0.9862068965517242 and parameters: {'num_leaves': 86, 'max_depth': 4, 'min_child_samples': 4}. Best is trial 0 with value: 0.9862068965517242.
+Trial 31 finished with value: 0.9862068965517242 and parameters: {'num_leaves': 91, 'max_depth': 7, 'min_child_samples': 5}. Best is trial 0 with value: 0.9862068965517242.
+Trial 32 finished with value: 0.9862068965517242 and parameters: {'num_leaves': 99, 'max_depth': 6, 'min_child_samples': 5}. Best is trial 0 with value: 0.9862068965517242.
+Trial 33 finished with value: 0.9862068965517242 and parameters: {'num_leaves': 91, 'max_depth': 8, 'min_child_samples': 5}. Best is trial 0 with value: 0.9862068965517242.
+Trial 34 finished with value: 0.9862068965517242 and parameters: {'num_leaves': 94, 'max_depth': 10, 'min_child_samples': 4}. Best is trial 0 with value: 0.9862068965517242.
+Trial 35 finished with value: 0.9793103448275862 and parameters: {'num_leaves': 80, 'max_depth': 7, 'min_child_samples': 2}. Best is trial 0 with value: 0.9862068965517242.
+Trial 36 finished with value: 0.9862068965517242 and parameters: {'num_leaves': 96, 'max_depth': 4, 'min_child_samples': 3}. Best is trial 0 with value: 0.9862068965517242.
+Trial 37 finished with value: 0.9862068965517242 and parameters: {'num_leaves': 45, 'max_depth': 6, 'min_child_samples': 5}. Best is trial 0 with value: 0.9862068965517242.
+Trial 38 finished with value: 0.9862068965517242 and parameters: {'num_leaves': 66, 'max_depth': 8, 'min_child_samples': 4}. Best is trial 0 with value: 0.9862068965517242.
+Trial 39 finished with value: 0.9793103448275862 and parameters: {'num_leaves': 38, 'max_depth': 10, 'min_child_samples': 2}. Best is trial 0 with value: 0.9862068965517242.
+Trial 40 finished with value: 0.9862068965517242 and parameters: {'num_leaves': 84, 'max_depth': 3, 'min_child_samples': 5}. Best is trial 0 with value: 0.9862068965517242.
+Trial 41 finished with value: 0.9862068965517242 and parameters: {'num_leaves': 60, 'max_depth': 15, 'min_child_samples': 3}. Best is trial 0 with value: 0.9862068965517242.
+Trial 42 finished with value: 0.9862068965517242 and parameters: {'num_leaves': 56, 'max_depth': 18, 'min_child_samples': 3}. Best is trial 0 with value: 0.9862068965517242.
+Trial 43 finished with value: 0.9862068965517242 and parameters: {'num_leaves': 70, 'max_depth': 17, 'min_child_samples': 3}. Best is trial 0 with value: 0.9862068965517242.
+Trial 44 finished with value: 0.9862068965517242 and parameters: {'num_leaves': 51, 'max_depth': 12, 'min_child_samples': 3}. Best is trial 0 with value: 0.9862068965517242.
+Trial 45 finished with value: 0.9862068965517242 and parameters: {'num_leaves': 21, 'max_depth': 16, 'min_child_samples': 4}. Best is trial 0 with value: 0.9862068965517242.
+Trial 46 finished with value: 0.9862068965517242 and parameters: {'num_leaves': 75, 'max_depth': 20, 'min_child_samples': 3}. Best is trial 0 with value: 0.9862068965517242.
+Trial 47 finished with value: 0.9793103448275862 and parameters: {'num_leaves': 32, 'max_depth': 9, 'min_child_samples': 2}. Best is trial 0 with value: 0.9862068965517242.
+Trial 48 finished with value: 0.9862068965517242 and parameters: {'num_leaves': 41, 'max_depth': 10, 'min_child_samples': 4}. Best is trial 0 with value: 0.9862068965517242.
+Trial 49 finished with value: 0.9862068965517242 and parameters: {'num_leaves': 78, 'max_depth': 11, 'min_child_samples': 3}. Best is trial 0 with value: 0.9862068965517242.
+A new study created in memory with name: GSPCA_LR
+Trial 0 finished with value: 0.993103448275862 and parameters: {'l1_ratio': 0.15818478769488764, 'C': 0.04375136325467545}. Best is trial 0 with value: 0.993103448275862.
+Trial 1 finished with value: 0.9793103448275862 and parameters: {'l1_ratio': 0.6359578199782326, 'C': 0.013791518686309212}. Best is trial 0 with value: 0.993103448275862.
+Trial 2 finished with value: 0.993103448275862 and parameters: {'l1_ratio': 0.4125917849875458, 'C': 0.0644297051326604}. Best is trial 0 with value: 0.993103448275862.
+Trial 3 finished with value: 0.993103448275862 and parameters: {'l1_ratio': 0.8383943701269984, 'C': 0.03922576558301792}. Best is trial 0 with value: 0.993103448275862.
+Trial 4 finished with value: 0.993103448275862 and parameters: {'l1_ratio': 0.8293240922766472, 'C': 0.024873531845033617}. Best is trial 0 with value: 0.993103448275862.
+Trial 5 finished with value: 0.993103448275862 and parameters: {'l1_ratio': 0.15321432907695365, 'C': 0.11441121759956885}. Best is trial 0 with value: 0.993103448275862.
+Trial 6 finished with value: 0.993103448275862 and parameters: {'l1_ratio': 0.0009087745185034635, 'C': 0.02996838591442826}. Best is trial 0 with value: 0.993103448275862.
+Trial 7 finished with value: 0.9793103448275863 and parameters: {'l1_ratio': 0.9617758885326557, 'C': 0.4634462195817558}. Best is trial 0 with value: 0.993103448275862.
+Trial 8 finished with value: 0.993103448275862 and parameters: {'l1_ratio': 0.4131589964428245, 'C': 0.3104361175801347}. Best is trial 0 with value: 0.993103448275862.
+Trial 9 finished with value: 0.9862068965517242 and parameters: {'l1_ratio': 0.6554501646124667, 'C': 0.8876068205374782}. Best is trial 0 with value: 0.993103448275862.
+Trial 10 finished with value: 0.993103448275862 and parameters: {'l1_ratio': 0.22220284427688872, 'C': 0.11700584504534721}. Best is trial 0 with value: 0.993103448275862.
+Trial 11 finished with value: 0.993103448275862 and parameters: {'l1_ratio': 0.3613399829735691, 'C': 0.061037296055116964}. Best is trial 0 with value: 0.993103448275862.
+Trial 12 finished with value: 0.993103448275862 and parameters: {'l1_ratio': 0.3178011454212592, 'C': 0.06797720515579031}. Best is trial 0 with value: 0.993103448275862.
+Trial 13 finished with value: 0.9793103448275862 and parameters: {'l1_ratio': 0.5139804261461022, 'C': 0.011053864094786241}. Best is trial 0 with value: 0.993103448275862.
+Trial 14 finished with value: 0.993103448275862 and parameters: {'l1_ratio': 0.16353483534622792, 'C': 0.16048826308382677}. Best is trial 0 with value: 0.993103448275862.
+Trial 15 finished with value: 0.993103448275862 and parameters: {'l1_ratio': 0.0268111721413358, 'C': 0.05582610509906977}. Best is trial 0 with value: 0.993103448275862.
+Trial 16 finished with value: 0.993103448275862 and parameters: {'l1_ratio': 0.25365244974959245, 'C': 0.020960460269852654}. Best is trial 0 with value: 0.993103448275862.
+Trial 17 finished with value: 0.993103448275862 and parameters: {'l1_ratio': 0.41910179944488, 'C': 0.04543936164764833}. Best is trial 0 with value: 0.993103448275862.
+Trial 18 finished with value: 0.993103448275862 and parameters: {'l1_ratio': 0.09774247347764112, 'C': 0.07387407019543533}. Best is trial 0 with value: 0.993103448275862.
+Trial 19 finished with value: 0.993103448275862 and parameters: {'l1_ratio': 0.3250889315473786, 'C': 0.03809934931678956}. Best is trial 0 with value: 0.993103448275862.
+Trial 20 finished with value: 0.993103448275862 and parameters: {'l1_ratio': 0.23873555259231782, 'C': 0.020691056549088423}. Best is trial 0 with value: 0.993103448275862.
+Trial 21 finished with value: 0.993103448275862 and parameters: {'l1_ratio': 0.5261109955404957, 'C': 0.038620049222768044}. Best is trial 0 with value: 0.993103448275862.
+Trial 22 finished with value: 0.993103448275862 and parameters: {'l1_ratio': 0.642201357658465, 'C': 0.08311890594515497}. Best is trial 0 with value: 0.993103448275862.
+Trial 23 finished with value: 0.993103448275862 and parameters: {'l1_ratio': 0.7422169180524223, 'C': 0.042373853873535164}. Best is trial 0 with value: 0.993103448275862.
+Trial 24 finished with value: 0.993103448275862 and parameters: {'l1_ratio': 0.4498038670779206, 'C': 0.027041368893560142}. Best is trial 0 with value: 0.993103448275862.
+Trial 25 finished with value: 0.993103448275862 and parameters: {'l1_ratio': 0.5574667375004624, 'C': 0.048351119255302374}. Best is trial 0 with value: 0.993103448275862.
+Trial 26 finished with value: 0.993103448275862 and parameters: {'l1_ratio': 0.8462281074998453, 'C': 0.1615893477412417}. Best is trial 0 with value: 0.993103448275862.
+Trial 27 finished with value: 0.993103448275862 and parameters: {'l1_ratio': 0.48116852385980585, 'C': 0.016783890429553017}. Best is trial 0 with value: 0.993103448275862.
+Trial 28 finished with value: 0.993103448275862 and parameters: {'l1_ratio': 0.9766146884066871, 'C': 0.030493335868350607}. Best is trial 0 with value: 0.993103448275862.
+Trial 29 finished with value: 0.9862068965517242 and parameters: {'l1_ratio': 0.5913770563261648, 'C': 0.014870426770647129}. Best is trial 0 with value: 0.993103448275862.
+Trial 30 finished with value: 0.993103448275862 and parameters: {'l1_ratio': 0.3722308524740041, 'C': 0.09506132391574387}. Best is trial 0 with value: 0.993103448275862.
+Trial 31 finished with value: 0.993103448275862 and parameters: {'l1_ratio': 0.7702867362999601, 'C': 0.026090049475732666}. Best is trial 0 with value: 0.993103448275862.
+Trial 32 finished with value: 0.993103448275862 and parameters: {'l1_ratio': 0.8803959847249605, 'C': 0.053027467350105655}. Best is trial 0 with value: 0.993103448275862.
+Trial 33 finished with value: 0.993103448275862 and parameters: {'l1_ratio': 0.6922573214557387, 'C': 0.03321653184074382}. Best is trial 0 with value: 0.993103448275862.
+Trial 34 finished with value: 0.993103448275862 and parameters: {'l1_ratio': 0.5780357898901107, 'C': 0.024676385341589672}. Best is trial 0 with value: 0.993103448275862.
+Trial 35 finished with value: 0.993103448275862 and parameters: {'l1_ratio': 0.8926146761929922, 'C': 0.033313362954783134}. Best is trial 0 with value: 0.993103448275862.
+Trial 36 finished with value: 0.9793103448275862 and parameters: {'l1_ratio': 0.802285146160079, 'C': 0.017826088794509247}. Best is trial 0 with value: 0.993103448275862.
+Trial 37 finished with value: 0.9793103448275862 and parameters: {'l1_ratio': 0.7345002001676237, 'C': 0.011783124677747803}. Best is trial 0 with value: 0.993103448275862.
+Trial 38 finished with value: 0.993103448275862 and parameters: {'l1_ratio': 0.9435318550998856, 'C': 0.06116960833276276}. Best is trial 0 with value: 0.993103448275862.
+Trial 39 finished with value: 0.993103448275862 and parameters: {'l1_ratio': 0.6476876512646818, 'C': 0.043084981408109235}. Best is trial 0 with value: 0.993103448275862.
+Trial 40 finished with value: 0.9793103448275862 and parameters: {'l1_ratio': 0.6897634888042444, 'C': 0.013984579510074636}. Best is trial 0 with value: 0.993103448275862.
+Trial 41 finished with value: 0.993103448275862 and parameters: {'l1_ratio': 0.1584547347989257, 'C': 0.10738211252291639}. Best is trial 0 with value: 0.993103448275862.
+Trial 42 finished with value: 0.993103448275862 and parameters: {'l1_ratio': 0.9996983809332968, 'C': 0.0726322741011615}. Best is trial 0 with value: 0.993103448275862.
+Trial 43 finished with value: 0.993103448275862 and parameters: {'l1_ratio': 0.2970875568785993, 'C': 0.05726481218807588}. Best is trial 0 with value: 0.993103448275862.
+Trial 44 finished with value: 0.993103448275862 and parameters: {'l1_ratio': 0.19191822590600538, 'C': 0.13539583160987628}. Best is trial 0 with value: 0.993103448275862.
+Trial 45 finished with value: 0.993103448275862 and parameters: {'l1_ratio': 0.10115866044146993, 'C': 0.08336447070365824}. Best is trial 0 with value: 0.993103448275862.
+Trial 46 finished with value: 0.993103448275862 and parameters: {'l1_ratio': 0.28640244495800427, 'C': 0.048411688896916445}. Best is trial 0 with value: 0.993103448275862.
+Trial 47 finished with value: 0.993103448275862 and parameters: {'l1_ratio': 0.40038405056262394, 'C': 0.06316712584998542}. Best is trial 0 with value: 0.993103448275862.
+Trial 48 finished with value: 0.993103448275862 and parameters: {'l1_ratio': 0.0031916374278135873, 'C': 0.0366639453362173}. Best is trial 0 with value: 0.993103448275862.
+Trial 49 finished with value: 0.993103448275862 and parameters: {'l1_ratio': 0.4740981569939403, 'C': 0.023730306595568837}. Best is trial 0 with value: 0.993103448275862.

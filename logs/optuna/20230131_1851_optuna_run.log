@@ -1,0 +1,13 @@
+A new study created in memory with name: PCA_LGBM
+Trial 0 failed with parameters: {'num_leaves': 726, 'max_depth': 9, 'learning_rate': 0.26737937011255286, 'n_estimators': 402, 'colsample_bytree': 0.21479491007578702} because of the following error: TypeError("lightgbm.sklearn.LGBMModel.set_params() got multiple values for keyword argument 'n_estimators'").
+Traceback (most recent call last):
+  File "/Users/jacco/Documents/repos/vu-case-study-eds/venv/lib/python3.10/site-packages/optuna/study/_optimize.py", line 200, in _run_trial
+    value_or_values = func(trial)
+  File "/Users/jacco/Documents/repos/vu-case-study-eds/src/helpers/config/hyperparameters.py", line 64, in <lambda>
+    lambda trial: self._objective(
+  File "/Users/jacco/Documents/repos/vu-case-study-eds/src/helpers/config/hyperparameters.py", line 37, in _objective
+    model = self.cfg.get_model()
+  File "/Users/jacco/Documents/repos/vu-case-study-eds/src/helpers/config/hyperparameters.py", line 104, in get_model
+    return self.model.set_params(
+TypeError: lightgbm.sklearn.LGBMModel.set_params() got multiple values for keyword argument 'n_estimators'
+Trial 0 failed with value None.

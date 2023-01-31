@@ -5,10 +5,7 @@ from joblib import dump, load
 import datetime as dt
 import json
 import copy
-from helpers.helper_functions import (
-    get_pca_pipeline,
-    get_model,
-)
+from helpers.helper_functions import get_pca_pipeline, get_model, alpha_setter
 from helpers.config.hyperparameters import (
     PCA_LGBM_CFG,
     SPCA_LGBM_CFG,
@@ -50,11 +47,11 @@ def parse_name_from_csv(path) -> str:
 def init_hyperparameter_configs():
     hyperparameter_configs = {
         "PCA_LGBM": PCA_LGBM_CFG(),
-        # "SPCA_LGBM": SPCA_LGBM_CFG(),
-        # "GSPCA_LGBM": GSPCA_LGBM_CFG(),
+        "SPCA_LGBM": SPCA_LGBM_CFG(),
+        "GSPCA_LGBM": GSPCA_LGBM_CFG(),
         "PCA_LR": PCA_LR_CFG(),
-        # "SPCA_LR": SPCA_LR_CFG(),
-        # "GSPCA_LR": GSPCA_LR_CFG(),
+        "SPCA_LR": SPCA_LR_CFG(),
+        "GSPCA_LR": GSPCA_LR_CFG(),
     }
     return hyperparameter_configs
 
@@ -66,7 +63,7 @@ if __name__ == "__main__":
     fitted_pipelines = dict.fromkeys(DATASETS, {})
     timestamp = dt.datetime.now().strftime("%Y%m%d_%H%M")
 
-    for dataset in ["chin"]:
+    for dataset in DATASETS:
         X_train, X_test = (
             data[dataset]["none"]["X_train"],
             data[dataset]["none"]["X_test"],
@@ -86,13 +83,14 @@ if __name__ == "__main__":
             best_params = parse_best_params_from_csv(path)
             cfg = hyperparameter_configs[name]
 
+            if name.split("_")[0] == "GSPCA":
+                cfg.params["pca"]["alpha"] = alpha_setter(dataset)
+
             pipe = Pipeline(
                 [
                     (
                         "pca",
-                        get_pca_pipeline(
-                            cfg.get_params()["pca"]["method"], **best_params
-                        ),
+                        get_pca_pipeline(**cfg.get_params()["pca"]),
                     ),
                     (
                         "model",

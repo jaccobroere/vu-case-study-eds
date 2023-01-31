@@ -1,0 +1,242 @@
+A new study created in memory with name: PCA_LR
+Trial 0 finished with value: 0.85 and parameters: {'l1_ratio': 0.010239995600638041, 'C': 0.010963637040210895}. Best is trial 0 with value: 0.85.
+Trial 1 finished with value: 0.8166666666666668 and parameters: {'l1_ratio': 0.21549150703325026, 'C': 0.014217013419310844}. Best is trial 0 with value: 0.85.
+Trial 2 finished with value: 0.7833333333333334 and parameters: {'l1_ratio': 0.12207988959219396, 'C': 0.25790854950333203}. Best is trial 0 with value: 0.85.
+Trial 3 finished with value: 0.8 and parameters: {'l1_ratio': 0.4984598770508063, 'C': 0.1018921016932664}. Best is trial 0 with value: 0.85.
+Trial 4 finished with value: 0.8 and parameters: {'l1_ratio': 0.5972190433274402, 'C': 0.20397495617306396}. Best is trial 0 with value: 0.85.
+Trial 5 finished with value: 0.8 and parameters: {'l1_ratio': 0.022417633165892625, 'C': 0.21784222470881023}. Best is trial 0 with value: 0.85.
+Trial 6 finished with value: 0.7666666666666667 and parameters: {'l1_ratio': 0.5227941995421236, 'C': 0.32876604042000085}. Best is trial 0 with value: 0.85.
+Trial 7 finished with value: 0.7833333333333334 and parameters: {'l1_ratio': 0.19768025512911125, 'C': 0.5100666250206037}. Best is trial 0 with value: 0.85.
+Trial 8 finished with value: 0.8666666666666666 and parameters: {'l1_ratio': 0.04845729944326671, 'C': 0.020168989738361464}. Best is trial 8 with value: 0.8666666666666666.
+Trial 9 finished with value: 0.7500000000000001 and parameters: {'l1_ratio': 0.9030967989104057, 'C': 0.03755616794096531}. Best is trial 8 with value: 0.8666666666666666.
+Trial 10 finished with value: 0.8 and parameters: {'l1_ratio': 0.32846790055999064, 'C': 0.036863722958705214}. Best is trial 8 with value: 0.8666666666666666.
+Trial 11 finished with value: 0.85 and parameters: {'l1_ratio': 0.012533781397786381, 'C': 0.010677693405751814}. Best is trial 8 with value: 0.8666666666666666.
+Trial 12 finished with value: 0.85 and parameters: {'l1_ratio': 0.006227100298013519, 'C': 0.021534067320863038}. Best is trial 8 with value: 0.8666666666666666.
+Trial 13 finished with value: 0.8 and parameters: {'l1_ratio': 0.29974377321146506, 'C': 0.02479479843328993}. Best is trial 8 with value: 0.8666666666666666.
+Trial 14 finished with value: 0.8166666666666668 and parameters: {'l1_ratio': 0.14139972178239324, 'C': 0.01114897936259262}. Best is trial 8 with value: 0.8666666666666666.
+Trial 15 finished with value: 0.7833333333333333 and parameters: {'l1_ratio': 0.3397373420588037, 'C': 0.9803840464467739}. Best is trial 8 with value: 0.8666666666666666.
+Trial 16 finished with value: 0.8 and parameters: {'l1_ratio': 0.10196277770873155, 'C': 0.0620223363355019}. Best is trial 8 with value: 0.8666666666666666.
+Trial 17 finished with value: 0.85 and parameters: {'l1_ratio': 0.004188302504660447, 'C': 0.019248702869141817}. Best is trial 8 with value: 0.8666666666666666.
+Trial 18 finished with value: 0.7666666666666667 and parameters: {'l1_ratio': 0.1773768994663636, 'C': 0.010045444986474425}. Best is trial 8 with value: 0.8666666666666666.
+Trial 19 finished with value: 0.8 and parameters: {'l1_ratio': 0.2714047545003956, 'C': 0.019099306936092922}. Best is trial 8 with value: 0.8666666666666666.
+Trial 20 finished with value: 0.85 and parameters: {'l1_ratio': 0.09576762067771746, 'C': 0.031837114969567856}. Best is trial 8 with value: 0.8666666666666666.
+Trial 21 finished with value: 0.85 and parameters: {'l1_ratio': 0.06508856076287824, 'C': 0.010088059414636348}. Best is trial 8 with value: 0.8666666666666666.
+Trial 22 finished with value: 0.8666666666666666 and parameters: {'l1_ratio': 0.013459198036234363, 'C': 0.01474636247422816}. Best is trial 8 with value: 0.8666666666666666.
+Trial 23 finished with value: 0.85 and parameters: {'l1_ratio': 0.09485011802074093, 'C': 0.01598302532571208}. Best is trial 8 with value: 0.8666666666666666.
+Trial 24 finished with value: 0.8 and parameters: {'l1_ratio': 0.19029116946366753, 'C': 0.015172602858768904}. Best is trial 8 with value: 0.8666666666666666.
+Trial 25 finished with value: 0.85 and parameters: {'l1_ratio': 0.0793663170119967, 'C': 0.028540276515875058}. Best is trial 8 with value: 0.8666666666666666.
+Trial 26 finished with value: 0.8166666666666667 and parameters: {'l1_ratio': 0.004268275836033725, 'C': 0.045491917124762284}. Best is trial 8 with value: 0.8666666666666666.
+Trial 27 finished with value: 0.8166666666666667 and parameters: {'l1_ratio': 0.2272617265014346, 'C': 0.02297143351807587}. Best is trial 8 with value: 0.8666666666666666.
+Trial 28 finished with value: 0.8166666666666668 and parameters: {'l1_ratio': 0.14137728627620524, 'C': 0.014945385590618438}. Best is trial 8 with value: 0.8666666666666666.
+Trial 29 finished with value: 0.7666666666666667 and parameters: {'l1_ratio': 0.25287047075767116, 'C': 0.01489286362934978}. Best is trial 8 with value: 0.8666666666666666.
+Trial 30 finished with value: 0.8166666666666667 and parameters: {'l1_ratio': 0.16418814509384067, 'C': 0.02388301635453861}. Best is trial 8 with value: 0.8666666666666666.
+Trial 31 finished with value: 0.8666666666666668 and parameters: {'l1_ratio': 0.04157074558029786, 'C': 0.012059504509583038}. Best is trial 31 with value: 0.8666666666666668.
+Trial 32 finished with value: 0.8666666666666666 and parameters: {'l1_ratio': 0.08011825704521322, 'C': 0.013224132614005638}. Best is trial 31 with value: 0.8666666666666668.
+Trial 33 finished with value: 0.8666666666666668 and parameters: {'l1_ratio': 0.06470100355123547, 'C': 0.01324309055180623}. Best is trial 31 with value: 0.8666666666666668.
+Trial 34 finished with value: 0.85 and parameters: {'l1_ratio': 0.07148655469736426, 'C': 0.018561147109154477}. Best is trial 31 with value: 0.8666666666666668.
+Trial 35 finished with value: 0.8166666666666668 and parameters: {'l1_ratio': 0.15339079047561432, 'C': 0.012821713819135704}. Best is trial 31 with value: 0.8666666666666668.
+Trial 36 finished with value: 0.85 and parameters: {'l1_ratio': 0.0660839866281865, 'C': 0.017169825522278803}. Best is trial 31 with value: 0.8666666666666668.
+Trial 37 finished with value: 0.7833333333333334 and parameters: {'l1_ratio': 0.22552985283457772, 'C': 0.01339652174502705}. Best is trial 31 with value: 0.8666666666666668.
+Trial 38 finished with value: 0.8333333333333334 and parameters: {'l1_ratio': 0.043798211416219736, 'C': 0.02954542166233005}. Best is trial 31 with value: 0.8666666666666668.
+Trial 39 finished with value: 0.8 and parameters: {'l1_ratio': 0.14053997799426382, 'C': 0.0594099031225946}. Best is trial 31 with value: 0.8666666666666668.
+Trial 40 finished with value: 0.7666666666666667 and parameters: {'l1_ratio': 0.37997077254387135, 'C': 0.020190977738271273}. Best is trial 31 with value: 0.8666666666666668.
+Trial 41 finished with value: 0.85 and parameters: {'l1_ratio': 0.044902588358985696, 'C': 0.014136366898057532}. Best is trial 31 with value: 0.8666666666666668.
+Trial 42 finished with value: 0.8166666666666668 and parameters: {'l1_ratio': 0.11346977123415328, 'C': 0.012396152189115037}. Best is trial 31 with value: 0.8666666666666668.
+Trial 43 finished with value: 0.85 and parameters: {'l1_ratio': 0.055588684698686, 'C': 0.013145006126988455}. Best is trial 31 with value: 0.8666666666666668.
+Trial 44 finished with value: 0.85 and parameters: {'l1_ratio': 0.002504857338708621, 'C': 0.017787469541540892}. Best is trial 31 with value: 0.8666666666666668.
+Trial 45 finished with value: 0.8166666666666668 and parameters: {'l1_ratio': 0.10369600095954738, 'C': 0.011363670010574246}. Best is trial 31 with value: 0.8666666666666668.
+Trial 46 finished with value: 0.8166666666666668 and parameters: {'l1_ratio': 0.1974136789629293, 'C': 0.023795750003518645}. Best is trial 31 with value: 0.8666666666666668.
+Trial 47 finished with value: 0.8666666666666668 and parameters: {'l1_ratio': 0.03505519591389071, 'C': 0.011644832544799073}. Best is trial 31 with value: 0.8666666666666668.
+Trial 48 finished with value: 0.8666666666666668 and parameters: {'l1_ratio': 0.04447259381314129, 'C': 0.01166724277337241}. Best is trial 31 with value: 0.8666666666666668.
+Trial 49 finished with value: 0.7833333333333334 and parameters: {'l1_ratio': 0.15573127904105738, 'C': 0.010028483540517137}. Best is trial 31 with value: 0.8666666666666668.
+Trial 50 finished with value: 0.8333333333333333 and parameters: {'l1_ratio': 0.12449594065647127, 'C': 0.011507630427010716}. Best is trial 31 with value: 0.8666666666666668.
+Trial 51 finished with value: 0.8666666666666666 and parameters: {'l1_ratio': 0.027836809557174116, 'C': 0.017042397338382243}. Best is trial 31 with value: 0.8666666666666668.
+Trial 52 finished with value: 0.8666666666666666 and parameters: {'l1_ratio': 0.039266223023607355, 'C': 0.0211625416216997}. Best is trial 31 with value: 0.8666666666666668.
+Trial 53 finished with value: 0.8666666666666666 and parameters: {'l1_ratio': 0.001494870010144098, 'C': 0.01221127009125382}. Best is trial 31 with value: 0.8666666666666668.
+Trial 54 finished with value: 0.8666666666666666 and parameters: {'l1_ratio': 0.044638643437401114, 'C': 0.01593278611767019}. Best is trial 31 with value: 0.8666666666666668.
+Trial 55 finished with value: 0.8333333333333333 and parameters: {'l1_ratio': 0.10942297519683265, 'C': 0.010161065942069314}. Best is trial 31 with value: 0.8666666666666668.
+Trial 56 finished with value: 0.8333333333333334 and parameters: {'l1_ratio': 0.04180239917065809, 'C': 0.025968155628129094}. Best is trial 31 with value: 0.8666666666666668.
+Trial 57 finished with value: 0.8333333333333334 and parameters: {'l1_ratio': 0.12127758840745956, 'C': 0.020133771325733997}. Best is trial 31 with value: 0.8666666666666668.
+Trial 58 finished with value: 0.8 and parameters: {'l1_ratio': 0.1825586398340947, 'C': 0.01635703121427061}. Best is trial 31 with value: 0.8666666666666668.
+Trial 59 finished with value: 0.8333333333333334 and parameters: {'l1_ratio': 0.08507140675215233, 'C': 0.01173103736198229}. Best is trial 31 with value: 0.8666666666666668.
+Trial 60 finished with value: 0.85 and parameters: {'l1_ratio': 0.0008123596796806281, 'C': 0.014409919573606121}. Best is trial 31 with value: 0.8666666666666668.
+Trial 61 finished with value: 0.85 and parameters: {'l1_ratio': 0.07987722774980252, 'C': 0.01236325836500827}. Best is trial 31 with value: 0.8666666666666668.
+Trial 62 finished with value: 0.85 and parameters: {'l1_ratio': 0.07332492751587477, 'C': 0.014008725413119448}. Best is trial 31 with value: 0.8666666666666668.
+Trial 63 finished with value: 0.8666666666666666 and parameters: {'l1_ratio': 0.030954923490860153, 'C': 0.020557523428170178}. Best is trial 31 with value: 0.8666666666666668.
+Trial 64 finished with value: 0.85 and parameters: {'l1_ratio': 0.1318448418349169, 'C': 0.017166513354930184}. Best is trial 31 with value: 0.8666666666666668.
+Trial 65 finished with value: 0.8333333333333333 and parameters: {'l1_ratio': 0.09308158883527962, 'C': 0.010937705351549113}. Best is trial 31 with value: 0.8666666666666668.
+Trial 66 finished with value: 0.8666666666666666 and parameters: {'l1_ratio': 0.02811854315101981, 'C': 0.013698918626157854}. Best is trial 31 with value: 0.8666666666666668.
+Trial 67 finished with value: 0.8166666666666667 and parameters: {'l1_ratio': 0.17826012298166394, 'C': 0.01845613677305551}. Best is trial 31 with value: 0.8666666666666668.
+Trial 68 finished with value: 0.85 and parameters: {'l1_ratio': 0.06391077392353077, 'C': 0.026381739577819172}. Best is trial 31 with value: 0.8666666666666668.
+Trial 69 finished with value: 0.7666666666666667 and parameters: {'l1_ratio': 0.20985266620295903, 'C': 0.010068816451865015}. Best is trial 31 with value: 0.8666666666666668.
+Trial 70 finished with value: 0.8166666666666668 and parameters: {'l1_ratio': 0.15265730733317673, 'C': 0.015230392810026378}. Best is trial 31 with value: 0.8666666666666668.
+Trial 71 finished with value: 0.8666666666666666 and parameters: {'l1_ratio': 0.03126827946364167, 'C': 0.016729287088880572}. Best is trial 31 with value: 0.8666666666666668.
+Trial 72 finished with value: 0.85 and parameters: {'l1_ratio': 0.024907061238865196, 'C': 0.012281525345021619}. Best is trial 31 with value: 0.8666666666666668.
+Trial 73 finished with value: 0.85 and parameters: {'l1_ratio': 0.0642469856214218, 'C': 0.022701241361618763}. Best is trial 31 with value: 0.8666666666666668.
+Trial 74 finished with value: 0.85 and parameters: {'l1_ratio': 0.10096825914145267, 'C': 0.018686460748599257}. Best is trial 31 with value: 0.8666666666666668.
+Trial 75 finished with value: 0.8666666666666666 and parameters: {'l1_ratio': 0.025599260003621192, 'C': 0.015080273479883558}. Best is trial 31 with value: 0.8666666666666668.
+Trial 76 finished with value: 0.8166666666666668 and parameters: {'l1_ratio': 0.11991847592080414, 'C': 0.013223674131577668}. Best is trial 31 with value: 0.8666666666666668.
+Trial 77 finished with value: 0.8666666666666666 and parameters: {'l1_ratio': 0.0664795301656708, 'C': 0.011246328094785695}. Best is trial 31 with value: 0.8666666666666668.
+Trial 78 finished with value: 0.85 and parameters: {'l1_ratio': 0.0916451523945092, 'C': 0.016753763531310657}. Best is trial 31 with value: 0.8666666666666668.
+Trial 79 finished with value: 0.85 and parameters: {'l1_ratio': 0.018451573857814638, 'C': 0.0220253547921811}. Best is trial 31 with value: 0.8666666666666668.
+Trial 80 finished with value: 0.85 and parameters: {'l1_ratio': 0.055343028296799844, 'C': 0.013283770309410577}. Best is trial 31 with value: 0.8666666666666668.
+Trial 81 finished with value: 0.8666666666666666 and parameters: {'l1_ratio': 0.04512464594127159, 'C': 0.019215779805278978}. Best is trial 31 with value: 0.8666666666666668.
+Trial 82 finished with value: 0.85 and parameters: {'l1_ratio': 0.007666858176866111, 'C': 0.021702233598878337}. Best is trial 31 with value: 0.8666666666666668.
+Trial 83 finished with value: 0.85 and parameters: {'l1_ratio': 0.13412842483017928, 'C': 0.031460956880025245}. Best is trial 31 with value: 0.8666666666666668.
+Trial 84 finished with value: 0.85 and parameters: {'l1_ratio': 0.08552811652933764, 'C': 0.01568359001556083}. Best is trial 31 with value: 0.8666666666666668.
+Trial 85 finished with value: 0.8666666666666668 and parameters: {'l1_ratio': 0.03989076462392941, 'C': 0.011481642515876044}. Best is trial 31 with value: 0.8666666666666668.
+Trial 86 finished with value: 0.8166666666666668 and parameters: {'l1_ratio': 0.16693876649400552, 'C': 0.011317949089611047}. Best is trial 31 with value: 0.8666666666666668.
+Trial 87 finished with value: 0.8333333333333334 and parameters: {'l1_ratio': 0.10779413703769763, 'C': 0.012532571226232036}. Best is trial 31 with value: 0.8666666666666668.
+Trial 88 finished with value: 0.85 and parameters: {'l1_ratio': 0.057259645392915816, 'C': 0.010001684546683457}. Best is trial 31 with value: 0.8666666666666668.
+Trial 89 finished with value: 0.85 and parameters: {'l1_ratio': 1.552361099779742e-05, 'C': 0.01412471156900651}. Best is trial 31 with value: 0.8666666666666668.
+Trial 90 finished with value: 0.8666666666666668 and parameters: {'l1_ratio': 0.029733568479016363, 'C': 0.011292729934377252}. Best is trial 31 with value: 0.8666666666666668.
+Trial 91 finished with value: 0.85 and parameters: {'l1_ratio': 0.021385097574465377, 'C': 0.011186130338877687}. Best is trial 31 with value: 0.8666666666666668.
+Trial 92 finished with value: 0.85 and parameters: {'l1_ratio': 0.07881834603220114, 'C': 0.012542168576472211}. Best is trial 31 with value: 0.8666666666666668.
+Trial 93 finished with value: 0.85 and parameters: {'l1_ratio': 0.04691373548381274, 'C': 0.014713602218744647}. Best is trial 31 with value: 0.8666666666666668.
+Trial 94 finished with value: 0.8666666666666666 and parameters: {'l1_ratio': 0.02290372314839806, 'C': 0.017461471598787276}. Best is trial 31 with value: 0.8666666666666668.
+Trial 95 finished with value: 0.8333333333333333 and parameters: {'l1_ratio': 0.11541792106555447, 'C': 0.010873953729158562}. Best is trial 31 with value: 0.8666666666666668.
+Trial 96 finished with value: 0.85 and parameters: {'l1_ratio': 0.05484228533840465, 'C': 0.013255495549778994}. Best is trial 31 with value: 0.8666666666666668.
+Trial 97 finished with value: 0.85 and parameters: {'l1_ratio': 0.08274979984685657, 'C': 0.01607162829182864}. Best is trial 31 with value: 0.8666666666666668.
+Trial 98 finished with value: 0.8166666666666668 and parameters: {'l1_ratio': 0.14314125539880862, 'C': 0.011574420543471485}. Best is trial 31 with value: 0.8666666666666668.
+Trial 99 finished with value: 0.85 and parameters: {'l1_ratio': 0.03591910779997602, 'C': 0.013959381701042215}. Best is trial 31 with value: 0.8666666666666668.
+A new study created in memory with name: SPCA_LR
+Trial 0 finished with value: 0.9 and parameters: {'l1_ratio': 0.16387356451922253, 'C': 0.04564790432415687}. Best is trial 0 with value: 0.9.
+Trial 1 finished with value: 0.75 and parameters: {'l1_ratio': 0.8201930544276083, 'C': 0.062298364724981944}. Best is trial 0 with value: 0.9.
+Trial 2 finished with value: 0.8 and parameters: {'l1_ratio': 0.2330142620792125, 'C': 0.04156058097122559}. Best is trial 0 with value: 0.9.
+Trial 3 finished with value: 0.7833333333333333 and parameters: {'l1_ratio': 0.2741915476696146, 'C': 0.6584877244406376}. Best is trial 0 with value: 0.9.
+Trial 4 finished with value: 0.8 and parameters: {'l1_ratio': 0.3050250332841239, 'C': 0.35182689234989944}. Best is trial 0 with value: 0.9.
+Trial 5 finished with value: 0.8166666666666667 and parameters: {'l1_ratio': 0.4558113135255756, 'C': 0.5799180009841377}. Best is trial 0 with value: 0.9.
+Trial 6 finished with value: 0.7166666666666666 and parameters: {'l1_ratio': 0.9099455317762588, 'C': 0.08913299253968462}. Best is trial 0 with value: 0.9.
+Trial 7 finished with value: 0.6166666666666667 and parameters: {'l1_ratio': 0.8684977372707655, 'C': 0.017650654010290145}. Best is trial 0 with value: 0.9.
+Trial 8 finished with value: 0.4833333333333333 and parameters: {'l1_ratio': 0.9607831081403063, 'C': 0.014586055172610659}. Best is trial 0 with value: 0.9.
+Trial 9 finished with value: 0.8333333333333333 and parameters: {'l1_ratio': 0.29502543563554307, 'C': 0.18991984445388793}. Best is trial 0 with value: 0.9.
+Trial 10 finished with value: 0.8666666666666666 and parameters: {'l1_ratio': 0.0967068189177774, 'C': 0.03629707867440951}. Best is trial 0 with value: 0.9.
+Trial 11 finished with value: 0.85 and parameters: {'l1_ratio': 0.08813917362582824, 'C': 0.03654231978446272}. Best is trial 0 with value: 0.9.
+Trial 12 finished with value: 0.8666666666666666 and parameters: {'l1_ratio': 0.0018510343981931188, 'C': 0.0281781044899259}. Best is trial 0 with value: 0.9.
+Trial 13 finished with value: 0.8166666666666667 and parameters: {'l1_ratio': 0.11226144699784929, 'C': 0.1234386214125114}. Best is trial 0 with value: 0.9.
+Trial 14 finished with value: 0.85 and parameters: {'l1_ratio': 0.0015221627903581753, 'C': 0.012398238112462406}. Best is trial 0 with value: 0.9.
+Trial 15 finished with value: 0.75 and parameters: {'l1_ratio': 0.4827444849421773, 'C': 0.054272222804494216}. Best is trial 0 with value: 0.9.
+Trial 16 finished with value: 0.8 and parameters: {'l1_ratio': 0.16561123810048967, 'C': 0.024513094226025378}. Best is trial 0 with value: 0.9.
+Trial 17 finished with value: 0.7833333333333333 and parameters: {'l1_ratio': 0.3964135068362908, 'C': 0.02373695765888847}. Best is trial 0 with value: 0.9.
+Trial 18 finished with value: 0.8666666666666666 and parameters: {'l1_ratio': 0.1747335243657201, 'C': 0.06965002645125448}. Best is trial 0 with value: 0.9.
+Trial 19 finished with value: 0.5166666666666666 and parameters: {'l1_ratio': 0.5822762594207579, 'C': 0.01073489206285572}. Best is trial 0 with value: 0.9.
+Trial 20 finished with value: 0.85 and parameters: {'l1_ratio': 0.0733162030780207, 'C': 0.03879564738624753}. Best is trial 0 with value: 0.9.
+Trial 21 finished with value: 0.8666666666666666 and parameters: {'l1_ratio': 0.008137335478125016, 'C': 0.026870317387122724}. Best is trial 0 with value: 0.9.
+Trial 22 finished with value: 0.7833333333333334 and parameters: {'l1_ratio': 0.16362247179522327, 'C': 0.019265938351785916}. Best is trial 0 with value: 0.9.
+Trial 23 finished with value: 0.8666666666666666 and parameters: {'l1_ratio': 0.0025168980018820952, 'C': 0.0320511118266506}. Best is trial 0 with value: 0.9.
+Trial 24 finished with value: 0.8333333333333334 and parameters: {'l1_ratio': 0.07727036547452415, 'C': 0.04982311910236085}. Best is trial 0 with value: 0.9.
+Trial 25 finished with value: 0.8166666666666667 and parameters: {'l1_ratio': 0.20264164889437136, 'C': 0.03202429074554859}. Best is trial 0 with value: 0.9.
+Trial 26 finished with value: 0.7999999999999999 and parameters: {'l1_ratio': 0.11768522350907862, 'C': 0.01985309533357998}. Best is trial 0 with value: 0.9.
+Trial 27 finished with value: 0.7666666666666667 and parameters: {'l1_ratio': 0.34443769128044516, 'C': 0.04669734827338582}. Best is trial 0 with value: 0.9.
+Trial 28 finished with value: 0.85 and parameters: {'l1_ratio': 0.2329965777188185, 'C': 0.08764399525582496}. Best is trial 0 with value: 0.9.
+Trial 29 finished with value: 0.75 and parameters: {'l1_ratio': 0.589819420160383, 'C': 0.06360733716878345}. Best is trial 0 with value: 0.9.
+Trial 30 finished with value: 0.8 and parameters: {'l1_ratio': 0.13371373068125833, 'C': 0.01539610238217934}. Best is trial 0 with value: 0.9.
+Trial 31 finished with value: 0.8666666666666666 and parameters: {'l1_ratio': 0.2168182981375944, 'C': 0.06541853777958809}. Best is trial 0 with value: 0.9.
+Trial 32 finished with value: 0.85 and parameters: {'l1_ratio': 0.051965499277905426, 'C': 0.042059040019676655}. Best is trial 0 with value: 0.9.
+Trial 33 finished with value: 0.8666666666666666 and parameters: {'l1_ratio': 0.1531725169174209, 'C': 0.06589171201217602}. Best is trial 0 with value: 0.9.
+Trial 34 finished with value: 0.8 and parameters: {'l1_ratio': 0.22903587559703042, 'C': 0.029094538855960233}. Best is trial 0 with value: 0.9.
+Trial 35 finished with value: 0.85 and parameters: {'l1_ratio': 0.04617040969389276, 'C': 0.03671751818786971}. Best is trial 0 with value: 0.9.
+Trial 36 finished with value: 0.8666666666666666 and parameters: {'l1_ratio': 0.16868923545233605, 'C': 0.052930317006044586}. Best is trial 0 with value: 0.9.
+Trial 37 finished with value: 0.7833333333333334 and parameters: {'l1_ratio': 0.25929627202706895, 'C': 0.023751049450862365}. Best is trial 0 with value: 0.9.
+Trial 38 finished with value: 0.85 and parameters: {'l1_ratio': 0.10479287463963316, 'C': 0.08151643837019422}. Best is trial 0 with value: 0.9.
+Trial 39 finished with value: 0.8166666666666667 and parameters: {'l1_ratio': 0.30181148892133913, 'C': 0.11433703895921225}. Best is trial 0 with value: 0.9.
+Trial 40 finished with value: 0.85 and parameters: {'l1_ratio': 0.05454222483262035, 'C': 0.039109191826394205}. Best is trial 0 with value: 0.9.
+Trial 41 finished with value: 0.8666666666666666 and parameters: {'l1_ratio': 0.00021551623330358892, 'C': 0.029134943210731498}. Best is trial 0 with value: 0.9.
+Trial 42 finished with value: 0.85 and parameters: {'l1_ratio': 0.04584014479619074, 'C': 0.04395983908825905}. Best is trial 0 with value: 0.9.
+Trial 43 finished with value: 0.7999999999999999 and parameters: {'l1_ratio': 0.12896329486200409, 'C': 0.019265834118139855}. Best is trial 0 with value: 0.9.
+Trial 44 finished with value: 0.8833333333333334 and parameters: {'l1_ratio': 0.09677628498003366, 'C': 0.02787628520925271}. Best is trial 0 with value: 0.9.
+Trial 45 finished with value: 0.8333333333333333 and parameters: {'l1_ratio': 0.19124609290094402, 'C': 0.03336157152134166}. Best is trial 0 with value: 0.9.
+Trial 46 finished with value: 0.85 and parameters: {'l1_ratio': 0.09350263911491398, 'C': 0.07407575416515469}. Best is trial 0 with value: 0.9.
+Trial 47 finished with value: 0.8833333333333332 and parameters: {'l1_ratio': 0.1984871986393381, 'C': 0.05420061968198891}. Best is trial 0 with value: 0.9.
+Trial 48 finished with value: 0.8 and parameters: {'l1_ratio': 0.25862852012823073, 'C': 0.049352394971921565}. Best is trial 0 with value: 0.9.
+Trial 49 finished with value: 0.85 and parameters: {'l1_ratio': 0.12281168407936807, 'C': 0.05517670116297824}. Best is trial 0 with value: 0.9.
+Trial 50 finished with value: 0.7833333333333334 and parameters: {'l1_ratio': 0.21142576214907688, 'C': 0.02393842516593121}. Best is trial 0 with value: 0.9.
+Trial 51 finished with value: 0.8666666666666666 and parameters: {'l1_ratio': 0.1720093514476754, 'C': 0.04149426952901661}. Best is trial 0 with value: 0.9.
+Trial 52 finished with value: 0.85 and parameters: {'l1_ratio': 0.09416345681696608, 'C': 0.10877271185167721}. Best is trial 0 with value: 0.9.
+Trial 53 finished with value: 0.8666666666666666 and parameters: {'l1_ratio': 0.15430679799299948, 'C': 0.05781289165762303}. Best is trial 0 with value: 0.9.
+Trial 54 finished with value: 0.85 and parameters: {'l1_ratio': 0.036012927995698996, 'C': 0.034035046597721344}. Best is trial 0 with value: 0.9.
+Trial 55 finished with value: 0.8666666666666666 and parameters: {'l1_ratio': 0.18779954591666495, 'C': 0.07482295036461857}. Best is trial 0 with value: 0.9.
+Trial 56 finished with value: 0.8333333333333334 and parameters: {'l1_ratio': 0.07899353859580419, 'C': 0.044892549079515606}. Best is trial 0 with value: 0.9.
+Trial 57 finished with value: 0.8166666666666667 and parameters: {'l1_ratio': 0.12221495015542413, 'C': 0.13917659605122543}. Best is trial 0 with value: 0.9.
+Trial 58 finished with value: 0.8333333333333333 and parameters: {'l1_ratio': 0.2471258171169915, 'C': 0.09177181556297283}. Best is trial 0 with value: 0.9.
+Trial 59 finished with value: 0.7666666666666667 and parameters: {'l1_ratio': 0.2814536618434698, 'C': 0.021003039271889862}. Best is trial 0 with value: 0.9.
+Trial 60 finished with value: 0.7833333333333334 and parameters: {'l1_ratio': 0.33348243662888793, 'C': 0.027462442589632145}. Best is trial 0 with value: 0.9.
+Trial 61 finished with value: 0.8666666666666666 and parameters: {'l1_ratio': 0.015539726411755272, 'C': 0.027611109972342805}. Best is trial 0 with value: 0.9.
+Trial 62 finished with value: 0.85 and parameters: {'l1_ratio': 0.07773908383729557, 'C': 0.034593040136231955}. Best is trial 0 with value: 0.9.
+Trial 63 finished with value: 0.8666666666666666 and parameters: {'l1_ratio': 0.024361131532685126, 'C': 0.0506400689935051}. Best is trial 0 with value: 0.9.
+Trial 64 finished with value: 0.85 and parameters: {'l1_ratio': 0.07068491897764148, 'C': 0.014937798933826624}. Best is trial 0 with value: 0.9.
+Trial 65 finished with value: 0.85 and parameters: {'l1_ratio': 0.031228160122211163, 'C': 0.03922025244751407}. Best is trial 0 with value: 0.9.
+Trial 66 finished with value: 0.8666666666666666 and parameters: {'l1_ratio': 0.1446237189682843, 'C': 0.06141344693034574}. Best is trial 0 with value: 0.9.
+Trial 67 finished with value: 0.7999999999999999 and parameters: {'l1_ratio': 0.10935233648975777, 'C': 0.017479400195491344}. Best is trial 0 with value: 0.9.
+Trial 68 finished with value: 0.8666666666666666 and parameters: {'l1_ratio': 0.0012205975266688616, 'C': 0.031086010374628287}. Best is trial 0 with value: 0.9.
+Trial 69 finished with value: 0.8333333333333334 and parameters: {'l1_ratio': 0.06285574104990121, 'C': 0.04630060755257895}. Best is trial 0 with value: 0.9.
+Trial 70 finished with value: 0.8 and parameters: {'l1_ratio': 0.19754584785850082, 'C': 0.025660102017639366}. Best is trial 0 with value: 0.9.
+Trial 71 finished with value: 0.85 and parameters: {'l1_ratio': 0.025083615492752342, 'C': 0.03096494689875049}. Best is trial 0 with value: 0.9.
+Trial 72 finished with value: 0.85 and parameters: {'l1_ratio': 0.05221989636956633, 'C': 0.03595535360129627}. Best is trial 0 with value: 0.9.
+Trial 73 finished with value: 0.8666666666666666 and parameters: {'l1_ratio': 0.0005873511426165131, 'C': 0.028418468564834327}. Best is trial 0 with value: 0.9.
+Trial 74 finished with value: 0.8833333333333334 and parameters: {'l1_ratio': 0.09333073778559721, 'C': 0.02343206308200146}. Best is trial 0 with value: 0.9.
+Trial 75 finished with value: 0.8166666666666667 and parameters: {'l1_ratio': 0.1390225921167647, 'C': 0.02184624735394542}. Best is trial 0 with value: 0.9.
+Trial 76 finished with value: 0.8666666666666666 and parameters: {'l1_ratio': 0.08696405949732075, 'C': 0.02463277843704786}. Best is trial 0 with value: 0.9.
+Trial 77 finished with value: 0.85 and parameters: {'l1_ratio': 0.17588252377362953, 'C': 0.038065562401043786}. Best is trial 0 with value: 0.9.
+Trial 78 finished with value: 0.7999999999999999 and parameters: {'l1_ratio': 0.10951819031967813, 'C': 0.01756307585252763}. Best is trial 0 with value: 0.9.
+Trial 79 finished with value: 0.8166666666666667 and parameters: {'l1_ratio': 0.22371145217358446, 'C': 0.04264683175945972}. Best is trial 0 with value: 0.9.
+Trial 80 finished with value: 0.8 and parameters: {'l1_ratio': 0.15705483127269176, 'C': 0.02249965570852999}. Best is trial 0 with value: 0.9.
+Trial 81 finished with value: 0.85 and parameters: {'l1_ratio': 0.0468242836629347, 'C': 0.03150086743063986}. Best is trial 0 with value: 0.9.
+Trial 82 finished with value: 0.85 and parameters: {'l1_ratio': 0.0683983574103963, 'C': 0.02529125157205334}. Best is trial 0 with value: 0.9.
+Trial 83 finished with value: 0.85 and parameters: {'l1_ratio': 0.10373732251362838, 'C': 0.0552972276052487}. Best is trial 0 with value: 0.9.
+Trial 84 finished with value: 0.85 and parameters: {'l1_ratio': 0.025477112276003022, 'C': 0.04749188960479361}. Best is trial 0 with value: 0.9.
+Trial 85 finished with value: 0.9 and parameters: {'l1_ratio': 0.12286710385285615, 'C': 0.03613073237268953}. Best is trial 0 with value: 0.9.
+Trial 86 finished with value: 0.8833333333333334 and parameters: {'l1_ratio': 0.13539082192474483, 'C': 0.0348834502174951}. Best is trial 0 with value: 0.9.
+Trial 87 finished with value: 0.8666666666666666 and parameters: {'l1_ratio': 0.14503011810754682, 'C': 0.035443017282371994}. Best is trial 0 with value: 0.9.
+Trial 88 finished with value: 0.85 and parameters: {'l1_ratio': 0.1872789829001007, 'C': 0.0412737865970244}. Best is trial 0 with value: 0.9.
+Trial 89 finished with value: 0.8666666666666666 and parameters: {'l1_ratio': 0.13046551033351975, 'C': 0.05018813197294185}. Best is trial 0 with value: 0.9.
+Trial 90 finished with value: 0.8666666666666666 and parameters: {'l1_ratio': 0.16798038291889017, 'C': 0.0675229306143853}. Best is trial 0 with value: 0.9.
+Trial 91 finished with value: 0.8666666666666666 and parameters: {'l1_ratio': 0.1026596109353004, 'C': 0.027137391455106963}. Best is trial 0 with value: 0.9.
+Trial 92 finished with value: 0.8 and parameters: {'l1_ratio': 0.21151873497449003, 'C': 0.030487617822331666}. Best is trial 0 with value: 0.9.
+Trial 93 finished with value: 0.85 and parameters: {'l1_ratio': 0.06432167363248537, 'C': 0.03786810161072524}. Best is trial 0 with value: 0.9.
+Trial 94 finished with value: 0.8666666666666668 and parameters: {'l1_ratio': 0.08997651780735505, 'C': 0.020188775465878248}. Best is trial 0 with value: 0.9.
+Trial 95 finished with value: 0.8666666666666666 and parameters: {'l1_ratio': 0.08933540319292309, 'C': 0.032546344251894024}. Best is trial 0 with value: 0.9.
+Trial 96 finished with value: 0.7999999999999999 and parameters: {'l1_ratio': 0.1255386840171438, 'C': 0.0210950208225321}. Best is trial 0 with value: 0.9.
+Trial 97 finished with value: 0.8166666666666667 and parameters: {'l1_ratio': 0.14561017236548024, 'C': 0.023283784745662443}. Best is trial 0 with value: 0.9.
+Trial 98 finished with value: 0.8666666666666666 and parameters: {'l1_ratio': 0.17769688466868738, 'C': 0.04247626277161256}. Best is trial 0 with value: 0.9.
+Trial 99 finished with value: 0.7999999999999999 and parameters: {'l1_ratio': 0.11591885149430117, 'C': 0.01868460054234242}. Best is trial 0 with value: 0.9.
+A new study created in memory with name: GSPCA_LR
+Trial 0 failed with parameters: {'l1_ratio': 0.2344435036890239, 'C': 0.10479484620798812} because of the following error: ValueError('\nAll the 5 fits failed.\nIt is very likely that your model is misconfigured.\nYou can try to debug the error by setting error_score=\'raise\'.\n\nBelow are more details about the failures:\n--------------------------------------------------------------------------------\n5 fits failed with the following error:\nTraceback (most recent call last):\n  File "/Users/jacco/Documents/repos/vu-case-study-eds/venv/lib/python3.10/site-packages/sklearn/model_selection/_validation.py", line 686, in _fit_and_score\n    estimator.fit(X_train, y_train, **fit_params)\n  File "/Users/jacco/Documents/repos/vu-case-study-eds/venv/lib/python3.10/site-packages/sklearn/linear_model/_logistic.py", line 1196, in fit\n    X, y = self._validate_data(\n  File "/Users/jacco/Documents/repos/vu-case-study-eds/venv/lib/python3.10/site-packages/sklearn/base.py", line 554, in _validate_data\n    X, y = check_X_y(X, y, **check_params)\n  File "/Users/jacco/Documents/repos/vu-case-study-eds/venv/lib/python3.10/site-packages/sklearn/utils/validation.py", line 1104, in check_X_y\n    X = check_array(\n  File "/Users/jacco/Documents/repos/vu-case-study-eds/venv/lib/python3.10/site-packages/sklearn/utils/validation.py", line 919, in check_array\n    _assert_all_finite(\n  File "/Users/jacco/Documents/repos/vu-case-study-eds/venv/lib/python3.10/site-packages/sklearn/utils/validation.py", line 161, in _assert_all_finite\n    raise ValueError(msg_err)\nValueError: Input X contains NaN.\nLogisticRegression does not accept missing values encoded as NaN natively. For supervised learning, you might want to consider sklearn.ensemble.HistGradientBoostingClassifier and Regressor which accept missing values encoded as NaNs natively. Alternatively, it is possible to preprocess the data, for instance by using an imputer transformer in a pipeline or drop samples with missing values. See https://scikit-learn.org/stable/modules/impute.html You can find a list of all estimators that handle NaN values at the following page: https://scikit-learn.org/stable/modules/impute.html#estimators-that-handle-nan-values\n').
+Traceback (most recent call last):
+  File "/Users/jacco/Documents/repos/vu-case-study-eds/venv/lib/python3.10/site-packages/optuna/study/_optimize.py", line 200, in _run_trial
+    value_or_values = func(trial)
+  File "/Users/jacco/Documents/repos/vu-case-study-eds/src/helpers/config/hyperparameters.py", line 63, in <lambda>
+    lambda trial: self._objective(
+  File "/Users/jacco/Documents/repos/vu-case-study-eds/src/helpers/config/hyperparameters.py", line 39, in _objective
+    cv_score = cross_val_score(
+  File "/Users/jacco/Documents/repos/vu-case-study-eds/venv/lib/python3.10/site-packages/sklearn/model_selection/_validation.py", line 515, in cross_val_score
+    cv_results = cross_validate(
+  File "/Users/jacco/Documents/repos/vu-case-study-eds/venv/lib/python3.10/site-packages/sklearn/model_selection/_validation.py", line 285, in cross_validate
+    _warn_or_raise_about_fit_failures(results, error_score)
+  File "/Users/jacco/Documents/repos/vu-case-study-eds/venv/lib/python3.10/site-packages/sklearn/model_selection/_validation.py", line 367, in _warn_or_raise_about_fit_failures
+    raise ValueError(all_fits_failed_message)
+ValueError: 
+All the 5 fits failed.
+It is very likely that your model is misconfigured.
+You can try to debug the error by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+5 fits failed with the following error:
+Traceback (most recent call last):
+  File "/Users/jacco/Documents/repos/vu-case-study-eds/venv/lib/python3.10/site-packages/sklearn/model_selection/_validation.py", line 686, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/Users/jacco/Documents/repos/vu-case-study-eds/venv/lib/python3.10/site-packages/sklearn/linear_model/_logistic.py", line 1196, in fit
+    X, y = self._validate_data(
+  File "/Users/jacco/Documents/repos/vu-case-study-eds/venv/lib/python3.10/site-packages/sklearn/base.py", line 554, in _validate_data
+    X, y = check_X_y(X, y, **check_params)
+  File "/Users/jacco/Documents/repos/vu-case-study-eds/venv/lib/python3.10/site-packages/sklearn/utils/validation.py", line 1104, in check_X_y
+    X = check_array(
+  File "/Users/jacco/Documents/repos/vu-case-study-eds/venv/lib/python3.10/site-packages/sklearn/utils/validation.py", line 919, in check_array
+    _assert_all_finite(
+  File "/Users/jacco/Documents/repos/vu-case-study-eds/venv/lib/python3.10/site-packages/sklearn/utils/validation.py", line 161, in _assert_all_finite
+    raise ValueError(msg_err)
+ValueError: Input X contains NaN.
+LogisticRegression does not accept missing values encoded as NaN natively. For supervised learning, you might want to consider sklearn.ensemble.HistGradientBoostingClassifier and Regressor which accept missing values encoded as NaNs natively. Alternatively, it is possible to preprocess the data, for instance by using an imputer transformer in a pipeline or drop samples with missing values. See https://scikit-learn.org/stable/modules/impute.html You can find a list of all estimators that handle NaN values at the following page: https://scikit-learn.org/stable/modules/impute.html#estimators-that-handle-nan-values
+
+Trial 0 failed with value None.

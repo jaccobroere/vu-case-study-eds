@@ -1,4 +1,3 @@
-from typing import Optional, List
 import pandas as pd
 import numpy as np
 from feature_engine.selection.base_selector import BaseSelector
@@ -138,7 +137,9 @@ def get_pca_pipeline(
         #     max_iter=max_iter,
         #     n_jobs=n_jobs,
         # ),
-        "spca": SparsePCA(n_components=n_components, alpha=alpha, max_iter=max_iter, n_jobs=n_jobs),
+        "spca": SparsePCA(
+            n_components=n_components, alpha=alpha, max_iter=max_iter, n_jobs=n_jobs
+        ),
         "gspca": GeneSPCA(n_components=n_components, alpha=alpha, max_iter=max_iter),
     }
 
@@ -158,3 +159,14 @@ def get_model(model, **kwargs):
             pass
 
     return model
+
+
+def alpha_setter(dataset):
+    d = {
+        "sorlie": 257,
+        "christensen": 1500,
+        "alon": 1500,
+        "khan": 721,
+        "gravier": 1090,
+    }
+    return d[dataset]

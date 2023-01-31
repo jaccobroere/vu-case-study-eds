@@ -4,6 +4,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import ShuffleSplit
 from helpers.helper_functions import get_pca_pipeline
 from sklearn.model_selection import cross_val_score
+from sklearn.ensemble import RandomForestClassifier
 
 
 class OptunaOptimzation:
@@ -115,8 +116,8 @@ class PCA_LGBM_CFG(HyperparameterConfig):
             "static": {
                 "n_jobs": -1,
                 "boosting_type": "gbdt",
-                "n_estimators": 500,
-                "learning_rate": 0.03,
+                "learning_rate": 0.1,
+                "n_estimators": 100,
             },
             "other": {
                 "cv": self.cv,
@@ -137,16 +138,9 @@ class PCA_LGBM_CFG(HyperparameterConfig):
 
         # Set parameters
         self.params["model"] = {
-            "num_leaves": self.trial.suggest_int("num_leaves", 15, 1500),
-            "max_depth": self.trial.suggest_int("max_depth", -1, 15),
-            "min_child_samples": self.trial.suggest_int(
-                "min_child_samples", 200, 10000, step=100
-            ),
-            "min_split_gain": self.trial.suggest_float("min_split_gain", 0, 15),
-            # "subsample": self.trial.suggest_float("subsample", 0.2, 1),
-            # "colsample_bytree": self.trial.suggest_float(
-            #     "colsample_bytree", 0.2, 1
-            # ),
+            "num_leaves": self.trial.suggest_int("num_leaves", 15, 100),
+            "max_depth": self.trial.suggest_int("max_depth", 3, 20),
+            "min_child_samples": self.trial.suggest_int("min_child_samples", 2, 5),
         }
 
 
@@ -157,8 +151,8 @@ class SPCA_LGBM_CFG(HyperparameterConfig):
             "static": {
                 "n_jobs": -1,
                 "boosting_type": "gbdt",
-                "n_estimators": 500,
-                "learning_rate": 0.03,
+                "learning_rate": 0.1,
+                "n_estimators": 100,
             },
             "other": {
                 "cv": self.cv,
@@ -175,17 +169,11 @@ class SPCA_LGBM_CFG(HyperparameterConfig):
             raise ValueError("Trial is not set. Please set trial first.")
 
         # Set parameters
+        # Set parameters
         self.params["model"] = {
-            "num_leaves": self.trial.suggest_int("num_leaves", 15, 1500),
-            "max_depth": self.trial.suggest_int("max_depth", -1, 15),
-            "min_child_samples": self.trial.suggest_int(
-                "min_child_samples", 200, 10000, step=100
-            ),
-            "min_split_gain": self.trial.suggest_float("min_split_gain", 0, 15),
-            # "subsample": self.trial.suggest_float("subsample", 0.2, 1),
-            # "colsample_bytree": self.trial.suggest_float(
-            #     "colsample_bytree", 0.2, 1
-            # ),
+            "num_leaves": self.trial.suggest_int("num_leaves", 15, 100),
+            "max_depth": self.trial.suggest_int("max_depth", 3, 20),
+            "min_child_samples": self.trial.suggest_int("min_child_samples", 2, 5),
         }
 
 
@@ -196,8 +184,8 @@ class GSPCA_LGBM_CFG(HyperparameterConfig):
             "static": {
                 "n_jobs": -1,
                 "boosting_type": "gbdt",
-                "n_estimators": 500,
-                "learning_rate": 0.03,
+                "learning_rate": 0.1,
+                "n_estimators": 100,
             },
             "other": {
                 "cv": self.cv,
@@ -219,16 +207,9 @@ class GSPCA_LGBM_CFG(HyperparameterConfig):
 
         # Set parameters
         self.params["model"] = {
-            "num_leaves": self.trial.suggest_int("num_leaves", 15, 1500),
-            "max_depth": self.trial.suggest_int("max_depth", -1, 15),
-            "min_child_samples": self.trial.suggest_int(
-                "min_child_samples", 200, 10000, step=100
-            ),
-            "min_split_gain": self.trial.suggest_float("min_split_gain", 0, 15),
-            # "subsample": self.trial.suggest_float("subsample", 0.2, 1),
-            # "colsample_bytree": self.trial.suggest_float(
-            #     "colsample_bytree", 0.2, 1
-            # ),
+            "num_leaves": self.trial.suggest_int("num_leaves", 15, 100),
+            "max_depth": self.trial.suggest_int("max_depth", 3, 20),
+            "min_child_samples": self.trial.suggest_int("min_child_samples", 2, 5),
         }
 
 
@@ -291,7 +272,7 @@ class SPCA_LR_CFG(HyperparameterConfig):
             "pca": {
                 "method": "spca",
                 "n_components": 15,
-                "alpha": 0.1,
+                "alpha": 0.01,
             },
         }
 
@@ -327,7 +308,7 @@ class GSPCA_LR_CFG(HyperparameterConfig):
             "pca": {
                 "method": "gspca",
                 "n_components": 15,
-                "alpha": 5,
+                "alpha": 1,
             },
         }
 

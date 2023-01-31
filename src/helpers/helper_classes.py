@@ -356,6 +356,8 @@ class GeneSPCA(BaseEstimator, TransformerMixin):
             diff = self._max_diff(B_old, B)
             diff_improve = np.abs(diff - diff_old)
 
+            # print(diff)
+
             # Update A (step 3)
             A_old = A
             Un, s, Vnt = np.linalg.svd(XtX @ B, full_matrices=False)
@@ -413,11 +415,10 @@ class AddFeatureNames(BaseSelector):
                 f"number of features in feature_names ({len(self.feature_names)})."
             )
 
-        X = pd.DataFrame(X, columns=self.feature_names)
-
         return self
 
     def transform(self, X: pd.DataFrame) -> pd.DataFrame:
         """Transforms the data."""
-        X = pd.DataFrame(X, columns=self.feature_names)
+        X = pd.DataFrame(X)
+        X.columns = self.feature_names
         return X
