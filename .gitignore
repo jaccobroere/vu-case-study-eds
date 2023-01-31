@@ -1,6 +1,6 @@
 .venv/
 venv/
-*.csv
+data/*.csv
 *.code-workspace
 .vscode/
 *.zip
@@ -19,3 +19,4 @@ dist/
 *.lib
 .DS_Store
 data/microarray-data
+

@@ -18,14 +18,25 @@ from itertools import repeat
 
 from multiprocessing import Pool
 
+
 class EnetSPCA(BaseEstimator, TransformerMixin):
     """
     SKLearn compatible transformer implementing the SPCA algorithm as described in "Sparse Principal Component Analysis" Zou et al (2006)
     """
-    def __init__(self, n_comps=20, max_iter=10000, tol=0.00001, alpha = 0.1, l1_ratio = 0.5, use_sklearn = True, n_jobs = 0):
+
+    def __init__(
+        self,
+        n_components=20,
+        max_iter=10000,
+        tol=0.00001,
+        alpha=0.1,
+        l1_ratio=0.5,
+        use_sklearn=True,
+        n_jobs=0,
+    ):
         self.max_iter = max_iter
         self.tol = tol
-        self.n_comps = n_comps
+        self.n_components = n_components
         self.alpha = alpha
         self.l1_ratio = l1_ratio
         self.loadings = None
@@ -36,9 +47,9 @@ class EnetSPCA(BaseEstimator, TransformerMixin):
         self.n_jobs = n_jobs
 
     def fit(self, X, y=None, verbose=0):
-        
+
         # Calculate total number of loadings
-        self.totloadings = self.n_comps * X.shape[1]
+        self.totloadings = self.n_components * X.shape[1]
 
         # Setup progress bar
         if verbose:
@@ -51,8 +62,8 @@ class EnetSPCA(BaseEstimator, TransformerMixin):
 
         ## Step 1: Setup first iteration
         U, _, Vt = np.linalg.svd(X, full_matrices=False)
-        A = Vt.T[:, :self.n_comps]
-        B = np.zeros((A[:, 0].shape[0], self.n_comps))
+        A = Vt.T[:, : self.n_components]
+        B = np.zeros((A[:, 0].shape[0], self.n_components))
         XtX = X.T @ X
         Sig_root = sqrtm(XtX)
         Sig_root = Sig_root.real
@@ -66,9 +77,7 @@ class EnetSPCA(BaseEstimator, TransformerMixin):
         iter = 0
 
         ## Loop of step 2 and 3 until convergence / maxiter:
-        while (
-            iter < self.max_iter and diff > self.tol and diff_nonimprove < 5
-        ):
+        while iter < self.max_iter and diff > self.tol and diff_nonimprove < 5:
             B_old = np.copy(B)
 
             ## Update B (step 2*)
@@ -85,21 +94,34 @@ class EnetSPCA(BaseEstimator, TransformerMixin):
                         threads = self.n_jobs
 
                     # Setup thread pool using a starmap
-                    map_arr = list(range(self.n_comps))
+                    map_arr = list(range(self.n_components))
                     second_arg = A
                     third_arg = Sig_root
                     with Pool(threads) as pool:
-                        B = np.array(pool.starmap(self._enet_criterion, zip(map_arr, repeat(second_arg), repeat(third_arg))))
+                        B = np.array(
+                            pool.starmap(
+                                self._enet_criterion,
+                                zip(map_arr, repeat(second_arg), repeat(third_arg)),
+                            )
+                        )
                         B = B.T
 
                 else:
-                    for i in range(self.n_comps):
-                        B[:, i] = ElasticNet(alpha = self.alpha, fit_intercept=False, max_iter = 10000).fit(Sig_root, Sig_root @ A[:, i]).coef_
-            
+                    for i in range(self.n_components):
+                        B[:, i] = (
+                            ElasticNet(
+                                alpha=self.alpha, fit_intercept=False, max_iter=10000
+                            )
+                            .fit(Sig_root, Sig_root @ A[:, i])
+                            .coef_
+                        )
+
             else:
                 # Scipy implementation, basically not-runnable due to time constraints.
-                for i in range(self.n_comps):
-                    B[:, i] = minimize(self._criterion, np.zeros(A[:, i].shape[0]), args=(XtX, A[:, i]))
+                for i in range(self.n_components):
+                    B[:, i] = minimize(
+                        self._criterion, np.zeros(A[:, i].shape[0]), args=(XtX, A[:, i])
+                    )
                     print(i)
 
             # Monitor change
@@ -139,12 +161,20 @@ class EnetSPCA(BaseEstimator, TransformerMixin):
         for i in range(X.shape[1]):
             X[:, i] = X[:, i] / np.maximum(np.linalg.norm(X[:, i]), 1)
         return X
-    
+
     def _criterion(self, x, XtX, alpha_j):
-        return (alpha_j - x).T @ XtX @ (alpha_j - x) + self.alpha * self.l1_ratio * np.linalg.norm(x, 1) + 0.5 * self.alpha * (1 - self.l1_ratio) * np.linalg.norm(x, 2)
+        return (
+            (alpha_j - x).T @ XtX @ (alpha_j - x)
+            + self.alpha * self.l1_ratio * np.linalg.norm(x, 1)
+            + 0.5 * self.alpha * (1 - self.l1_ratio) * np.linalg.norm(x, 2)
+        )
 
     def _enet_criterion(self, i, A, Sig_root):
-        return ElasticNet(alpha = self.alpha, fit_intercept=False, max_iter = 10000).fit(Sig_root, Sig_root @ A[:, i]).coef_
+        return (
+            ElasticNet(alpha=self.alpha, fit_intercept=False, max_iter=10000)
+            .fit(Sig_root, Sig_root @ A[:, i])
+            .coef_
+        )
 
 
 class LoadingsSPCA(SparsePCA):
@@ -275,7 +305,15 @@ class GeneSPCA(BaseEstimator, TransformerMixin):
     for gene expression data as described in "Sparse Principal Component Analysis" Zou et al (2006)
     """
 
-    def __init__(self, n_comps=20, max_iter=10000, tol=0.0001, improve_tol=0.00001, l1=5, alpha = None):
+    def __init__(
+        self,
+        n_components=20,
+        max_iter=10000,
+        tol=0.0001,
+        improve_tol=0.00001,
+        l1=5,
+        alpha=None,
+    ):
         self.max_iter = max_iter
         self.tol = tol
         self.improve_tol = improve_tol
