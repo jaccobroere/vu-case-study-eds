@@ -63,7 +63,6 @@ def run_all_optimizations(
         if name.split("_")[0] == "GSPCA":
             cfg.params["pca"]["alpha"] = alpha_setter(dataset)
 
-        print(f'Hyperparameter config: {cfg.params["pca"]["alpha"]}')
         optimizer = OptunaOptimzation(
             X_train,
             y_train,
