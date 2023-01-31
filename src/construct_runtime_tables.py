@@ -9,7 +9,7 @@ import os
 import time
 
 # helper functions
-from helpers.helper_classes import Gene_SPCA, EnetSPCA
+from helpers.helper_classes import GeneSPCA, EnetSPCA
 from helpers.helper_functions import get_regularisation_value
 
 # sklearn
@@ -32,10 +32,10 @@ data = load(config['PATH']['DATA_DIR'] + '/microarray-data-dict.lib')
 
 # Relevant transformations
 def get_gene_spca(n_components, random_state, alpha = 10):
-    return Gene_SPCA(n_comps = n_components, l1= alpha, tol = 0.001)
+    return GeneSPCA(n_components = n_components, l1= alpha, tol = 0.001)
 
 def get_spca(n_components, random_state, alpha = 0.001):
-    return EnetSPCA(n_comps=n_components, alpha = alpha, tol = 0.001)
+    return EnetSPCA(n_components=n_components, alpha = alpha, tol = 0.001)
 
 def get_pca(n_components, random_state):
     return PCA(n_components=n_components, random_state=random_state)
@@ -45,7 +45,7 @@ def get_pca(n_components, random_state):
 ################################################################################
 
 # Set datasets
-datasets = ['chin', 'chowdary', 'gravier', 'west']
+datasets = ['sorlie']
 N_TIMINGS = 3
 N_JOBS = -1
 n_components_list = [5]

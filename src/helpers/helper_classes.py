@@ -23,10 +23,11 @@ class EnetSPCA(BaseEstimator, TransformerMixin):
     """
     SKLearn compatible transformer implementing the SPCA algorithm as described in "Sparse Principal Component Analysis" Zou et al (2006)
     """
-    def __init__(self, n_comps=20, max_iter=10000, tol=0.00001, alpha = 0.1, l1_ratio = 0.5, use_sklearn = True):
+    def __init__(self, n_components=20, max_iter=10000, tol=0.00001, alpha = 0.1, l1_ratio = 0.5, use_sklearn = True):
         self.max_iter = max_iter
         self.tol = tol
         self.n_components = n_components
+        self.n_comps = n_components
         self.alpha = alpha
         self.l1_ratio = l1_ratio
         self.loadings = None
@@ -301,6 +302,7 @@ class GeneSPCA(BaseEstimator, TransformerMixin):
         self.tol = tol
         self.improve_tol = improve_tol
         self.n_components = n_components
+        self.n_comps = n_components
         self.alpha = alpha
         self.loadings = None
         self.hasFit = False
