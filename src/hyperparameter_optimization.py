@@ -5,6 +5,7 @@ import json
 import datetime as dt
 from tqdm import tqdm
 import optuna
+import logging
 from helpers.config.hyperparameters import OptunaOptimzation
 from helpers.config.hyperparameters import (
     PCA_LGBM_CFG,
@@ -14,8 +15,6 @@ from helpers.config.hyperparameters import (
     SPCA_LR_CFG,
     GSPCA_LR_CFG,
 )
-
-optuna.logging.set_verbosity(optuna.logging.INFO)
 
 # Read config.ini file
 config = configparser.ConfigParser()
@@ -27,12 +26,24 @@ OPTUNA_DIR = config["LOGGING"]["OPTUNA_DIR"]
 DATA_DIR = config["PATH"]["DATA_DIR"]
 DATASETS = json.loads(config.get("PARAMS", "DATASETS"))
 
+# Set logger for Optuna
+timestamp = dt.datetime.now().strftime("%Y%m%d_%H%M")
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
+logger.addHandler(
+    logging.FileHandler(
+        os.path.join(OPTUNA_DIR, f"{timestamp}_optuna_run.log"), mode="a"
+    )
+)
+optuna.logging.enable_propagation()
+optuna.logging.disable_default_handler()
+
 
 def init_hyperparameter_configs():
     hyperparameter_configs = {
-        "PCA_LGBM": PCA_LGBM_CFG(),
-        "SPCA_LGBM": SPCA_LGBM_CFG(),
-        "GSPCA_LGBM": GSPCA_LGBM_CFG(),
+        # "PCA_LGBM": PCA_LGBM_CFG(),
+        # "SPCA_LGBM": SPCA_LGBM_CFG(),
+        # "GSPCA_LGBM": GSPCA_LGBM_CFG(),
         "PCA_LR": PCA_LR_CFG(),
         "SPCA_LR": SPCA_LR_CFG(),
         "GSPCA_LR": GSPCA_LR_CFG(),
@@ -65,6 +76,7 @@ def run_all_optimizations(
             path=f"{OPTUNA_DIR}{dataset}/{timestamp}_{name}_optuna_run.csv"
         )
         study_dict[name] = optimizer.study
+        print(f"Best score: {optimizer.study.best_value}")
 
     return study_dict
 
@@ -79,5 +91,5 @@ if __name__ == "__main__":
         print(f"X_train shape: {X_train.shape}")
 
         run_all_optimizations(
-            X_train, y_train, init_hyperparameter_configs(), dataset, n_trials=50
+            X_train, y_train, init_hyperparameter_configs(), dataset, n_trials=100
         )

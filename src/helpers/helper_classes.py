@@ -130,7 +130,7 @@ class EnetSPCA(BaseEstimator, TransformerMixin):
             if diff_old < diff:
                 diff_nonimprove += 1
 
-            print(diff)
+            # print(diff)
 
             # Update A (step 3)
             # A_old = A

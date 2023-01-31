@@ -122,11 +122,11 @@ class PCA_LGBM_CFG(HyperparameterConfig):
                 "cv": self.cv,
                 "sampler": optuna.samplers.TPESampler(seed=self.random_state),
                 # "pruner": optuna.pruners.MedianPruner(),
-                "scoring": "f1",
+                "scoring": "accuracy",
             },
             "pca": {
                 "method": "pca",
-                "n_components": 25,
+                "n_components": 15,
             },
         }
 
@@ -164,9 +164,9 @@ class SPCA_LGBM_CFG(HyperparameterConfig):
                 "cv": self.cv,
                 "sampler": optuna.samplers.TPESampler(seed=self.random_state),
                 # "pruner": optuna.pruners.MedianPruner(),
-                "scoring": "f1",
+                "scoring": "accuracy",
             },
-            "pca": {"method": "spca", "n_components": 25, "alpha": 0.01},
+            "pca": {"method": "spca", "n_components": 15, "alpha": 0.01},
         }
 
     def init_params(self):
@@ -203,11 +203,11 @@ class GSPCA_LGBM_CFG(HyperparameterConfig):
                 "cv": self.cv,
                 "sampler": optuna.samplers.TPESampler(seed=self.random_state),
                 # "pruner": optuna.pruners.MedianPruner(),
-                "scoring": "f1",
+                "scoring": "accuracy",
             },
             "pca": {
                 "method": "gspca",
-                "n_components": 25,
+                "n_components": 15,
                 "alpha": 5,
             },
         }
@@ -249,11 +249,11 @@ class PCA_LR_CFG(HyperparameterConfig):
                 "cv": self.cv,
                 "sampler": optuna.samplers.TPESampler(seed=self.random_state),
                 # "pruner": optuna.pruners.MedianPruner(),
-                "scoring": "f1",
+                "scoring": "accuracy",
             },
             "pca": {
                 "method": "pca",
-                "n_components": 25,
+                "n_components": 15,
             },
         }
 
@@ -263,11 +263,9 @@ class PCA_LR_CFG(HyperparameterConfig):
             raise ValueError("Trial is not set. Please set trial first.")
 
         # Set parameters
-        self.params = {
-            "model": {
-                "l1_ratio": self.trial.suggest_float("l1_ratio", 0, 1),
-                "C": self.trial.suggest_float("C", 0.01, 1, log=True),
-            }
+        self.params["model"] = {
+            "l1_ratio": self.trial.suggest_float("l1_ratio", 0, 1),
+            "C": self.trial.suggest_float("C", 0.01, 1, log=True),
         }
 
 
@@ -288,11 +286,11 @@ class SPCA_LR_CFG(HyperparameterConfig):
                 "cv": self.cv,
                 "sampler": optuna.samplers.TPESampler(seed=self.random_state),
                 # "pruner": optuna.pruners.MedianPruner(),
-                "scoring": "f1",
+                "scoring": "accuracy",
             },
             "pca": {
                 "method": "spca",
-                "n_components": 25,
+                "n_components": 15,
                 "alpha": 0.01,
             },
         }
@@ -301,13 +299,10 @@ class SPCA_LR_CFG(HyperparameterConfig):
         # Check if trial is set
         if self.trial is None:
             raise ValueError("Trial is not set. Please set trial first.")
-
         # Set parameters
-        self.params = {
-            "model": {
-                "l1_ratio": self.trial.suggest_float("l1_ratio", 0, 1),
-                "C": self.trial.suggest_float("C", 0.01, 1, log=True),
-            }
+        self.params["model"] = {
+            "l1_ratio": self.trial.suggest_float("l1_ratio", 0, 1),
+            "C": self.trial.suggest_float("C", 0.01, 1, log=True),
         }
 
 
@@ -327,11 +322,11 @@ class GSPCA_LR_CFG(HyperparameterConfig):
             "other": {
                 "cv": self.cv,
                 "sampler": optuna.samplers.TPESampler(seed=self.random_state),
-                "scoring": "f1",
+                "scoring": "accuracy",
             },
             "pca": {
                 "method": "gspca",
-                "n_components": 25,
+                "n_components": 15,
                 "alpha": 5,
             },
         }
@@ -342,9 +337,7 @@ class GSPCA_LR_CFG(HyperparameterConfig):
             raise ValueError("Trial is not set. Please set trial first.")
 
         # Set parameters
-        self.params = {
-            "model": {
-                "l1_ratio": self.trial.suggest_float("l1_ratio", 0, 1),
-                "C": self.trial.suggest_float("C", 0.01, 1, log=True),
-            }
+        self.params["model"] = {
+            "l1_ratio": self.trial.suggest_float("l1_ratio", 0, 1),
+            "C": self.trial.suggest_float("C", 0.01, 1, log=True),
         }
