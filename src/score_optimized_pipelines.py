@@ -17,6 +17,7 @@ from helpers.config.hyperparameters import (
     SPCA_LR_CFG,
     GSPCA_LR_CFG,
 )
+from sklearn.pipeline import Pipeline
 
 
 # Read config.ini file
@@ -49,11 +50,11 @@ def parse_name_from_csv(path) -> str:
 def init_hyperparameter_configs():
     hyperparameter_configs = {
         "PCA_LGBM": PCA_LGBM_CFG(),
-        "SPCA_LGBM": SPCA_LGBM_CFG(),
-        "GSPCA_LGBM": GSPCA_LGBM_CFG(),
+        # "SPCA_LGBM": SPCA_LGBM_CFG(),
+        # "GSPCA_LGBM": GSPCA_LGBM_CFG(),
         "PCA_LR": PCA_LR_CFG(),
-        "SPCA_LR": SPCA_LR_CFG(),
-        "GSPCA_LR": GSPCA_LR_CFG(),
+        # "SPCA_LR": SPCA_LR_CFG(),
+        # "GSPCA_LR": GSPCA_LR_CFG(),
     }
     return hyperparameter_configs
 

@@ -1,6 +1,7 @@
 import configparser
 import os
 from joblib import load
+import json
 import datetime as dt
 from tqdm import tqdm
 import optuna
@@ -24,6 +25,7 @@ os.chdir(config["PATH"]["ROOT_DIR"])
 
 OPTUNA_DIR = config["LOGGING"]["OPTUNA_DIR"]
 DATA_DIR = config["PATH"]["DATA_DIR"]
+DATASETS = json.loads(config.get("PARAMS", "DATASETS"))
 
 
 def init_hyperparameter_configs():
@@ -69,12 +71,11 @@ def run_all_optimizations(
 
 if __name__ == "__main__":
     data = load(DATA_DIR + "/microarray-data-dict.lib")
-    dataset_list = ["chin", "chowdary", "gravier", "west"]
 
-    for dataset in dataset_list:
+    for dataset in DATASETS:
         print(f"Dataset: {dataset}")
         X_train = data[dataset]["none"]["X_train"]
-        y_train = data[dataset]["none"]["y_train"].to_numpy().ravel()
+        y_train = data[dataset]["none"]["y_train"].iloc[:, 0]
         print(f"X_train shape: {X_train.shape}")
 
         run_all_optimizations(
