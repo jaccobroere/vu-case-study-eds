@@ -306,19 +306,13 @@ class GeneSPCA(BaseEstimator, TransformerMixin):
     """
 
     def __init__(
-        self,
-        n_components=20,
-        max_iter=10000,
-        tol=0.0001,
-        improve_tol=0.00001,
-        l1=5,
-        alpha=None,
+        self, n_components=20, max_iter=10000, tol=0.0001, improve_tol=0.00001, alpha=5
     ):
         self.max_iter = max_iter
         self.tol = tol
         self.improve_tol = improve_tol
         self.n_components = n_components
-        self.l1 = l1
+        self.alpha = alpha
         self.loadings = None
         self.hasFit = False
         self.nonzero = -1
@@ -355,7 +349,7 @@ class GeneSPCA(BaseEstimator, TransformerMixin):
             # Update B (step 2*)
             input = A.T @ XtX
             for i in range(self.n_components):
-                B[:, i] = self._soft_threshold(input[i, :], self.l1)
+                B[:, i] = self._soft_threshold(input[i, :], self.alpha)
 
             # Monitor change
             diff_old = diff
