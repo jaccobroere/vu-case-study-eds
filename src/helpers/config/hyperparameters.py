@@ -4,6 +4,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import ShuffleSplit
 from helpers.helper_functions import get_pca_pipeline
 from sklearn.model_selection import cross_val_score
+from sklearn.ensemble import RandomForestClassifier
 
 
 class OptunaOptimzation:
@@ -35,14 +36,10 @@ class OptunaOptimzation:
         params = self.cfg.get_params()
         model = self.cfg.get_model()
 
-        # Make pipeline
-        pca = get_pca_pipeline(params.get("pca")["method"], **params.get("pca_params"))
-        X = pca.fit_transform(X_train)
-
         # Perform cross validation
         cv_score = cross_val_score(
             model,
-            X,
+            X_train,
             y_train,
             cv=params.get("other").get("cv"),
             n_jobs=params.get("other").get("n_jobs"),
@@ -57,6 +54,12 @@ class OptunaOptimzation:
             study_name=self.name,
         )
 
+        # Perform (G)(S)PCA
+        params = self.cfg.get_params()
+        pca = get_pca_pipeline(**params.get("pca"))
+        self.X_train = pca.fit_transform(self.X_train)
+
+        # Optimize model parameters
         self.study.optimize(
             lambda trial: self._objective(
                 trial,
@@ -113,17 +116,18 @@ class PCA_LGBM_CFG(HyperparameterConfig):
             "static": {
                 "n_jobs": -1,
                 "boosting_type": "gbdt",
-                "n_estimators": 500,
-                "learning_rate": 0.03,
+                "learning_rate": 0.1,
+                "n_estimators": 100,
             },
             "other": {
                 "cv": self.cv,
                 "sampler": optuna.samplers.TPESampler(seed=self.random_state),
                 # "pruner": optuna.pruners.MedianPruner(),
-                "scoring": "f1",
+                "scoring": "accuracy",
             },
             "pca": {
                 "method": "pca",
+                "n_components": 15,
             },
         }
 
@@ -134,20 +138,9 @@ class PCA_LGBM_CFG(HyperparameterConfig):
 
         # Set parameters
         self.params["model"] = {
-            "num_leaves": self.trial.suggest_int("num_leaves", 15, 1500),
-            "max_depth": self.trial.suggest_int("max_depth", -1, 15),
-            "min_child_samples": self.trial.suggest_int(
-                "min_child_samples", 200, 10000, step=100
-            ),
-            "min_split_gain": self.trial.suggest_float("min_split_gain", 0, 15),
-            # "subsample": self.trial.suggest_float("subsample", 0.2, 1),
-            # "colsample_bytree": self.trial.suggest_float(
-            #     "colsample_bytree", 0.2, 1
-            # ),
-        }
-
-        self.params["pca_params"] = {
-            "n_components": self.trial.suggest_int("n_components", 5, 30),
+            "num_leaves": self.trial.suggest_int("num_leaves", 15, 100),
+            "max_depth": self.trial.suggest_int("max_depth", 3, 20),
+            "min_child_samples": self.trial.suggest_int("min_child_samples", 2, 5),
         }
 
 
@@ -158,18 +151,16 @@ class SPCA_LGBM_CFG(HyperparameterConfig):
             "static": {
                 "n_jobs": -1,
                 "boosting_type": "gbdt",
-                "n_estimators": 500,
-                "learning_rate": 0.03,
+                "learning_rate": 0.1,
+                "n_estimators": 100,
             },
             "other": {
                 "cv": self.cv,
                 "sampler": optuna.samplers.TPESampler(seed=self.random_state),
                 # "pruner": optuna.pruners.MedianPruner(),
-                "scoring": "f1",
+                "scoring": "accuracy",
             },
-            "pca": {
-                "method": "spca",
-            },
+            "pca": {"method": "spca", "n_components": 15, "alpha": 0.01},
         }
 
     def init_params(self):
@@ -178,22 +169,11 @@ class SPCA_LGBM_CFG(HyperparameterConfig):
             raise ValueError("Trial is not set. Please set trial first.")
 
         # Set parameters
+        # Set parameters
         self.params["model"] = {
-            "num_leaves": self.trial.suggest_int("num_leaves", 15, 1500),
-            "max_depth": self.trial.suggest_int("max_depth", -1, 15),
-            "min_child_samples": self.trial.suggest_int(
-                "min_child_samples", 200, 10000, step=100
-            ),
-            "min_split_gain": self.trial.suggest_float("min_split_gain", 0, 15),
-            # "subsample": self.trial.suggest_float("subsample", 0.2, 1),
-            # "colsample_bytree": self.trial.suggest_float(
-            #     "colsample_bytree", 0.2, 1
-            # ),
-        }
-
-        self.params["pca_params"] = {
-            "n_components": self.trial.suggest_int("n_components", 5, 30),
-            "alpha": self.trial.suggest_float("alpha", 0.5, 5),
+            "num_leaves": self.trial.suggest_int("num_leaves", 15, 100),
+            "max_depth": self.trial.suggest_int("max_depth", 3, 20),
+            "min_child_samples": self.trial.suggest_int("min_child_samples", 2, 5),
         }
 
 
@@ -204,17 +184,19 @@ class GSPCA_LGBM_CFG(HyperparameterConfig):
             "static": {
                 "n_jobs": -1,
                 "boosting_type": "gbdt",
-                "n_estimators": 500,
-                "learning_rate": 0.03,
+                "learning_rate": 0.1,
+                "n_estimators": 100,
             },
             "other": {
                 "cv": self.cv,
                 "sampler": optuna.samplers.TPESampler(seed=self.random_state),
                 # "pruner": optuna.pruners.MedianPruner(),
-                "scoring": "f1",
+                "scoring": "accuracy",
             },
             "pca": {
                 "method": "gspca",
+                "n_components": 15,
+                "alpha": 5,
             },
         }
 
@@ -225,21 +207,9 @@ class GSPCA_LGBM_CFG(HyperparameterConfig):
 
         # Set parameters
         self.params["model"] = {
-            "num_leaves": self.trial.suggest_int("num_leaves", 15, 1500),
-            "max_depth": self.trial.suggest_int("max_depth", -1, 15),
-            "min_child_samples": self.trial.suggest_int(
-                "min_child_samples", 200, 10000, step=100
-            ),
-            "min_split_gain": self.trial.suggest_float("min_split_gain", 0, 15),
-            # "subsample": self.trial.suggest_float("subsample", 0.2, 1),
-            # "colsample_bytree": self.trial.suggest_float(
-            #     "colsample_bytree", 0.2, 1
-            # ),
-        }
-
-        self.params["pca_params"] = {
-            "n_components": self.trial.suggest_int("n_components", 5, 30),
-            "alpha": self.trial.suggest_float("alpha", 1, 20),
+            "num_leaves": self.trial.suggest_int("num_leaves", 15, 100),
+            "max_depth": self.trial.suggest_int("max_depth", 3, 20),
+            "min_child_samples": self.trial.suggest_int("min_child_samples", 2, 5),
         }
 
 
@@ -260,10 +230,11 @@ class PCA_LR_CFG(HyperparameterConfig):
                 "cv": self.cv,
                 "sampler": optuna.samplers.TPESampler(seed=self.random_state),
                 # "pruner": optuna.pruners.MedianPruner(),
-                "scoring": "f1",
+                "scoring": "accuracy",
             },
             "pca": {
                 "method": "pca",
+                "n_components": 15,
             },
         }
 
@@ -273,14 +244,9 @@ class PCA_LR_CFG(HyperparameterConfig):
             raise ValueError("Trial is not set. Please set trial first.")
 
         # Set parameters
-        self.params = {
-            "model": {
-                "l1_ratio": self.trial.suggest_float("l1_ratio", 0, 1),
-                "C": self.trial.suggest_float("C", 0.01, 1, log=True),
-            },
-            "pca_params": {
-                "n_components": self.trial.suggest_int("n_components", 5, 30),
-            },
+        self.params["model"] = {
+            "l1_ratio": self.trial.suggest_float("l1_ratio", 0, 1),
+            "C": self.trial.suggest_float("C", 0.01, 1, log=True),
         }
 
 
@@ -301,10 +267,12 @@ class SPCA_LR_CFG(HyperparameterConfig):
                 "cv": self.cv,
                 "sampler": optuna.samplers.TPESampler(seed=self.random_state),
                 # "pruner": optuna.pruners.MedianPruner(),
-                "scoring": "f1",
+                "scoring": "accuracy",
             },
             "pca": {
                 "method": "spca",
+                "n_components": 15,
+                "alpha": 0.01,
             },
         }
 
@@ -312,17 +280,10 @@ class SPCA_LR_CFG(HyperparameterConfig):
         # Check if trial is set
         if self.trial is None:
             raise ValueError("Trial is not set. Please set trial first.")
-
         # Set parameters
-        self.params = {
-            "model": {
-                "l1_ratio": self.trial.suggest_float("l1_ratio", 0, 1),
-                "C": self.trial.suggest_float("C", 0.01, 1, log=True),
-            },
-            "pca_params": {
-                "n_components": self.trial.suggest_int("n_components", 5, 30),
-                "alpha": self.trial.suggest_float("alpha", 0.5, 5),
-            },
+        self.params["model"] = {
+            "l1_ratio": self.trial.suggest_float("l1_ratio", 0, 1),
+            "C": self.trial.suggest_float("C", 0.01, 1, log=True),
         }
 
 
@@ -342,10 +303,12 @@ class GSPCA_LR_CFG(HyperparameterConfig):
             "other": {
                 "cv": self.cv,
                 "sampler": optuna.samplers.TPESampler(seed=self.random_state),
-                "scoring": "f1",
+                "scoring": "accuracy",
             },
             "pca": {
                 "method": "gspca",
+                "n_components": 15,
+                "alpha": 1,
             },
         }
 
@@ -355,13 +318,7 @@ class GSPCA_LR_CFG(HyperparameterConfig):
             raise ValueError("Trial is not set. Please set trial first.")
 
         # Set parameters
-        self.params = {
-            "model": {
-                "l1_ratio": self.trial.suggest_float("l1_ratio", 0, 1),
-                "C": self.trial.suggest_float("C", 0.01, 1, log=True),
-            },
-            "pca_params": {
-                "n_components": self.trial.suggest_int("n_components", 5, 30),
-                "alpha": self.trial.suggest_float("alpha", 1, 20),
-            },
+        self.params["model"] = {
+            "l1_ratio": self.trial.suggest_float("l1_ratio", 0, 1),
+            "C": self.trial.suggest_float("C", 0.01, 1, log=True),
         }

@@ -1,0 +1,44 @@
+A new study created in memory with name: PCA_LGBM
+Trial 0 failed with parameters: {'num_leaves': 583, 'max_depth': 3, 'learning_rate': 0.05369250277793083, 'n_estimators': 457, 'colsample_bytree': 0.6748190734545926} because of the following error: TypeError("lightgbm.sklearn.LGBMModel.set_params() got multiple values for keyword argument 'learning_rate'").
+Traceback (most recent call last):
+  File "/Users/jacco/Documents/repos/vu-case-study-eds/venv/lib/python3.10/site-packages/optuna/study/_optimize.py", line 200, in _run_trial
+    value_or_values = func(trial)
+  File "/Users/jacco/Documents/repos/vu-case-study-eds/src/helpers/config/hyperparameters.py", line 64, in <lambda>
+    lambda trial: self._objective(
+  File "/Users/jacco/Documents/repos/vu-case-study-eds/src/helpers/config/hyperparameters.py", line 37, in _objective
+    model = self.cfg.get_model()
+  File "/Users/jacco/Documents/repos/vu-case-study-eds/src/helpers/config/hyperparameters.py", line 104, in get_model
+    return self.model.set_params(
+TypeError: lightgbm.sklearn.LGBMModel.set_params() got multiple values for keyword argument 'learning_rate'
+Trial 0 failed with value None.
+A new study created in memory with name: PCA_LGBM
+Trial 0 failed with parameters: {'num_leaves': 658, 'max_depth': 8, 'learning_rate': 0.03370443615398994, 'n_estimators': 70, 'colsample_bytree': 0.4749902785432718} because of the following error: TypeError("lightgbm.sklearn.LGBMModel.set_params() got multiple values for keyword argument 'learning_rate'").
+Traceback (most recent call last):
+  File "/Users/jacco/Documents/repos/vu-case-study-eds/venv/lib/python3.10/site-packages/optuna/study/_optimize.py", line 200, in _run_trial
+    value_or_values = func(trial)
+  File "/Users/jacco/Documents/repos/vu-case-study-eds/src/helpers/config/hyperparameters.py", line 64, in <lambda>
+    lambda trial: self._objective(
+  File "/Users/jacco/Documents/repos/vu-case-study-eds/src/helpers/config/hyperparameters.py", line 37, in _objective
+    model = self.cfg.get_model()
+  File "/Users/jacco/Documents/repos/vu-case-study-eds/src/helpers/config/hyperparameters.py", line 104, in get_model
+    return self.model.set_params(
+TypeError: lightgbm.sklearn.LGBMModel.set_params() got multiple values for keyword argument 'learning_rate'
+Trial 0 failed with value None.
+A new study created in memory with name: PCA_LGBM
+Trial 0 finished with value: 0.8166666666666667 and parameters: {'num_leaves': 858, 'max_depth': 0, 'learning_rate': 0.04550238110724197, 'n_estimators': 356, 'colsample_bytree': 0.9255167418356636}. Best is trial 0 with value: 0.8166666666666667.
+Trial 1 finished with value: 0.8 and parameters: {'num_leaves': 893, 'max_depth': 4, 'learning_rate': 0.010688782453321005, 'n_estimators': 996, 'colsample_bytree': 0.7510903975900161}. Best is trial 0 with value: 0.8166666666666667.
+Trial 2 finished with value: 0.8 and parameters: {'num_leaves': 963, 'max_depth': 3, 'learning_rate': 0.2142273432643721, 'n_estimators': 161, 'colsample_bytree': 0.6217922276122367}. Best is trial 0 with value: 0.8166666666666667.
+Trial 3 finished with value: 0.7666666666666667 and parameters: {'num_leaves': 906, 'max_depth': 4, 'learning_rate': 0.22823342178764242, 'n_estimators': 687, 'colsample_bytree': 0.2706715397109896}. Best is trial 0 with value: 0.8166666666666667.
+Trial 4 finished with value: 0.8166666666666667 and parameters: {'num_leaves': 681, 'max_depth': 9, 'learning_rate': 0.036043444225110445, 'n_estimators': 708, 'colsample_bytree': 0.6514865703453416}. Best is trial 0 with value: 0.8166666666666667.
+Trial 5 finished with value: 0.8 and parameters: {'num_leaves': 629, 'max_depth': 5, 'learning_rate': 0.04975451437627349, 'n_estimators': 82, 'colsample_bytree': 0.6303760411382753}. Best is trial 0 with value: 0.8166666666666667.
+Trial 6 finished with value: 0.7833333333333334 and parameters: {'num_leaves': 57, 'max_depth': 10, 'learning_rate': 0.02650288640032842, 'n_estimators': 581, 'colsample_bytree': 0.34873354260524214}. Best is trial 0 with value: 0.8166666666666667.
+Trial 7 finished with value: 0.8166666666666667 and parameters: {'num_leaves': 237, 'max_depth': 13, 'learning_rate': 0.01804282479164682, 'n_estimators': 749, 'colsample_bytree': 0.5323333031754558}. Best is trial 0 with value: 0.8166666666666667.
+Trial 8 finished with value: 0.8333333333333334 and parameters: {'num_leaves': 606, 'max_depth': 6, 'learning_rate': 0.10035607646148317, 'n_estimators': 942, 'colsample_bytree': 0.641583678002021}. Best is trial 8 with value: 0.8333333333333334.
+Trial 9 finished with value: 0.7833333333333333 and parameters: {'num_leaves': 1043, 'max_depth': -1, 'learning_rate': 0.1906464059206956, 'n_estimators': 246, 'colsample_bytree': 0.29962459383302104}. Best is trial 8 with value: 0.8333333333333334.
+Trial 10 finished with value: 0.8166666666666667 and parameters: {'num_leaves': 1343, 'max_depth': 15, 'learning_rate': 0.09898382027102216, 'n_estimators': 906, 'colsample_bytree': 0.9758896585678455}. Best is trial 8 with value: 0.8333333333333334.
+Trial 11 finished with value: 0.8166666666666667 and parameters: {'num_leaves': 414, 'max_depth': -1, 'learning_rate': 0.0798076598128792, 'n_estimators': 370, 'colsample_bytree': 0.9702295513264512}. Best is trial 8 with value: 0.8333333333333334.
+Trial 12 finished with value: 0.8 and parameters: {'num_leaves': 1266, 'max_depth': 2, 'learning_rate': 0.07807920622078147, 'n_estimators': 405, 'colsample_bytree': 0.852522475036366}. Best is trial 8 with value: 0.8333333333333334.
+Trial 13 finished with value: 0.8 and parameters: {'num_leaves': 481, 'max_depth': 7, 'learning_rate': 0.12416173171313745, 'n_estimators': 450, 'colsample_bytree': 0.7738466741762269}. Best is trial 8 with value: 0.8333333333333334.
+Trial 14 finished with value: 0.8166666666666667 and parameters: {'num_leaves': 505, 'max_depth': 1, 'learning_rate': 0.04718491504986411, 'n_estimators': 310, 'colsample_bytree': 0.5266296421567538}. Best is trial 8 with value: 0.8333333333333334.
+Trial 15 finished with value: 0.8166666666666667 and parameters: {'num_leaves': 1121, 'max_depth': 8, 'learning_rate': 0.1453206030339241, 'n_estimators': 545, 'colsample_bytree': 0.8550705559870658}. Best is trial 8 with value: 0.8333333333333334.
+Trial 16 finished with value: 0.8 and parameters: {'num_leaves': 798, 'max_depth': 6, 'learning_rate': 0.0693080022675936, 'n_estimators': 895, 'colsample_bytree': 0.4136762814408812}. Best is trial 8 with value: 0.8333333333333334.
