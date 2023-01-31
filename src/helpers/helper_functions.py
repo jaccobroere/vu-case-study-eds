@@ -138,7 +138,7 @@ def get_pca_pipeline(
             max_iter=max_iter,
             n_jobs=n_jobs,
         ),
-        "gspca": GeneSPCA(n_components=n_components, l1=alpha, max_iter=max_iter),
+        "gspca": GeneSPCA(n_components=n_components, alpha=alpha, max_iter=max_iter),
     }
 
     return Pipeline(
