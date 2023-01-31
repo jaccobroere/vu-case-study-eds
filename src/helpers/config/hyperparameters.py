@@ -35,14 +35,10 @@ class OptunaOptimzation:
         params = self.cfg.get_params()
         model = self.cfg.get_model()
 
-        # Make pipeline
-        pca = get_pca_pipeline(params.get("pca")["method"], **params.get("pca_params"))
-        X = pca.fit_transform(X_train)
-
         # Perform cross validation
         cv_score = cross_val_score(
             model,
-            X,
+            X_train,
             y_train,
             cv=params.get("other").get("cv"),
             n_jobs=params.get("other").get("n_jobs"),
@@ -57,6 +53,12 @@ class OptunaOptimzation:
             study_name=self.name,
         )
 
+        # Perform (G)(S)PCA
+        params = self.cfg.get_params()
+        pca = get_pca_pipeline(**params.get("pca"))
+        self.X_train = pca.fit_transform(self.X_train)
+
+        # Optimize model parameters
         self.study.optimize(
             lambda trial: self._objective(
                 trial,
@@ -124,6 +126,7 @@ class PCA_LGBM_CFG(HyperparameterConfig):
             },
             "pca": {
                 "method": "pca",
+                "n_components": 25,
             },
         }
 
@@ -144,10 +147,6 @@ class PCA_LGBM_CFG(HyperparameterConfig):
             # "colsample_bytree": self.trial.suggest_float(
             #     "colsample_bytree", 0.2, 1
             # ),
-        }
-
-        self.params["pca_params"] = {
-            "n_components": self.trial.suggest_int("n_components", 5, 30),
         }
 
 
@@ -167,9 +166,7 @@ class SPCA_LGBM_CFG(HyperparameterConfig):
                 # "pruner": optuna.pruners.MedianPruner(),
                 "scoring": "f1",
             },
-            "pca": {
-                "method": "spca",
-            },
+            "pca": {"method": "spca", "n_components": 25, "alpha": 0.01},
         }
 
     def init_params(self):
@@ -189,11 +186,6 @@ class SPCA_LGBM_CFG(HyperparameterConfig):
             # "colsample_bytree": self.trial.suggest_float(
             #     "colsample_bytree", 0.2, 1
             # ),
-        }
-
-        self.params["pca_params"] = {
-            "n_components": self.trial.suggest_int("n_components", 5, 30),
-            "alpha": self.trial.suggest_float("alpha", 0.5, 5),
         }
 
 
@@ -215,6 +207,8 @@ class GSPCA_LGBM_CFG(HyperparameterConfig):
             },
             "pca": {
                 "method": "gspca",
+                "n_components": 25,
+                "alpha": 5,
             },
         }
 
@@ -235,11 +229,6 @@ class GSPCA_LGBM_CFG(HyperparameterConfig):
             # "colsample_bytree": self.trial.suggest_float(
             #     "colsample_bytree", 0.2, 1
             # ),
-        }
-
-        self.params["pca_params"] = {
-            "n_components": self.trial.suggest_int("n_components", 5, 30),
-            "alpha": self.trial.suggest_float("alpha", 1, 20),
         }
 
 
@@ -264,6 +253,7 @@ class PCA_LR_CFG(HyperparameterConfig):
             },
             "pca": {
                 "method": "pca",
+                "n_components": 25,
             },
         }
 
@@ -277,10 +267,7 @@ class PCA_LR_CFG(HyperparameterConfig):
             "model": {
                 "l1_ratio": self.trial.suggest_float("l1_ratio", 0, 1),
                 "C": self.trial.suggest_float("C", 0.01, 1, log=True),
-            },
-            "pca_params": {
-                "n_components": self.trial.suggest_int("n_components", 5, 30),
-            },
+            }
         }
 
 
@@ -305,6 +292,8 @@ class SPCA_LR_CFG(HyperparameterConfig):
             },
             "pca": {
                 "method": "spca",
+                "n_components": 25,
+                "alpha": 0.01,
             },
         }
 
@@ -318,11 +307,7 @@ class SPCA_LR_CFG(HyperparameterConfig):
             "model": {
                 "l1_ratio": self.trial.suggest_float("l1_ratio", 0, 1),
                 "C": self.trial.suggest_float("C", 0.01, 1, log=True),
-            },
-            "pca_params": {
-                "n_components": self.trial.suggest_int("n_components", 5, 30),
-                "alpha": self.trial.suggest_float("alpha", 0.5, 5),
-            },
+            }
         }
 
 
@@ -346,6 +331,8 @@ class GSPCA_LR_CFG(HyperparameterConfig):
             },
             "pca": {
                 "method": "gspca",
+                "n_components": 25,
+                "alpha": 5,
             },
         }
 
@@ -359,9 +346,5 @@ class GSPCA_LR_CFG(HyperparameterConfig):
             "model": {
                 "l1_ratio": self.trial.suggest_float("l1_ratio", 0, 1),
                 "C": self.trial.suggest_float("C", 0.01, 1, log=True),
-            },
-            "pca_params": {
-                "n_components": self.trial.suggest_int("n_components", 5, 30),
-                "alpha": self.trial.suggest_float("alpha", 1, 20),
-            },
+            }
         }

@@ -1,0 +1,3 @@
+number,value,datetime_start,datetime_complete,duration,params_max_depth,params_min_child_samples,params_min_split_gain,params_n_components,params_num_leaves,state
+0,0.0,2023-01-31 13:11:04.070642,2023-01-31 13:11:05.108643,0 days 00:00:01.038001,11,9400,1.622838030744853,14,42,COMPLETE
+1,0.0,2023-01-31 13:11:05.110640,2023-01-31 13:11:06.113281,0 days 00:00:01.002641,-1,6900,11.19293915405234,5,236,COMPLETE
