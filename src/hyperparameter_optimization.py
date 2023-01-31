@@ -42,11 +42,11 @@ optuna.logging.disable_default_handler()
 
 def init_hyperparameter_configs():
     hyperparameter_configs = {
-        # "PCA_LGBM": PCA_LGBM_CFG(),
-        # "SPCA_LGBM": SPCA_LGBM_CFG(),
+        "PCA_LGBM": PCA_LGBM_CFG(),
+        "SPCA_LGBM": SPCA_LGBM_CFG(),
         "GSPCA_LGBM": GSPCA_LGBM_CFG(),
-        # "PCA_LR": PCA_LR_CFG(),
-        # "SPCA_LR": SPCA_LR_CFG(),
+        "PCA_LR": PCA_LR_CFG(),
+        "SPCA_LR": SPCA_LR_CFG(),
         "GSPCA_LR": GSPCA_LR_CFG(),
     }
     return hyperparameter_configs
@@ -63,7 +63,6 @@ def run_all_optimizations(
         if name.split("_")[0] == "GSPCA":
             cfg.params["pca"]["alpha"] = alpha_setter(dataset)
 
-        print(f'Hyperparameter config: {cfg.params["pca"]["alpha"]}')
         optimizer = OptunaOptimzation(
             X_train,
             y_train,
