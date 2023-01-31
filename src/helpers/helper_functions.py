@@ -2,7 +2,7 @@ from typing import Optional, List
 import pandas as pd
 import numpy as np
 from feature_engine.selection.base_selector import BaseSelector
-from helpers.helper_classes import Gene_SPCA, LoadingsSPCA
+from helpers.helper_classes import Gene_SPCA, LoadingsSPCA, EnetSPCA
 
 def transform_data(df: pd.DataFrame):
     """Transforms the data to a format that can be used by the model.
@@ -46,7 +46,7 @@ def add_actuals(df: pd.DataFrame, actuals: pd.DataFrame, target: str = "cancer")
     return res
 
 def get_spca(alpha, n_components = 20, tol = 0.00001, max_iter = 10000, random_state = 2023):
-    spca_obj = LoadingsSPCA(alpha = alpha, max_iter = max_iter, tol = tol, n_components = n_components, n_jobs = -1, random_state=random_state)
+    spca_obj = EnetSPCA(alpha = alpha, max_iter = max_iter, tol = tol, n_comps = n_components)
     return spca_obj
 
 def get_gene_spca(l1, n_components = 20, tol = 0.00001, random_state = 2023, max_iter = 10000):
@@ -110,3 +110,30 @@ def get_data_pev(X, n_components = 20, verbose = 0, step_size = 0.5, get_transfo
         alpha_cur += step_size
     
     return nz_cols, nz_loadings, PEV_arr
+
+# Bisection search for regularization parameter that sets nonzero loadings to a certain percentage
+def get_regularisation_value(X, n_components, percentage_nzero_loadings, get_transform, lower_bound = 0.0001, upper_bound = 1000, verbose = 0, random_state = 2023):
+    percent_nz = 0
+    alpha_cur = 0
+    alpha_lower = lower_bound
+    alpha_upper = upper_bound
+    
+    while abs(percent_nz - percentage_nzero_loadings) > 0.02:
+        if upper_bound - alpha_lower < 0.001:
+            raise ValueError("Correct alpha likely not in interval")
+
+        alpha_cur = (alpha_lower + alpha_upper) / 2
+        cur_transform = get_transform(alpha = alpha_cur, n_components = n_components, random_state = random_state)
+        cur_transform.fit(X)
+        percent_nz = cur_transform.nonzero / cur_transform.totloadings
+        
+        if verbose:
+            print(f"lower: {alpha_lower}, upper: {alpha_upper}, cur: {alpha_cur}")
+            print(f"percentage nonzero: {percent_nz}")
+            print('-' * 40)
+
+        if percent_nz > percentage_nzero_loadings:
+            alpha_lower = alpha_cur
+        else:
+            alpha_upper = alpha_cur
+    return alpha_cur
