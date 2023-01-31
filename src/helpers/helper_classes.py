@@ -21,7 +21,7 @@ class EnetSPCA(BaseEstimator, TransformerMixin):
     """
     SKLearn compatible transformer implementing the SPCA algorithm as described in "Sparse Principal Component Analysis" Zou et al (2006)
     """
-    def __init__(self, n_comps=20, max_iter=10000, tol=0.00001, alpha = 0.1, l1_ratio = 0.5, use_sklearn = True, n_jobs = 0):
+    def __init__(self, n_comps=20, max_iter=10000, tol=0.00001, alpha = 0.1, l1_ratio = 0.5, use_sklearn = True):
         self.max_iter = max_iter
         self.tol = tol
         self.n_comps = n_comps
@@ -32,9 +32,8 @@ class EnetSPCA(BaseEstimator, TransformerMixin):
         self.zero = -1
         self.totloadings = -1
         self.use_sklearn = use_sklearn
-        self.n_jobs = n_jobs
 
-    def fit(self, X, y=None, verbose=0):
+    def fit(self, X, y=None, verbose=0, n_jobs=0):
         
         # Calculate total number of loadings
         self.totloadings = self.n_comps * X.shape[1]
@@ -49,7 +48,7 @@ class EnetSPCA(BaseEstimator, TransformerMixin):
             X = X.values
 
         ## Step 1: Setup first iteration
-        U, _, Vt = np.linalg.svd(X, full_matrices=False)
+        _, _, Vt = np.linalg.svd(X, full_matrices=False)
         A = Vt.T[:, :self.n_comps]
         B = np.zeros((A[:, 0].shape[0], self.n_comps))
         XtX = X.T @ X
@@ -66,7 +65,7 @@ class EnetSPCA(BaseEstimator, TransformerMixin):
 
         ## Loop of step 2 and 3 until convergence / maxiter:
         while (
-            iter < self.max_iter and diff > self.tol and diff_nonimprove < 5
+            iter < self.max_iter and diff > self.tol and diff_nonimprove < 3
         ):
             B_old = np.copy(B)
 
@@ -76,12 +75,12 @@ class EnetSPCA(BaseEstimator, TransformerMixin):
             if self.use_sklearn:
 
                 # Setup parallelization if n_jobs != 0
-                if self.n_jobs != 0:
+                if n_jobs != 0:
 
-                    if self.n_jobs == -1:
+                    if n_jobs == -1:
                         threads = None
                     else:
-                        threads = self.n_jobs
+                        threads = n_jobs
 
                     # Setup thread pool using a starmap
                     map_arr = list(range(self.n_comps))
@@ -99,7 +98,7 @@ class EnetSPCA(BaseEstimator, TransformerMixin):
                 # Scipy implementation, basically not-runnable due to time constraints.
                 for i in range(self.n_comps):
                     B[:, i] = minimize(self._criterion, np.zeros(A[:, i].shape[0]), args=(XtX, A[:, i]))
-                    print(i)
+                    # print(i)
 
             # Monitor change
             diff_old = diff
@@ -107,7 +106,7 @@ class EnetSPCA(BaseEstimator, TransformerMixin):
             if diff_old < diff:
                 diff_nonimprove += 1
 
-            print(diff)
+            # print(diff)
 
             # Update A (step 3)
             # A_old = A
