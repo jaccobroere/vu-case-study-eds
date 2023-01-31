@@ -32,7 +32,7 @@ data = load(config['PATH']['DATA_DIR'] + '/microarray-data-dict.lib')
 
 # Relevant transformations
 def get_gene_spca(n_components, random_state, alpha = 10):
-    return GeneSPCA(n_components = n_components, l1= alpha, tol = 0.001)
+    return GeneSPCA(n_components = n_components, alpha = alpha, tol = 0.001)
 
 def get_spca(n_components, random_state, alpha = 0.001):
     return EnetSPCA(n_components=n_components, alpha = alpha, tol = 0.001)
