@@ -132,12 +132,13 @@ def get_pca_pipeline(
 ):
     algorithm = {
         "pca": PCA(n_components=n_components, random_state=random_state),
-        "spca": EnetSPCA(
-            n_components=n_components,
-            alpha=alpha,
-            max_iter=max_iter,
-            n_jobs=n_jobs,
-        ),
+        # "spca": EnetSPCA(
+        #     n_components=n_components,
+        #     alpha=alpha,
+        #     max_iter=max_iter,
+        #     n_jobs=n_jobs,
+        # ),
+        "spca": SparsePCA(n_components=n_components, alpha=alpha, max_iter=max_iter, n_jobs=n_jobs),
         "gspca": GeneSPCA(n_components=n_components, alpha=alpha, max_iter=max_iter),
     }
 

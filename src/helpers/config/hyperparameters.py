@@ -291,7 +291,7 @@ class SPCA_LR_CFG(HyperparameterConfig):
             "pca": {
                 "method": "spca",
                 "n_components": 15,
-                "alpha": 0.01,
+                "alpha": 0.1,
             },
         }
 
