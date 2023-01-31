@@ -1,6 +1,6 @@
 .venv/
 venv/
-*.csv
+data/*.csv
 *.code-workspace
 .vscode/
 *.zip
@@ -18,3 +18,5 @@ dist/
 *__pycache__/
 *.lib
 .DS_Store
+data/microarray-data
+
