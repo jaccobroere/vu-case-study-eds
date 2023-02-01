@@ -49,19 +49,17 @@ def add_actuals(df: pd.DataFrame, actuals: pd.DataFrame, target: str = "cancer")
     return res
 
 
-def get_spca(alpha, n_components=20, tol=0.00001, max_iter=10000, random_state=2023):
-    spca_obj = EnetSPCA(alpha=alpha, max_iter=max_iter, tol=tol, n_comps=n_components)
+def get_spca(alpha, n_components = 20, n_jobs = 6):
+    return EnetSPCA(alpha = alpha, max_iter = 10000, tol = 0.0001, l1_ratio = 0.05, n_components = n_components, n_jobs = 6)
+
+
+def get_gene_spca(l1, n_components = 20):
+    spca_obj = GeneSPCA(max_iter = 10000, tol = 0.0000001, n_components = n_components, alpha = l1)
     return spca_obj
 
-
-def get_gene_spca(l1, n_components=20, tol=0.00001, random_state=2023, max_iter=10000):
-    spca_obj = GeneSPCA(max_iter=max_iter, tol=tol, n_comps=n_components, l1=l1)
-    return spca_obj
-
-
-def get_data_pev(X, n_components=20, verbose=0, step_size=0.5, get_transform=get_spca):
-    """
-    Function that returns the explained variance of the first principal component for a single dataset versus
+def get_data_pev(X, n_components = 20, verbose = 0, step_size = 0.5, get_transform = get_spca):
+    """ 
+    Function that returns the explained variance of the first principal component for a single dataset versus 
     the number of non-zero loadings / genes
 
     Returns:
@@ -69,14 +67,9 @@ def get_data_pev(X, n_components=20, verbose=0, step_size=0.5, get_transform=get
     - nonzero_loadings_arr: array with number of non-zero loadings of 'B' matrix
     - PEV_var_arr: array with explained variance of first principal component
     """
-
-    # First obtain total variance
-    pca = get_transform(0, n_components=n_components)
-    _, R = np.linalg.qr(pca.fit_transform(X))
-    total_var = sum(R[i][i] ** 2 for i in range(R.shape[0]))
-
+    
     # Initialize values for loop
-    nonzero_cnt = 999999999
+    nz_percentage = 1
     alpha_cur = 0
 
     # arrays
@@ -84,40 +77,42 @@ def get_data_pev(X, n_components=20, verbose=0, step_size=0.5, get_transform=get
     nz_cols = []
     PEV_arr = []
 
-    while nonzero_cnt > 200:
+    while nz_percentage > 0.01:
 
         # Obtain and fit spca object
-        spca_cur = get_transform(alpha_cur, n_components=n_components)
-        X_spca_cur = spca_cur.fit_transform(X)
-
-        # Obtain PEV of first principal component
+        spca_cur = get_transform(alpha_cur, n_components = n_components).fit(X)
+        X_spca_cur = spca_cur.transform(X)
         _, R_cur = np.linalg.qr(X_spca_cur)
-        explained_var_leading = R_cur[0][0] ** 2
-        PEV = explained_var_leading / total_var
+
+        # Obtain PEV: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8636462/
+        X_recovered_cur = X_spca_cur @ spca_cur.loadings.T
+        PEV = 1 -  np.linalg.norm(X_recovered_cur.values - X.values, ord = 'fro') ** 2 / np.linalg.norm(X.values, ord = 'fro') ** 2
 
         # Count number of nonzero loadings and columns
-        zero_rows = sum(
-            np.count_nonzero(spca_cur.loadings[i, :]) == 0
-            for i in range(spca_cur.loadings.shape[0])
-        )
-        nonzero_cnt = X.shape[1] - zero_rows
-
+        nz_percentage_old = nz_percentage
+        nz_percentage = spca_cur.nonzero / spca_cur.totloadings
+        if nz_percentage - nz_percentage_old < 0.05:
+            step_size = step_size * 2
+        elif nz_percentage - nz_percentage_old > 0.4:
+            step_size = step_size / 2
+        
         # Append values to arrays
-        nz_cols.append(nonzero_cnt)
-        nz_loadings.append(spca_cur.nonzero)
+        zero_rows = sum(np.count_nonzero(spca_cur.loadings[i,:]) == 0 for i in range(spca_cur.loadings.shape[0]))
+        nz_cols.append((X.shape[1] - zero_rows) / X.shape[1])
+        nz_loadings.append(nz_percentage)
         PEV_arr.append(PEV)
 
         # Print values when verbose
         if verbose == 1:
             print("regularization = ", alpha_cur)
-            print("nonzero columns = ", nonzero_cnt)
-            print("nonzero loadings = ", spca_cur.nonzero)
+            print("nonzero columns = ", nz_cols[-1])
+            print("nonzero loadings = ", nz_loadings[-1])
             print("PEV = ", PEV)
             print("")
 
         # Update l1_cur
         alpha_cur += step_size
-
+    
     return nz_cols, nz_loadings, PEV_arr
 
 # Bisection search for regularization parameter that sets nonzero loadings to a certain percentage
