@@ -19,4 +19,5 @@ dist/
 *.lib
 .DS_Store
 data/microarray-data
+!logs/pipelines/*lib
 

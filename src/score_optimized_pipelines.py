@@ -63,15 +63,20 @@ if __name__ == "__main__":
     fitted_pipelines = dict.fromkeys(DATASETS, {})
     timestamp = dt.datetime.now().strftime("%Y%m%d_%H%M")
 
-    for dataset in DATASETS:
+    pca_dataset_combos = {}
+
+    for dataset in ["alon", "gravier"]:
+        print(f"Dataset: {dataset}")
         X_train, X_test = (
             data[dataset]["none"]["X_train"],
             data[dataset]["none"]["X_test"],
         )
         y_train, y_test = (
-            data[dataset]["none"]["y_train"],
-            data[dataset]["none"]["y_test"],
+            data[dataset]["none"]["y_train"].to_numpy().ravel(),
+            data[dataset]["none"]["y_test"].to_numpy().ravel(),
         )
+        print(f"y_train unique: {len(set(y_train))}")
+        print(f"y_test unique: {len(set(y_test))}")
 
         for file in os.listdir(os.path.join(OPTUNA_DIR, dataset)):
             if not file.endswith(".csv"):
@@ -86,27 +91,55 @@ if __name__ == "__main__":
             if name.split("_")[0] == "GSPCA":
                 cfg.params["pca"]["alpha"] = alpha_setter(dataset)
 
-            pipe = Pipeline(
-                [
-                    (
-                        "pca",
-                        get_pca_pipeline(**cfg.get_params()["pca"]),
-                    ),
-                    (
-                        "model",
-                        get_model(
-                            cfg.get_model(static=True),
-                            **cfg.get_params()["static"],
-                            **best_params,
-                        ),
-                    ),
-                ]
-            )
+            # Check if PCA fit already exists
+            combo = "_".join([dataset, name.split("_")[0]])
 
-            pipe.fit(X_train, y_train)
+            if combo in pca_dataset_combos:
+                print(f"Combo found: {combo}")
+                pca = pca_dataset_combos[combo]
+                train_pca = False
+            else:
+                print(f"Combo not found: {combo}, fitting {combo}")
+                pca = get_pca_pipeline(**cfg.get_params()["pca"])
+                pca_dataset_combos[combo] = pca
+                train_pca = True
+
+            if train_pca:
+                pca.fit(X_train, y_train)
+                X_train_pca = pca.transform(X_train)
+            else:
+                X_train_pca = pca.transform(X_train)
+
+            print(f"Training model: {name}")
+            model = get_model(cfg.get_model(static=True), **best_params)
+            model.fit(X_train_pca, y_train)
+
+            # pipe = Pipeline(
+            #     [
+            #         (
+            #             "pca",
+            #             get_pca_pipeline(**cfg.get_params()["pca"]),
+            #         ),
+            #         (
+            #             "model",
+            #             get_model(
+            #                 cfg.get_model(static=True),
+            #                 **cfg.get_params()["static"],
+            #                 **best_params,
+            #             ),
+            #         ),
+            #     ]
+            # )
+            pipe = Pipeline([("pca", pca), ("model", model)])
 
             # Save pipeline in dictionary
             fitted_pipelines[dataset][name] = copy.deepcopy(pipe)
+            dump(
+                pipe,
+                os.path.join(
+                    PIPE_DIR, f"{timestamp}_{name}_{dataset}_single_pipeline.lib"
+                ),
+            )
 
     # dump to joblib
     dump(fitted_pipelines, os.path.join(PIPE_DIR, f"{timestamp}_fitted-pipelines.lib"))
