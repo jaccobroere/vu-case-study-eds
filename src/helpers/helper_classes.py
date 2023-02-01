@@ -23,23 +23,27 @@ class EnetSPCA(BaseEstimator, TransformerMixin):
     """
     SKLearn compatible transformer implementing the SPCA algorithm as described in "Sparse Principal Component Analysis" Zou et al (2006)
     """
-    def __init__(self, n_components=20, max_iter=10000, tol=0.00001, alpha = 0.1, l1_ratio = 0.5, use_sklearn = True):
+    def __init__(self, n_components=20, max_iter=10000, tol=0.00001, alpha = 0.1, l1_ratio = 0.5, use_sklearn = True, n_jobs = 0):
         self.max_iter = max_iter
         self.tol = tol
         self.n_components = n_components
         self.n_comps = n_components
         self.alpha = alpha
         self.l1_ratio = l1_ratio
+        self.n_jobs = n_jobs
         self.loadings = None
         self.nonzero = -1
         self.zero = -1
         self.totloadings = -1
         self.use_sklearn = use_sklearn
+        self.pca_loadings = None
 
-    def fit(self, X, y=None, verbose=0, n_jobs=0):
+    def fit(self, X, y=None, verbose=0):
         
+        n_jobs = self.n_jobs
         # Calculate total number of loadings
         self.totloadings = self.n_components * X.shape[1]
+        self.nonzero = self.totloadings
 
         # Setup progress bar
         if verbose:
@@ -52,6 +56,7 @@ class EnetSPCA(BaseEstimator, TransformerMixin):
 
         ## Step 1: Setup first iteration
         _, _, Vt = np.linalg.svd(X, full_matrices=False)
+        self.pca_loadings = Vt.T[:, :self.n_comps]
         A = Vt.T[:, :self.n_comps]
         B = np.zeros((A[:, 0].shape[0], self.n_comps))
         XtX = X.T @ X
@@ -60,7 +65,8 @@ class EnetSPCA(BaseEstimator, TransformerMixin):
 
         # ElasticNET() is not suitable for alpha = 0, return PCA results
         if self.alpha == 0:
-            return A
+            self.loadings = A
+            return self
 
         # Initialize progress monitors arbitrarily large
         diff, diff_nonimprove = 100, 0
@@ -102,7 +108,7 @@ class EnetSPCA(BaseEstimator, TransformerMixin):
                     for i in range(self.n_components):
                         B[:, i] = (
                             ElasticNet(
-                                alpha=self.alpha, fit_intercept=False, max_iter=10000
+                                alpha=self.alpha,l1_ratio = self.l1_ratio, fit_intercept=False, max_iter=14000
                             )
                             .fit(Sig_root, Sig_root @ A[:, i])
                             .coef_
@@ -142,6 +148,8 @@ class EnetSPCA(BaseEstimator, TransformerMixin):
         return self
 
     def transform(self, X, y=None):
+        if self.alpha == 0:
+            return X @ self.pca_loadings
         return X @ self.loadings
 
     def _max_diff(self, X1, X2):
@@ -161,7 +169,7 @@ class EnetSPCA(BaseEstimator, TransformerMixin):
 
     def _enet_criterion(self, i, A, Sig_root):
         return (
-            ElasticNet(alpha=self.alpha, fit_intercept=False, max_iter=10000)
+            ElasticNet(alpha=self.alpha, l1_ratio = self.l1_ratio, fit_intercept=False, max_iter=14000)
             .fit(Sig_root, Sig_root @ A[:, i])
             .coef_
         )
