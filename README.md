@@ -1,7 +1,7 @@
 # Repository: Cancer subtype classification using shrinking methods on gene expression data
 ### Authors: Jacco Broere, Caspar Hentenaar, Bas Willemsen
 
-This repository contains the code to reproduce the results in our report.
+This repository contains the code to reproduce the results in our [report](https://github.com/jaccobroere/vu-case-study-eds/blob/main/paper/Case_Study_EDS.pdf).
 For this report we implemented general SPCA and an SPCA variant for gene expression data as described in [Zou et al. (2006)](https://www-jstor-org.vu-nl.idm.oclc.org/stable/27594179). Using these transformations classifiers were built to accurately classify different cancer subtypes on gene expression datasets. For classification a logistic regression and a tree boosting method using LightGBM were employed, hyperparameter tuning was done using the Optuna framework.
 
 The two implemented SPCA variants are made available in `spca_classes.py` and can be used as SKLearn transformers, in a pipeline, or standalone.
