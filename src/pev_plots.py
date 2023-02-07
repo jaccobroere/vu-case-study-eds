@@ -38,7 +38,7 @@ data = load(config['PATH']['DATA_DIR'] + '/microarray-data-dict.lib')
 os.environ["PATH"] += os.pathsep + '/Library/TeX/texbin'
 
 # Get list of datasets to run on
-pev_dataset_list = ['sorlie', 'khan', 'christensen', 'alon', 'gravier']
+pev_dataset_list = ['khan', 'alon', 'gravier']
 # pev_dataset_list = ['sorlie', 'christensen'] #'chin', 'nakayama']
 # pev_dataset_list = ['christensen']
 
@@ -61,8 +61,8 @@ if __name__ == "__main__":
         
         print(dname)
         print('-'*40)
+        nz_cols_spca, nz_loadings_spca, PEV_arr_spca = get_data_pev(X, n_components = N_COMPONENTS, verbose = VERBOSE, step_size = STEP_ALPHA, get_transform = get_spca, alpha_arr=[0, 0.000001, 0.00001, 0.0001, 0.005, 0.01, 0.02, 0.05, 0.1, 1, 10])
         nz_cols_gspca, nz_loadings_gspca, PEV_arr_gspca = get_data_pev(X, n_components = N_COMPONENTS, verbose = VERBOSE, step_size = STEP_L1, get_transform = get_gene_spca)
-        nz_cols_spca, nz_loadings_spca, PEV_arr_spca = get_data_pev(X, n_components = N_COMPONENTS, verbose = VERBOSE, step_size = STEP_ALPHA, get_transform = get_spca)
 
         # Plot PEV versus number of non-zero columns
         plt.figure()

@@ -45,11 +45,12 @@ def get_pca(n_components, random_state):
 ################################################################################
 
 # Set datasets
-datasets = ['sorlie']
+datasets = ['sorlie', 'gravier', 'khan', 'alon']
+lambda_val = {'sorlie':256, 'gravier': 1090, 'khan': 721, 'alon':1500}
 N_TIMINGS = 3
 N_JOBS = -1
 n_components_list = [5]
-transforms_dict = {'pca': get_pca, 'spca': get_spca, 'gene_spca': get_gene_spca}
+transforms_dict = {'pca': get_pca, 'gene_spca': get_gene_spca}
 
 
 ################################################################################
@@ -66,13 +67,13 @@ if __name__ == "__main__":
             
             X_cur = data[dname]['none']['X_train']
                 
-            spca_transform = get_spca(n_components = n_components, random_state = SEED, alpha = 0.01)
-            spca_fitted = spca_transform.fit(X_cur, n_jobs = N_JOBS)
-            spca_nzero_percentage = spca_fitted.nonzero / spca_fitted.totloadings
-            print(f"non zero % target: {spca_nzero_percentage}")
+            # spca_transform = get_spca(n_components = n_components, random_state = SEED, alpha = 0.01)
+            # spca_fitted = spca_transform.fit(X_cur, n_jobs = N_JOBS)
+            # spca_nzero_percentage = spca_fitted.nonzero / spca_fitted.totloadings
+            # print(f"non zero % target: {spca_nzero_percentage}")
 
             # Find lambda value such that gene_spca has same percentage of nonzero loadings as spca.
-            lambda_genespca = get_regularisation_value(X_cur, n_components, spca_nzero_percentage, get_gene_spca, lower_bound = 0, upper_bound = X_cur.shape[1] * 4, verbose = 1)                 
+            lambda_genespca = 50                
             lambda_dict[(dname, n_components)] = lambda_genespca
 
             # Time pca
@@ -85,21 +86,21 @@ if __name__ == "__main__":
                 end = time.time()
                 results_dict[(dname, 'pca', n_components)].append(end - start)
 
-            # Time spca
-            print(f"Timing spca...")
-            results_dict[(dname, 'spca', n_components)] = []
-            for i in range(N_TIMINGS):
-                cur_spca = get_spca(n_components = n_components, random_state = SEED, alpha = 0.01)
-                start = time.time()
-                cur_spca.fit(X_cur, n_jobs = N_JOBS)
-                end = time.time()
-                results_dict[(dname, 'spca', n_components)].append(end - start)
+            # # Time spca
+            # print(f"Timing spca...")
+            # results_dict[(dname, 'spca', n_components)] = []
+            # for i in range(N_TIMINGS):
+            #     cur_spca = get_spca(n_components = n_components, random_state = SEED, alpha = 0.01)
+            #     start = time.time()
+            #     cur_spca.fit(X_cur, n_jobs = N_JOBS)
+            #     end = time.time()
+            #     results_dict[(dname, 'spca', n_components)].append(end - start)
 
             # Time gene spca
             print(f"Timing gene spca...")
             results_dict[(dname, 'gene_spca', n_components)] = []
             for i in range(N_TIMINGS):
-                cur_genespca = get_gene_spca(n_components = n_components, random_state = SEED, alpha = lambda_genespca)
+                cur_genespca = get_gene_spca(n_components = n_components, random_state = SEED, alpha = lambda_val[dname])
                 start = time.time()
                 cur_genespca.fit(X_cur)
                 end = time.time()
@@ -125,7 +126,7 @@ if __name__ == "__main__":
         res_runtimes.columns = transforms_dict.keys()
 
         # Save to file
-        fname = config['LOGGING']['TIME_DIR'] + f"/runtime_table_{n_components}.txt"
+        fname = config['LOGGING']['TIME_DIR'] + f"/runtime_table2_{n_components}.txt"
 
         # If exists delete
         if os.path.exists(fname):
