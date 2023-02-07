@@ -66,14 +66,15 @@ if __name__ == "__main__":
             print(f"Dataset: {dname}, n_components: {n_components}")
             
             X_cur = data[dname]['none']['X_train']
-                
-            # spca_transform = get_spca(n_components = n_components, random_state = SEED, alpha = 0.01)
-            # spca_fitted = spca_transform.fit(X_cur, n_jobs = N_JOBS)
-            # spca_nzero_percentage = spca_fitted.nonzero / spca_fitted.totloadings
-            # print(f"non zero % target: {spca_nzero_percentage}")
+
+            # Fit once to get spca non zero percentage    
+            spca_transform = get_spca(n_components = n_components, random_state = SEED, alpha = 0.01)
+            spca_fitted = spca_transform.fit(X_cur, n_jobs = N_JOBS)
+            spca_nzero_percentage = spca_fitted.nonzero / spca_fitted.totloadings
+            print(f"non zero % target: {spca_nzero_percentage}")
 
             # Find lambda value such that gene_spca has same percentage of nonzero loadings as spca.
-            lambda_genespca = 50                
+            lambda_genespca = get_regularisation_value(X_cur, n_components, spca_nzero_percentage, get_gene_spca, lower_bound = 0, upper_bound = 2000)           
             lambda_dict[(dname, n_components)] = lambda_genespca
 
             # Time pca
@@ -87,14 +88,14 @@ if __name__ == "__main__":
                 results_dict[(dname, 'pca', n_components)].append(end - start)
 
             # # Time spca
-            # print(f"Timing spca...")
-            # results_dict[(dname, 'spca', n_components)] = []
-            # for i in range(N_TIMINGS):
-            #     cur_spca = get_spca(n_components = n_components, random_state = SEED, alpha = 0.01)
-            #     start = time.time()
-            #     cur_spca.fit(X_cur, n_jobs = N_JOBS)
-            #     end = time.time()
-            #     results_dict[(dname, 'spca', n_components)].append(end - start)
+            print(f"Timing spca...")
+            results_dict[(dname, 'spca', n_components)] = []
+            for i in range(N_TIMINGS):
+                cur_spca = get_spca(n_components = n_components, random_state = SEED, alpha = 0.01)
+                start = time.time()
+                cur_spca.fit(X_cur, n_jobs = N_JOBS)
+                end = time.time()
+                results_dict[(dname, 'spca', n_components)].append(end - start)
 
             # Time gene spca
             print(f"Timing gene spca...")
